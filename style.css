@@ -1,6 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #111;
+  background: linear-gradient(135deg, #ff6f61, #ffcc00, #ff33aa);
   color: #eee;
   max-width: 800px;
   margin: 30px auto;
@@ -37,5 +37,6 @@ ul {
   text-align: left;
   display: inline-block;
 }
+
 
 
