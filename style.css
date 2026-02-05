@@ -1,11 +1,13 @@
 body {
   font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #ff6f61, #ffcc00, #ff33aa);
-  color: #eee;
+  background-color: #111; /* fond noir */
+  color: #eee;            /* texte clair */
   max-width: 800px;
   margin: 30px auto;
   padding: 0 20px;
   text-align: center;
+}
+
 }
 
 img.logo {
@@ -37,6 +39,7 @@ ul {
   text-align: left;
   display: inline-block;
 }
+
 
 
 
