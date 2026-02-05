@@ -1,6 +1,10 @@
+/* ===========================
+   STYLE GLOBAL DU SITE
+=========================== */
+
 body {
   font-family: Arial, sans-serif;
-  background-color: #111; /* fond noir */
+  background-color: #111; /* fond noir classique */
   color: #eee;            /* texte clair */
   max-width: 800px;
   margin: 30px auto;
@@ -8,37 +12,83 @@ body {
   text-align: center;
 }
 
-}
-
+/* ===========================
+   LOGO
+=========================== */
 img.logo {
-  max-width: 200px;
+  max-width: 80%;   /* s'adapte aux écrans mobiles */
+  height: auto;
   display: block;
   margin: 0 auto 20px;
 }
 
+/* ===========================
+   MENU / NAVIGATION
+=========================== */
 nav {
   margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;      /* pour que les onglets passent à la ligne sur mobile */
+  justify-content: center;
 }
 
 nav a {
-  margin-right: 15px;
-  color: #f5c542;
+  margin: 5px 10px;
+  color: #f5c542;      /* couleur dorée */
   text-decoration: none;
   font-weight: bold;
 }
 
 nav a:hover {
+  color: #ff33aa;      /* accent festif au survol */
   text-decoration: underline;
 }
 
+/* ===========================
+   TITRES
+=========================== */
 h1, h2 {
-  color: #f5c542;
+  color: #f5c542;       /* doré pour contraste sur fond noir */
+  text-shadow: 1px 1px 2px #000; /* petite ombre pour relief */
 }
 
+/* ===========================
+   LISTES
+=========================== */
 ul {
   text-align: left;
   display: inline-block;
+  padding-left: 20px;
 }
+
+/* ===========================
+   FORMULAIRES (pour Vote)
+=========================== */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form select {
+  padding: 5px;
+  margin: 5px 0;
+}
+
+form button {
+  padding: 5px 15px;
+  background-color: #f5c542;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+form button:hover {
+  background-color: #ff33aa;
+  color: #fff;
+}
+
 
 
 
