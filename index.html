@@ -1,204 +1,40 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Les Tapas Nocturnes</title>
+  <meta charset="UTF-8">
+  <title>Les Tapas Nocturnes</title>
 
-<style>
-:root {
-  --rouge: #D41414;
-  --vert: #3E7F2B;
-  --beige: #F5E6C8;
-  --brun: #8B4513;
-  --noir: #000000;
-  --fond-clair: #faf7f0;
-}
+  <style>
+    /* ===== Texte de bienvenue limité à 4 lignes ===== */
+    .welcome-text {
+      max-width: 800px;              /* largeur du bloc (ajustable) */
+      margin: 20px auto;             /* centre le texte */
+      font-size: 1.2em;              /* taille du texte */
+      line-height: 1.5em;            /* hauteur de ligne */
+      
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 4;         /* 👉 limite à 4 lignes */
+      
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  </style>
 
-* { margin:0; padding:0; box-sizing:border-box; }
-
-body {
-  font-family: Arial, sans-serif;
-  background-color: var(--fond-clair);
-  min-height: 100vh;
-  position: relative;
-  color: #111;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-}
-
-/* Logo en arrière-plan */
-body::before {
-  content: "";
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 80vmin;
-  height: 80vmin;
-  background: url('logo.png') no-repeat center/contain;
-  opacity: 0.28;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* HEADER */
-header {
-  position: relative;
-  z-index: 1;
-  height: 180px;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  padding-top: 20px;
-}
-
-/* NAVIGATION */
-.nav-buttons {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  opacity: 0;
-  transform: translateY(-20px);
-  animation: slideDown 0.8s forwards;
-  animation-delay: 0.3s;
-}
-
-@keyframes slideDown {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Boutons stylisés avec contraste */
-.btn {
-  padding: 12px 36px;
-  border-radius: 60% 40% 60% 40% / 50% 60% 50% 60%;
-  border: 3px solid var(--noir);
-  font-size: 16px;
-  font-weight: 700;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  transition: transform 0.2s ease, filter 0.2s ease;
-  box-shadow: inset 0 3px 6px rgba(255,255,255,0.3), 0 4px 8px rgba(0,0,0,0.25);
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
-}
-
-/* Couleurs et icônes */
-.btn-rouge {
-  background-color: var(--rouge);
-  color: white;
-}
-.btn-brun {
-  background-color: var(--brun);
-  color: white;
-}
-.btn-beige {
-  background-color: var(--beige);
-  color: var(--noir);
-}
-.btn-vert {
-  background-color: var(--vert);
-  color: white;
-}
-
-/* Icones emojis */
-.btn-rouge::before { content: "🔥"; }
-.btn-brun::before { content: "🎵"; }
-.btn-beige::before { content: "📝"; }
-.btn-vert::before { content: "📞"; }
-
-/* Hover */
-.btn:hover { transform: translateY(-4px) scale(1.05); filter: brightness(1.15); }
-
-/* Accueil / présentation */
-.welcome {
-  max-width: 700px;
-  margin: 50px auto;
-  padding: 30px;
-  background-color: rgba(244,244,244,0.85);
-  border: 2px solid rgba(0,0,0,0.6);
-  border-radius: 15px;
-  position: relative;
-  z-index: 1;
-  text-align: center;
-}
-
-.welcome h2 {
-  margin-bottom: 15px;
-}
-
-.welcome p {
-  font-size: 1.2rem;
-  line-height: 1.5;
-}
-
-@media (max-width:600px){
-  .nav-buttons { flex-direction: column; gap:12px; }
-  .btn { width:100%; justify-content:center; }
-  .welcome { padding: 20px; margin: 40px 20px; }
-}
-</style>
 </head>
-
 <body>
-<header>
-  <nav class="nav-buttons">
-    <button class="btn btn-rouge" onclick="scrollToSection('accueil')">Accueil</button>
-    <button class="btn btn-brun" onclick="scrollToSection('repertoire')">Répertoire</button>
-    <button class="btn btn-beige" onclick="scrollToSection('paroles')">Paroles</button>
-    <button class="btn btn-vert" onclick="scrollToSection('contact')">Contact</button>
-  </nav>
-</header>
 
-<main>
-  <section class="welcome" id="accueil">
-    <h2>Bienvenue !</h2>
-    <p>
-      Bienvenue chez <strong>Les Tapas Nocturnes</strong> !<br>
-      Aitor Tilla et Gustavo Cadillo vous servent de la musique à déguster en bonne humeur.<br>
-      Nos chansons sont faites pour l’apéro et pour que <strong>vous chantiez avec nous</strong>, ensemble, dans une ambiance festive et conviviale.
+  <section>
+    <p class="welcome-text">
+      Bienvenue sur le site officiel du groupe Les Tapas Nocturnes.
+      Découvrez notre univers musical, nos compositions originales,
+      nos reprises festives et nos prochaines dates de concerts.
+      Nous partageons avec vous notre passion de la scène,
+      du rythme et des moments vibrants en live.
     </p>
   </section>
 
-  <!-- Sections cachées accessibles via les boutons -->
-  <section id="repertoire" style="display:none;">
-    <h2>Répertoire</h2>
-    <ul>
-      <li>• Chanson 1</li>
-      <li>• Chanson 2</li>
-      <li>• Chanson 3</li>
-    </ul>
-  </section>
-
-  <section id="paroles" style="display:none;">
-    <h2>Paroles</h2>
-    <p>Ici vous pouvez ajouter les paroles de vos chansons.</p>
-  </section>
-
-  <section id="contact" style="display:none;">
-    <h2>Contact</h2>
-    <p>
-      <a href="https://www.instagram.com">Instagram</a><br>
-      <a href="mailto:contact@lestapasnocturnes.fr">Envoyer un e-mail</a>
-    </p>
-  </section>
-</main>
-
-<script>
-function scrollToSection(id) {
-  // Cache toutes les sections sauf accueil
-  const sections = ['repertoire','paroles','contact'];
-  sections.forEach(s => document.getElementById(s).style.display = 'none');
-  if(id !== 'accueil'){
-    document.getElementById(id).style.display = 'block';
-  }
-  document.getElementById(id).scrollIntoView({ behavior: "smooth" });
-}
-</script>
 </body>
 </html>
+
 
