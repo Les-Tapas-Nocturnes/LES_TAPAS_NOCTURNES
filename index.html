@@ -71,7 +71,6 @@ header {
   }
 }
 
-/* Boutons stylisés avec contraste */
 .btn {
   padding: 12px 36px;
   border-radius: 60% 40% 60% 40% / 50% 60% 50% 60%;
@@ -87,34 +86,19 @@ header {
   text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
 }
 
-/* Couleurs et icônes */
-.btn-rouge {
-  background-color: var(--rouge);
-  color: white;
-}
-.btn-brun {
-  background-color: var(--brun);
-  color: white;
-}
-.btn-beige {
-  background-color: var(--beige);
-  color: var(--noir);
-}
-.btn-vert {
-  background-color: var(--vert);
-  color: white;
-}
+.btn-rouge { background-color: var(--rouge); color: white; }
+.btn-brun { background-color: var(--brun); color: white; }
+.btn-beige { background-color: var(--beige); color: var(--noir); }
+.btn-vert { background-color: var(--vert); color: white; }
 
-/* Icones emojis */
 .btn-rouge::before { content: "🔥"; }
 .btn-brun::before { content: "🎵"; }
 .btn-beige::before { content: "📝"; }
 .btn-vert::before { content: "📞"; }
 
-/* Hover */
 .btn:hover { transform: translateY(-4px) scale(1.05); filter: brightness(1.15); }
 
-/* Accueil / présentation */
+/* Accueil */
 .welcome {
   max-width: 700px;
   margin: 50px auto;
@@ -131,16 +115,9 @@ header {
   margin-bottom: 15px;
 }
 
-/* ✅ LIMITATION À 4 LIGNES */
 .welcome p {
   font-size: 1.2rem;
-  line-height: 1.5;
-
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 4;   /* limite à 4 lignes */
-  overflow: hidden;
-  text-overflow: ellipsis;
+  line-height: 1.6;
 }
 
 @media (max-width:600px){
@@ -166,12 +143,12 @@ header {
     <h2>Bienvenue !</h2>
     <p>
       Bienvenue chez <strong>Les Tapas Nocturnes</strong> !<br>
-      Aitor Tilla et Gustavo Cadillo vous servent de la musique à déguster en bonne humeur.<br>
-      Nos chansons sont faites pour l’apéro et pour que <strong>vous chantiez avec nous</strong>, ensemble, dans une ambiance festive et conviviale.
+      Aitor Tilla et Gustavo Cadillo vous invitent<br>
+      à chanter, vibrer et partager l’instant,<br>
+      dans une ambiance festive et généreuse.
     </p>
   </section>
 
-  <!-- Sections cachées accessibles via les boutons -->
   <section id="repertoire" style="display:none;">
     <h2>Répertoire</h2>
     <ul>
@@ -207,5 +184,6 @@ function scrollToSection(id) {
 </script>
 </body>
 </html>
+
 
 
