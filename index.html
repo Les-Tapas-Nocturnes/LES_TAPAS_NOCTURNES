@@ -2,81 +2,160 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <title>Les Tapas Nocturnes</title>
+
+  <!-- Styles principaux -->
   <style>
+    /* Reset + base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
     body {
-      font-family: Arial, sans-serif;
-      background-color: #111;
-      color: #eee;
-      max-width: 800px;
-      margin: 30px auto;
-      padding: 0 20px;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #fafafa;
+      color: #222;
       text-align: center;
+      line-height: 1.6;
+      padding: 20px;
     }
-    img.logo {
-      max-width: 200px;
-      display: block;
-      margin: 0 auto 20px;
+
+    header {
+      margin-bottom: 40px;
     }
-    nav a {
-      margin-right: 15px;
-      color: #f5c542;
-      text-decoration: none;
+    header img {
+      width: 160px;
+      margin-bottom: 10px;
+    }
+    h1 {
+      font-size: 2.4rem;
+      margin-bottom: 12px;
+    }
+
+    /* Barre de navigation en buttons */
+    .nav-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      margin-bottom: 32px;
+    }
+    .btn {
+      padding: 14px 26px;
+      font-size: 16px;
       font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
-    nav a:hover {
-      text-decoration: underline;
+    .btn:hover {
+      transform: scale(1.05);
+    }
+
+    .btn-accueil {
+      background: linear-gradient(45deg,#ff8a00,#e52e71);
+      color: #fff;
+      box-shadow: 0 4px 10px rgba(229,46,113,0.4);
+    }
+    .btn-repertoire {
+      background: linear-gradient(45deg,#28aadd,#005f99);
+      color: #fff;
+      box-shadow: 0 4px 10px rgba(0,95,153,0.4);
+    }
+    .btn-contact {
+      background: linear-gradient(45deg,#22c55e,#116530);
+      color: #fff;
+      box-shadow: 0 4px 10px rgba(17,101,48,0.4);
+    }
+
+    .btn:active {
+      transform: scale(0.98);
+      box-shadow: inset 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    /* Sections */
+    section {
+      max-width: 800px;
+      margin: auto;
+      text-align: left;
+      padding: 12px 0;
     }
     h2 {
-      color: #f5c542;
+      margin-top: 36px;
+      margin-bottom: 12px;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 8px;
     }
     ul {
-      text-align: left;
+      list-style: none;
+      padding-left: 0;
+    }
+    .links a {
       display: inline-block;
+      margin-top: 8px;
+      text-decoration: none;
+      color: #005f99;
+      font-weight: bold;
+      border-bottom: 2px solid #005f99;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .links a:hover {
+      color: #e52e71;
+      border-color: #e52e71;
     }
   </style>
 </head>
+
 <body>
+  <!-- En-tête -->
+  <header>
+    <img src="Logo.png" alt="Logo Les Tapas Nocturnes" />
+    <h1>Les Tapas Nocturnes</h1>
 
-  <!-- Logo -->
-  <img src="logo.png" alt="Logo Les Tapas Nocturnes" class="logo" />
+    <!-- Navigation moderne -->
+    <div class="nav-buttons">
+      <button class="btn btn-accueil" onclick="scrollToSection('accueil')">Accueil</button>
+      <button class="btn btn-repertoire" onclick="scrollToSection('repertoire')">Répertoire</button>
+      <button class="btn btn-contact" onclick="scrollToSection('contact')">Contact</button>
+    </div>
+  </header>
 
-  <h1>Les Tapas Nocturnes</h1>
-
-<nav class="menu">
-  <a href="index.html" class="btn">Accueil</a>
-  <a href="repertoire.html" class="btn">Répertoire</a>
-  <a href="contact.html" class="btn">Contact</a>
-</nav>
-
-
-  <!-- Contenu principal -->
-  <section>
-    <p>
-      Bienvenue sur le site officiel du groupe Les Tapas Nocturnes.<br />
-      Découvrez notre musique, nos paroles, notre répertoire et nos dates de concerts.
-    </p>
-
-    <h2>Répertoire</h2>
-    <ul>
-      <li>Chanson 1</li>
-      <li>Chanson 2</li>
-      <li>Chanson 3</li>
-    </ul>
-
-    <h2>Concerts à venir</h2>
-    <ul>
-      <li>15 mars 2026 – Bar Le Zinc – Paris</li>
-      <li>2 avril 2026 – Festival nocturne – Lyon</li>
-    </ul>
-
-    <!-- Instagram -->
-    <p>Suivez-nous sur Instagram : <a href="https://www.instagram.com/TON_PSEUDO" target="_blank">@pseudo</a></p>
+  <!-- SECTION Accueil -->
+  <section id="accueil">
+    <p>Bienvenue sur le site officiel du groupe Les Tapas Nocturnes. Découvrez notre musique, nos paroles et nos dates de concerts à venir.</p>
   </section>
 
+  <!-- SECTION Répertoire -->
+  <section id="repertoire">
+    <h2>Répertoire 🎶</h2>
+    <ul>
+      <li>• Chanson 1</li>
+      <li>• Chanson 2</li>
+      <li>• Chanson 3</li>
+      <li>• …</li>
+    </ul>
+  </section>
+
+  <!-- SECTION Contact -->
+  <section id="contact">
+    <h2>Contact 💬</h2>
+    <div class="links">
+      <a href="https://www.instagram.com">Instagram</a><br />
+      <a href="mailto:contact@lestapasnocturnes.fr">Envoyer un e-mail</a>
+    </div>
+  </section>
+
+  <script>
+    // Fonction pour faire défiler vers la section
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
 </body>
 </html>
+
 
 
 
