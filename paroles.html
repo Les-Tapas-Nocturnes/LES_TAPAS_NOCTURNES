@@ -20,11 +20,47 @@
 body {
   font-family: Arial, sans-serif;
   background-color: var(--fond-clair);
-  padding: 40px 20px;
-  text-align: center;
+  min-height: 100vh;
+  position: relative;
+  color: #111;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
-/* Boutons identiques au menu */
+/* Logo en arrière-plan (comme index) */
+body::before {
+  content: "";
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 80vmin;
+  height: 80vmin;
+  background: url('logo.png') no-repeat center/contain;
+  opacity: 0.28;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* HEADER IDENTIQUE */
+header {
+  position: relative;
+  z-index: 1;
+  height: 180px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+/* NAVIGATION */
+.nav-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Boutons menu */
 .btn {
   padding: 12px 36px;
   border-radius: 60% 40% 60% 40% / 50% 60% 50% 60%;
@@ -32,26 +68,45 @@ body {
   font-size: 16px;
   font-weight: 700;
   cursor: pointer;
-  margin: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
   transition: transform 0.2s ease, filter 0.2s ease;
   box-shadow: inset 0 3px 6px rgba(255,255,255,0.3), 0 4px 8px rgba(0,0,0,0.25);
   text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
-  background-color: var(--brun);
-  color: white;
 }
+
+.btn-rouge { background-color: var(--rouge); color: white; }
+.btn-brun { background-color: var(--brun); color: white; }
+.btn-beige { background-color: var(--beige); color: var(--noir); }
+.btn-vert { background-color: var(--vert); color: white; }
+.btn-agenda { background-color: #FFA500; color: white; }
+
+.btn-rouge::before { content: "🔥"; }
+.btn-brun::before { content: "🎵"; }
+.btn-beige::before { content: "📝"; }
+.btn-vert::before { content: "📞"; }
+.btn-agenda::before { content: "📅"; }
 
 .btn:hover {
   transform: translateY(-4px) scale(1.05);
   filter: brightness(1.15);
 }
 
+/* Zone liste chansons */
+.song-list {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 20px;
+}
+
 /* Zone paroles */
 .lyrics {
-  margin-top: 40px;
+  position: relative;
+  z-index: 1;
+  margin: 40px auto;
   max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: left;
   background: white;
   padding: 25px;
   border-radius: 12px;
@@ -64,38 +119,48 @@ body {
 
 <body>
 
-<h1>Paroles</h1>
+<header>
+  <nav class="nav-buttons">
+    <button class="btn btn-rouge" onclick="window.location.href='index.html'">Accueil</button>
+    <button class="btn btn-brun" onclick="window.location.href='repertoire.html'">Répertoire</button>
+    <button class="btn btn-beige" onclick="window.location.href='paroles.html'">Paroles</button>
+    <button class="btn btn-agenda" onclick="window.location.href='concerts.html'">Agenda</button>
+    <button class="btn btn-vert" onclick="window.location.href='contact.html'">Contact</button>
+  </nav>
+</header>
 
-<!-- LISTE DES CHANSONS -->
-<button class="btn" onclick="showLyrics('s1')">Et moi, et moi, et moi</button>
-<button class="btn" onclick="showLyrics('s2')">La fille du Père Noël</button>
-<button class="btn" onclick="showLyrics('s3')">Sarbacane</button>
-<button class="btn" onclick="showLyrics('s4')">L'amour à la machine</button>
-<button class="btn" onclick="showLyrics('s5')">La nuit je mens</button>
-<button class="btn" onclick="showLyrics('s6')">Laisse béton</button>
-<button class="btn" onclick="showLyrics('s7')">Jardin d’hiver</button>
-<button class="btn" onclick="showLyrics('s8')">Vieille canaille</button>
-<button class="btn" onclick="showLyrics('s9')">Les Élucubrations d’Antoine</button>
-<button class="btn" onclick="showLyrics('s10')">Encore une journée d’foutue</button>
-<button class="btn" onclick="showLyrics('s11')">Les Ailes d’un ange</button>
-<button class="btn" onclick="showLyrics('s12')">J'ai dix ans</button>
-<button class="btn" onclick="showLyrics('s13')">Ces idées là</button>
-<button class="btn" onclick="showLyrics('s14')">Toute la musique que j'aime</button>
-<button class="btn" onclick="showLyrics('s15')">Gabrielle</button>
-<button class="btn" onclick="showLyrics('s16')">Vertige de l’amour</button>
-<button class="btn" onclick="showLyrics('s17')">New York avec toi</button>
-<button class="btn" onclick="showLyrics('s18')">La Bombe humaine</button>
-<button class="btn" onclick="showLyrics('s19')">Antisocial</button>
-<button class="btn" onclick="showLyrics('s20')">Aitormena</button>
-<button class="btn" onclick="showLyrics('s21')">Lau teilatu</button>
-<button class="btn" onclick="showLyrics('s22')">Hegoak</button>
-<button class="btn" onclick="showLyrics('s23')">Un autre monde</button>
-<button class="btn" onclick="showLyrics('s24')">Les cactus</button>
-<button class="btn" onclick="showLyrics('s25')">Gogoaren baitan</button>
-<button class="btn" onclick="showLyrics('s26')">J'irai où tu iras</button>
-<button class="btn" onclick="showLyrics('s27')">Ça c'est vraiment toi</button>
+<div class="song-list">
 
-<!-- ZONE PAROLES -->
+<button class="btn btn-brun" onclick="showLyrics('s1')">Et moi, et moi, et moi</button>
+<button class="btn btn-brun" onclick="showLyrics('s2')">La fille du Père Noël</button>
+<button class="btn btn-brun" onclick="showLyrics('s3')">Sarbacane</button>
+<button class="btn btn-brun" onclick="showLyrics('s4')">L'amour à la machine</button>
+<button class="btn btn-brun" onclick="showLyrics('s5')">La nuit je mens</button>
+<button class="btn btn-brun" onclick="showLyrics('s6')">Laisse béton</button>
+<button class="btn btn-brun" onclick="showLyrics('s7')">Jardin d’hiver</button>
+<button class="btn btn-brun" onclick="showLyrics('s8')">Vieille canaille</button>
+<button class="btn btn-brun" onclick="showLyrics('s9')">Les Élucubrations d’Antoine</button>
+<button class="btn btn-brun" onclick="showLyrics('s10')">Encore une journée d’foutue</button>
+<button class="btn btn-brun" onclick="showLyrics('s11')">Les Ailes d’un ange</button>
+<button class="btn btn-brun" onclick="showLyrics('s12')">J'ai dix ans</button>
+<button class="btn btn-brun" onclick="showLyrics('s13')">Ces idées là</button>
+<button class="btn btn-brun" onclick="showLyrics('s14')">Toute la musique que j'aime</button>
+<button class="btn btn-brun" onclick="showLyrics('s15')">Gabrielle</button>
+<button class="btn btn-brun" onclick="showLyrics('s16')">Vertige de l’amour</button>
+<button class="btn btn-brun" onclick="showLyrics('s17')">New York avec toi</button>
+<button class="btn btn-brun" onclick="showLyrics('s18')">La Bombe humaine</button>
+<button class="btn btn-brun" onclick="showLyrics('s19')">Antisocial</button>
+<button class="btn btn-brun" onclick="showLyrics('s20')">Aitormena</button>
+<button class="btn btn-brun" onclick="showLyrics('s21')">Lau teilatu</button>
+<button class="btn btn-brun" onclick="showLyrics('s22')">Hegoak</button>
+<button class="btn btn-brun" onclick="showLyrics('s23')">Un autre monde</button>
+<button class="btn btn-brun" onclick="showLyrics('s24')">Les cactus</button>
+<button class="btn btn-brun" onclick="showLyrics('s25')">Gogoaren baitan</button>
+<button class="btn btn-brun" onclick="showLyrics('s26')">J'irai où tu iras</button>
+<button class="btn btn-brun" onclick="showLyrics('s27')">Ça c'est vraiment toi</button>
+
+</div>
+
 <div id="s1" class="lyrics"></div>
 <div id="s2" class="lyrics"></div>
 <div id="s3" class="lyrics"></div>
