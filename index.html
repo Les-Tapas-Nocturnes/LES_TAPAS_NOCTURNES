@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Les Tapas Nocturnes</title>
 
 <style>
@@ -84,24 +84,21 @@ header {
   text-shadow: 0 1px 2px rgba(0,0,0,0.6);
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   transition: transform 0.2s ease, filter 0.2s ease;
-  background-repeat: no-repeat;
-  background-position: right 10px center;
-  background-size: 20px 20px;
   box-shadow: inset 0 3px 6px rgba(255,255,255,0.3), 0 4px 8px rgba(0,0,0,0.25);
 }
 
-/* Couleurs et icônes */
-.btn-rouge { background-color: var(--rouge); background-image: url('https://cdn-icons-png.flaticon.com/512/415/415729.png'); }
-.btn-brun { background-color: var(--brun); background-image: url('https://cdn-icons-png.flaticon.com/512/414/414992.png'); }
-.btn-beige { background-color: var(--beige); color: var(--noir); background-image: url('https://cdn-icons-png.flaticon.com/512/476/476863.png'); }
-.btn-vert { background-color: var(--vert); background-image: url('https://cdn-icons-png.flaticon.com/512/726/726691.png'); }
+/* Couleurs et icônes (ici emojis) */
+.btn-rouge::before { content: "🔥"; }
+.btn-brun::before { content: "🎵"; }
+.btn-beige::before { content: "📝"; color: black; }
+.btn-vert::before { content: "📞"; }
 
 /* Hover */
 .btn:hover { transform: translateY(-4px) scale(1.05); filter: brightness(1.15); }
 
-/* Sections */
+/* SECTIONS */
 section {
   max-width: 900px;
   margin: 50px auto;
@@ -121,7 +118,7 @@ a:hover { color: var(--vert); }
 
 @media (max-width:600px){
   .nav-buttons { flex-direction: column; gap:12px; }
-  .btn { width:100%; justify-content:center; background-position: center right 16px; }
+  .btn { width:100%; justify-content:center; }
 }
 </style>
 </head>
@@ -129,10 +126,10 @@ a:hover { color: var(--vert); }
 <body>
 <header>
   <nav class="nav-buttons">
-    <button class="btn btn-rouge" onclick="scrollToSection('accueil')">🔥 Accueil</button>
-    <button class="btn btn-brun" onclick="scrollToSection('repertoire')">🎶 Répertoire</button>
-    <button class="btn btn-beige" onclick="scrollToSection('paroles')">📝 Paroles</button>
-    <button class="btn btn-vert" onclick="scrollToSection('contact')">📩 Contact</button>
+    <button class="btn btn-rouge" onclick="scrollToSection('accueil')">Accueil</button>
+    <button class="btn btn-brun" onclick="scrollToSection('repertoire')">Répertoire</button>
+    <button class="btn btn-beige" onclick="scrollToSection('paroles')">Paroles</button>
+    <button class="btn btn-vert" onclick="scrollToSection('contact')">Contact</button>
   </nav>
 </header>
 
@@ -159,7 +156,7 @@ a:hover { color: var(--vert); }
   <section id="contact">
     <h2>Contact</h2>
     <p>
-      <a href="https://www.instagram.com">Instagram</a><br />
+      <a href="https://www.instagram.com">Instagram</a><br>
       <a href="mailto:contact@lestapasnocturnes.fr">Envoyer un e-mail</a>
     </p>
   </section>
