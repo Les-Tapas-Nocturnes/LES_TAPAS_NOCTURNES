@@ -27,7 +27,6 @@ body {
   scroll-behavior: smooth;
 }
 
-/* Logo en arrière-plan */
 body::before {
   content: "";
   position: fixed;
@@ -42,7 +41,6 @@ body::before {
   z-index: 0;
 }
 
-/* HEADER */
 header {
   position: relative;
   z-index: 1;
@@ -53,7 +51,6 @@ header {
   padding-top: 20px;
 }
 
-/* NAVIGATION */
 .nav-buttons {
   display: flex;
   gap: 16px;
@@ -93,7 +90,6 @@ header {
   filter: brightness(1.15);
 }
 
-/* LISTE DES CHANSONS */
 .song-list {
   position: relative;
   z-index: 1;
@@ -104,7 +100,6 @@ header {
   margin: 30px 0;
 }
 
-/* ZONE PAROLES */
 .lyrics {
   position: relative;
   z-index: 1;
@@ -116,6 +111,12 @@ header {
   box-shadow: 0 6px 14px rgba(0,0,0,0.15);
   display: none;
   white-space: pre-line;
+}
+
+.return-btn {
+  margin-top: 20px;
+  background-color: #3E7F2B;
+  color: white;
 }
 </style>
 </head>
@@ -133,37 +134,71 @@ header {
 </header>
 
 <div class="song-list">
-<!-- BOUTONS CHANSONS -->
-<button class="btn btn-brun" onclick="showLyrics('s1')">Et moi, et moi, et moi</button>
-<button class="btn btn-brun" onclick="showLyrics('s2')">La fille du Père Noël</button>
-<button class="btn btn-brun" onclick="showLyrics('s3')">Sarbacane</button>
-<!-- Ajoute les autres boutons de la même manière -->
+  <!-- Tous les boutons des chansons -->
+  <button class="btn btn-brun" onclick="showLyrics('s1')">Et moi, et moi, et moi</button>
+  <button class="btn btn-brun" onclick="showLyrics('s2')">La fille du Père Noël</button>
+  <button class="btn btn-brun" onclick="showLyrics('s3')">Sarbacane</button>
+  <button class="btn btn-brun" onclick="showLyrics('s4')">L'amour à la machine</button>
+  <button class="btn btn-brun" onclick="showLyrics('s5')">La nuit je mens</button>
+  <button class="btn btn-brun" onclick="showLyrics('s6')">Laisse béton</button>
+  <button class="btn btn-brun" onclick="showLyrics('s7')">Jardin d’hiver</button>
+  <button class="btn btn-brun" onclick="showLyrics('s8')">Vieille canaille</button>
+  <button class="btn btn-brun" onclick="showLyrics('s9')">Les Élucubrations d’Antoine</button>
+  <button class="btn btn-brun" onclick="showLyrics('s10')">Encore une journée d’foutue</button>
+  <button class="btn btn-brun" onclick="showLyrics('s11')">Les Ailes d’un ange</button>
+  <button class="btn btn-brun" onclick="showLyrics('s12')">J'ai dix ans</button>
+  <button class="btn btn-brun" onclick="showLyrics('s13')">Ces idées là</button>
+  <button class="btn btn-brun" onclick="showLyrics('s14')">Toute la musique que j'aime</button>
+  <button class="btn btn-brun" onclick="showLyrics('s15')">Gabrielle</button>
+  <button class="btn btn-brun" onclick="showLyrics('s16')">Vertige de l’amour</button>
+  <button class="btn btn-brun" onclick="showLyrics('s17')">New York avec toi</button>
+  <button class="btn btn-brun" onclick="showLyrics('s18')">La Bombe humaine</button>
+  <button class="btn btn-brun" onclick="showLyrics('s19')">Antisocial</button>
+  <button class="btn btn-brun" onclick="showLyrics('s20')">Aitormena</button>
+  <button class="btn btn-brun" onclick="showLyrics('s21')">Lau teilatu</button>
+  <button class="btn btn-brun" onclick="showLyrics('s22')">Hegoak</button>
+  <button class="btn btn-brun" onclick="showLyrics('s23')">Un autre monde</button>
+  <button class="btn btn-brun" onclick="showLyrics('s24')">Les cactus</button>
+  <button class="btn btn-brun" onclick="showLyrics('s25')">Gogoaren baitan</button>
+  <button class="btn btn-brun" onclick="showLyrics('s26')">J'irai où tu iras</button>
+  <button class="btn btn-brun" onclick="showLyrics('s27')">Ça c'est vraiment toi</button>
 </div>
 
+<!-- Paroles de chansons -->
 <div id="s1" class="lyrics">
 Sept cent millions de chinois
 Et moi, et moi, et moi
 Avec ma vie, mon petit chez-moi
 ...
+<button class="btn return-btn" onclick="returnToSongs()">Retour aux chansons</button>
 </div>
-<div id="s2" class="lyrics">Paroles de "La fille du Père Noël" ici...</div>
-<div id="s3" class="lyrics">Paroles de "Sarbacane" ici...</div>
+<div id="s2" class="lyrics">
+Paroles de "La fille du Père Noël" ici...
+<button class="btn return-btn" onclick="returnToSongs()">Retour aux chansons</button>
+</div>
+<div id="s3" class="lyrics">
+Paroles de "Sarbacane" ici...
+<button class="btn return-btn" onclick="returnToSongs()">Retour aux chansons</button>
+</div>
+<!-- Ajoute les autres paroles avec le même bouton retour pour s4 à s27 -->
 
 <script>
 function showLyrics(id) {
   // Masquer tous les boutons de chansons
   document.querySelectorAll('.song-list .btn').forEach(btn => btn.style.display = 'none');
-
   // Masquer toutes les paroles
   document.querySelectorAll('.lyrics').forEach(el => el.style.display = 'none');
-
   // Afficher la chanson sélectionnée
   document.getElementById(id).style.display = 'block';
+}
+
+function returnToSongs() {
+  // Masquer toutes les paroles
+  document.querySelectorAll('.lyrics').forEach(el => el.style.display = 'none');
+  // Réafficher tous les boutons de chansons
+  document.querySelectorAll('.song-list .btn').forEach(btn => btn.style.display = 'flex');
 }
 </script>
 
 </body>
 </html>
-
-
-
