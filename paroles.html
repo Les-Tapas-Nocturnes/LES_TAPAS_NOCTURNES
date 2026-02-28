@@ -27,7 +27,7 @@ body {
   scroll-behavior: smooth;
 }
 
-/* Logo en arrière-plan (comme index) */
+/* Logo en arrière-plan */
 body::before {
   content: "";
   position: fixed;
@@ -58,9 +58,10 @@ header {
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
-/* Boutons menu */
+/* Boutons menu / chansons identiques */
 .btn {
   padding: 12px 36px;
   border-radius: 60% 40% 60% 40% / 50% 60% 50% 60%;
@@ -93,12 +94,15 @@ header {
   filter: brightness(1.15);
 }
 
-/* Zone liste chansons */
+/* LISTE DES CHANSONS */
 .song-list {
   position: relative;
   z-index: 1;
-  text-align: center;
-  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin: 30px 0;
 }
 
 /* Zone paroles */
@@ -129,8 +133,8 @@ header {
   </nav>
 </header>
 
+<!-- LISTE CHANSONS -->
 <div class="song-list">
-
 <button class="btn btn-brun" onclick="showLyrics('s1')">Et moi, et moi, et moi</button>
 <button class="btn btn-brun" onclick="showLyrics('s2')">La fille du Père Noël</button>
 <button class="btn btn-brun" onclick="showLyrics('s3')">Sarbacane</button>
@@ -158,9 +162,9 @@ header {
 <button class="btn btn-brun" onclick="showLyrics('s25')">Gogoaren baitan</button>
 <button class="btn btn-brun" onclick="showLyrics('s26')">J'irai où tu iras</button>
 <button class="btn btn-brun" onclick="showLyrics('s27')">Ça c'est vraiment toi</button>
-
 </div>
 
+<!-- PAROLES -->
 <div id="s1" class="lyrics"></div>
 <div id="s2" class="lyrics"></div>
 <div id="s3" class="lyrics"></div>
@@ -199,6 +203,7 @@ function showLyrics(id) {
 
 </body>
 </html>
+
 
 
 
