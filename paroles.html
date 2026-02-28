@@ -4,26 +4,100 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Paroles - Les Tapas Nocturnes</title>
+
 <style>
-/* Même CSS que index.html */
-:root{--rouge:#D41414;--vert:#3E7F2B;--beige:#F5E6C8;--brun:#8B4513;--noir:#000;--fond-clair:#faf7f0}*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial,sans-serif;background-color:var(--fond-clair);min-height:100vh;position:relative;color:#111;overflow-x:hidden;scroll-behavior:smooth}body::before{content:"";position:fixed;top:50%;left:50%;width:80vmin;height:80vmin;background:url('logo.png') no-repeat center/contain;opacity:.28;transform:translate(-50%,-50%);pointer-events:none;z-index:0}header{position:relative;z-index:1;height:180px;display:flex;align-items:flex-start;justify-content:center;padding-top:20px}.nav-buttons{display:flex;gap:16px;flex-wrap:wrap;opacity:0;transform:translateY(-20px);animation:slideDown .8s forwards;animation-delay:.3s}@keyframes slideDown{to{opacity:1;transform:translateY(0)}}.btn{padding:12px 36px;border-radius:60% 40% 60% 40%/50% 60% 50% 60%;border:3px solid var(--noir);font-size:16px;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:8px;transition:transform .2s ease,filter .2s ease;box-shadow:inset 0 3px 6px rgba(255,255,255,.3),0 4px 8px rgba(0,0,0,.25);text-shadow:1px 1px 2px rgba(0,0,0,.7)}.btn-rouge{background-color:var(--rouge);color:#fff}.btn-brun{background-color:var(--brun);color:#fff}.btn-beige{background-color:var(--beige);color:var(--noir)}.btn-vert{background-color:var(--vert);color:#fff}.btn-agenda{background-color:#FFA500;color:#fff}.btn-rouge::before{content:"🔥"}.btn-brun::before{content:"🎵"}.btn-beige::before{content:"📝"}.btn-vert::before{content:"📞"}.btn-agenda::before{content:"📅"}.btn:hover{transform:translateY(-4px) scale(1.05);filter:brightness(1.15)}@media(max-width:600px){.nav-buttons{flex-direction:column;gap:12px}.btn{width:100%;justify-content:center}}
+:root {
+  --rouge: #D41414;
+  --vert: #3E7F2B;
+  --beige: #F5E6C8;
+  --brun: #8B4513;
+  --noir: #000000;
+  --fond-clair: #faf7f0;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--fond-clair);
+  padding: 40px 20px;
+  text-align: center;
+}
+
+/* TITRE */
+h1 {
+  margin-bottom: 30px;
+}
+
+/* Boutons chansons */
+.song-btn {
+  padding: 10px 25px;
+  margin: 8px;
+  border-radius: 40px;
+  border: 2px solid var(--noir);
+  background-color: var(--brun);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.song-btn:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+/* Zone paroles */
+.lyrics {
+  margin-top: 40px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  display: none;
+  white-space: pre-line;
+}
 </style>
 </head>
+
 <body>
-<header>
-<nav class="nav-buttons">
-<button class="btn btn-rouge" onclick="window.location.href='index.html'">Accueil</button>
-<button class="btn btn-brun" onclick="window.location.href='repertoire.html'">Répertoire</button>
-<button class="btn btn-beige" onclick="window.location.href='paroles.html'">Paroles</button>
-<button class="btn btn-agenda" onclick="window.location.href='concerts.html'">Agenda</button>
-<button class="btn btn-vert" onclick="window.location.href='contact.html'">Contact</button>
-</nav>
-</header>
-<main>
-  <!-- Contenu spécifique à Paroles à ajouter ici -->
-</main>
+
+<h1>Paroles</h1>
+
+<!-- BOUTONS DES CHANSONS -->
+<button class="song-btn" onclick="showLyrics('song1')">Bella Ciao</button>
+<button class="song-btn" onclick="showLyrics('song2')">Volare</button>
+<button class="song-btn" onclick="showLyrics('song3')">La Bamba</button>
+
+<!-- PAROLES -->
+<div id="song1" class="lyrics">
+Bella ciao, bella ciao, bella ciao ciao ciao...
+</div>
+
+<div id="song2" class="lyrics">
+Nel blu dipinto di blu...
+</div>
+
+<div id="song3" class="lyrics">
+Para bailar la bamba...
+</div>
+
+<script>
+function showLyrics(id) {
+  const allLyrics = document.querySelectorAll('.lyrics');
+  allLyrics.forEach(el => el.style.display = 'none');
+
+  document.getElementById(id).style.display = 'block';
+}
+</script>
+
 </body>
 </html>
+
 
 
 
