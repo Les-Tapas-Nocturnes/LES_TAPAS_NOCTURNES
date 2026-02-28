@@ -158,38 +158,39 @@ header {
   <section class="welcome" id="accueil">
     <h2>Bienvenue !</h2>
     <p>
-      Découvrez Les Tapas Nocturnes : musique festive, ambiance chaleureuse et tapas à partager.  
-      Cliquez sur les boutons ci-dessus pour explorer notre répertoire, lire les paroles ou nous contacter.
+      Bienvenue chez <strong>Les Tapas Nocturnes</strong> !<br>
+      Aitor Tilla et Gustavo Cadillo vous servent de la musique à déguster en bonne humeur.<br>
+      Nos chansons sont faites pour l’apéro et pour que <strong>vous chantiez avec nous</strong>, ensemble, dans une ambiance festive et conviviale.
+    </p>
+  </section>
+
+  <!-- Sections cachées accessibles via les boutons -->
+  <section id="repertoire" style="display:none;">
+    <h2>Répertoire</h2>
+    <ul>
+      <li>• Chanson 1</li>
+      <li>• Chanson 2</li>
+      <li>• Chanson 3</li>
+    </ul>
+  </section>
+
+  <section id="paroles" style="display:none;">
+    <h2>Paroles</h2>
+    <p>Ici vous pouvez ajouter les paroles de vos chansons.</p>
+  </section>
+
+  <section id="contact" style="display:none;">
+    <h2>Contact</h2>
+    <p>
+      <a href="https://www.instagram.com">Instagram</a><br>
+      <a href="mailto:contact@lestapasnocturnes.fr">Envoyer un e-mail</a>
     </p>
   </section>
 </main>
 
-<!-- Sections cachées accessibles via les boutons -->
-<section id="repertoire" style="display:none;">
-  <h2>Répertoire</h2>
-  <ul>
-    <li>• Chanson 1</li>
-    <li>• Chanson 2</li>
-    <li>• Chanson 3</li>
-  </ul>
-</section>
-
-<section id="paroles" style="display:none;">
-  <h2>Paroles</h2>
-  <p>Ici vous pouvez ajouter les paroles de vos chansons.</p>
-</section>
-
-<section id="contact" style="display:none;">
-  <h2>Contact</h2>
-  <p>
-    <a href="https://www.instagram.com">Instagram</a><br>
-    <a href="mailto:contact@lestapasnocturnes.fr">Envoyer un e-mail</a>
-  </p>
-</section>
-
 <script>
 function scrollToSection(id) {
-  // Affiche la section correspondante et scroll dessus
+  // Cache toutes les sections sauf accueil
   const sections = ['repertoire','paroles','contact'];
   sections.forEach(s => document.getElementById(s).style.display = 'none');
   if(id !== 'accueil'){
@@ -200,3 +201,4 @@ function scrollToSection(id) {
 </script>
 </body>
 </html>
+
