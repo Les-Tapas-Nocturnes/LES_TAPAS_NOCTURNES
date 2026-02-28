@@ -1,40 +1,83 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Les Tapas Nocturnes</title>
+    <meta charset="UTF-8">
+    <title>Les Tapas Nocturnes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    /* ===== Texte de bienvenue limité à 4 lignes ===== */
-    .welcome-text {
-      max-width: 800px;              /* largeur du bloc (ajustable) */
-      margin: 20px auto;             /* centre le texte */
-      font-size: 1.2em;              /* taille du texte */
-      line-height: 1.5em;            /* hauteur de ligne */
-      
-      display: -webkit-box;
-      -webkit-box-orient: vertical;
-      -webkit-line-clamp: 4;         /* 👉 limite à 4 lignes */
-      
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-  </style>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #111;
+            color: white;
+            text-align: center;
+        }
 
+        header {
+            background-color: #000;
+            padding: 20px;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        section {
+            padding: 40px 20px;
+        }
+
+        /* ===== TEXTE DE BIENVENUE LIMITÉ À 4 LIGNES ===== */
+        .welcome-text {
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 1.2em;
+            line-height: 1.6em;
+
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 4; /* 👉 limite à 4 lignes */
+
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        footer {
+            background-color: #000;
+            padding: 20px;
+            font-size: 0.9em;
+        }
+    </style>
 </head>
+
 <body>
 
-  <section>
+<header>
+    <h1>Les Tapas Nocturnes</h1>
+</header>
+
+<section>
     <p class="welcome-text">
-      Bienvenue sur le site officiel du groupe Les Tapas Nocturnes.
-      Découvrez notre univers musical, nos compositions originales,
-      nos reprises festives et nos prochaines dates de concerts.
-      Nous partageons avec vous notre passion de la scène,
-      du rythme et des moments vibrants en live.
+        Bienvenue sur le site officiel des Tapas Nocturnes.
+        Découvrez notre univers musical, nos compositions originales,
+        nos reprises festives et nos prochaines dates de concerts.
+        Nous partageons avec vous notre passion de la scène,
+        du rythme et des moments vibrants en live.
+        Ce texte peut être aussi long que vous voulez,
+        mais seulement 4 lignes seront visibles.
     </p>
-  </section>
+</section>
+
+<!-- 🔽 TU PEUX REMETTRE ICI TES AUTRES SECTIONS (concerts, photos, vidéos...) -->
+
+<section>
+    <h2>Prochains concerts</h2>
+    <p>Dates à venir...</p>
+</section>
+
+<footer>
+    © 2026 Les Tapas Nocturnes
+</footer>
 
 </body>
 </html>
-
-
