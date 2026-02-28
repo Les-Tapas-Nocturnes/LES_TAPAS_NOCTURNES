@@ -71,7 +71,7 @@ header {
   }
 }
 
-/* Boutons stylisés avec contraste */
+/* Boutons stylisés */
 .btn {
   padding: 12px 36px;
   border-radius: 60% 40% 60% 40% / 50% 60% 50% 60%;
@@ -104,40 +104,10 @@ header {
 /* Hover */
 .btn:hover { transform: translateY(-4px) scale(1.05); filter: brightness(1.15); }
 
-/* Accueil / présentation */
-.welcome {
-  max-width: 700px;
-  margin: 50px auto;
-  padding: 30px;
-  background-color: rgba(244,244,244,0.85);
-  border: 2px solid rgba(0,0,0,0.6);
-  border-radius: 15px;
-  position: relative;
-  z-index: 1;
-  text-align: center;
-}
-
-.welcome h2 {
-  margin-bottom: 15px;
-  font-size: 2rem;
-}
-
-.welcome p {
-  font-size: 1.3rem;
-  line-height: 1.6;
-}
-
-/* Centrer phrase d’accroche */
-.welcome .phrase {
-  margin-top: 20px;
-  font-style: italic;
-}
-
 /* Responsive */
 @media (max-width:600px){
   .nav-buttons { flex-direction: column; gap:12px; }
   .btn { width:100%; justify-content:center; }
-  .welcome { padding: 20px; margin: 40px 20px; }
 }
 </style>
 </head>
@@ -152,15 +122,7 @@ header {
     <button class="btn btn-vert" onclick="window.location.href='contact.html'">Contact</button>
   </nav>
 </header>
-
-<main>
-  <section class="welcome" id="accueil">
-    <h2>Bienvenue chez Les Tapas Nocturnes !</h2>
-    <p class="phrase">
-      Aïtor Tilla et Gustavo Cadillo vous invite à partager un répertoire festif, dans la bonne humeur et le partage.
-    </p>
-  </section>
-</main>
 </body>
 </html>
+
 
