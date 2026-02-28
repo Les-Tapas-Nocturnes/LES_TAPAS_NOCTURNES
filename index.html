@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8" />
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Les Tapas Nocturnes</title>
 
@@ -22,6 +22,7 @@ body {
   background-color: var(--fond-clair);
   min-height: 100vh;
   color: #111;
+  scroll-behavior: smooth;
 }
 
 /* HEADER */
@@ -35,12 +36,12 @@ header {
   padding: 20px 0;
 }
 
-/* Logo */
+/* Logo centré, taille naturelle */
 .logo {
-  max-width: 180px;      /* Limite la taille du logo */
-  width: 35%;            /* Adaptable sur tous les écrans */
+  display: block;
+  margin: 0 auto 20px auto;
+  max-width: 100%;
   height: auto;
-  margin-bottom: 15px;
 }
 
 /* NAVIGATION */
@@ -54,13 +55,9 @@ header {
 }
 
 @keyframes slideDown {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  to { opacity:1; transform: translateY(0); }
 }
 
-/* BOUTONS */
 .btn {
   padding: 12px 36px;
   border-radius: 60% 40% 60% 40% / 50% 60% 50% 60%;
@@ -76,25 +73,25 @@ header {
   text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
 }
 
-.btn-rouge { background-color: var(--rouge); color: white; }
-.btn-brun { background-color: var(--brun); color: white; }
-.btn-beige { background-color: var(--beige); color: var(--noir); }
-.btn-vert { background-color: var(--vert); color: white; }
-.btn-agenda { background-color: #FFA500; color: white; }
+.btn-rouge { background-color: var(--rouge); color:white; }
+.btn-brun { background-color: var(--brun); color:white; }
+.btn-beige { background-color: var(--beige); color:var(--noir); }
+.btn-vert { background-color: var(--vert); color:white; }
+.btn-agenda { background-color:#FFA500; color:white; }
 
-.btn-rouge::before { content: "🔥"; }
-.btn-brun::before { content: "🎵"; }
-.btn-beige::before { content: "📝"; }
-.btn-vert::before { content: "📞"; }
-.btn-agenda::before { content: "📅"; }
+.btn-rouge::before { content:"🔥"; }
+.btn-brun::before { content:"🎵"; }
+.btn-beige::before { content:"📝"; }
+.btn-vert::before { content:"📞"; }
+.btn-agenda::before { content:"📅"; }
 
 .btn:hover { transform: translateY(-4px) scale(1.05); filter: brightness(1.15); }
 
-/* RESPONSIVE */
+/* Responsive */
 @media (max-width:600px){
-  .logo { width: 50%; max-width: 150px; margin-bottom: 12px; }
   .nav-buttons { flex-direction: column; gap:12px; }
-  .btn { width: 100%; justify-content:center; }
+  .btn { width:100%; justify-content:center; }
+  .logo { margin-bottom:15px; }
 }
 </style>
 </head>
@@ -111,7 +108,8 @@ header {
   </nav>
 </header>
 <main>
-  <!-- Page d'accueil sans texte, uniquement logo et boutons -->
+  <!-- Accueil vide, juste logo et boutons -->
 </main>
 </body>
 </html>
+
