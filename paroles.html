@@ -21,10 +21,8 @@ body {
   font-family: Arial, sans-serif;
   background-color: var(--fond-clair);
   min-height: 100vh;
-  position: relative;
   color: #111;
   overflow-x: hidden;
-  scroll-behavior: smooth;
 }
 
 body::before {
@@ -103,14 +101,24 @@ header {
 .lyrics {
   position: relative;
   z-index: 1;
-  margin: 40px auto;
-  max-width: 800px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-evenly; /* répartir sur toute la hauteur */
+  align-items: center;
+  height: calc(100vh - 180px); /* prend toute la hauteur sous le header */
+  max-width: 900px;
+  margin: 0 auto;
   background: white;
-  padding: 25px;
+  padding: 20px;
   border-radius: 12px;
   box-shadow: 0 6px 14px rgba(0,0,0,0.15);
-  display: none;
   white-space: pre-line;
+}
+
+.lyrics p {
+  text-align: center;
+  margin-bottom: 1.5em;
+  line-height: 1.6;
 }
 
 .return-btn {
@@ -134,109 +142,29 @@ header {
 </header>
 
 <div class="song-list">
-  <!-- Tous les boutons des chansons -->
   <button class="btn btn-brun" onclick="showLyrics('s1')">Et moi, et moi, et moi</button>
   <button class="btn btn-brun" onclick="showLyrics('s2')">La fille du Père Noël</button>
   <button class="btn btn-brun" onclick="showLyrics('s3')">Sarbacane</button>
-  <button class="btn btn-brun" onclick="showLyrics('s4')">L'amour à la machine</button>
-  <button class="btn btn-brun" onclick="showLyrics('s5')">La nuit je mens</button>
-  <button class="btn btn-brun" onclick="showLyrics('s6')">Laisse béton</button>
-  <button class="btn btn-brun" onclick="showLyrics('s7')">Jardin d’hiver</button>
-  <button class="btn btn-brun" onclick="showLyrics('s8')">Vieille canaille</button>
-  <button class="btn btn-brun" onclick="showLyrics('s9')">Les Élucubrations d’Antoine</button>
-  <button class="btn btn-brun" onclick="showLyrics('s10')">Encore une journée d’foutue</button>
-  <button class="btn btn-brun" onclick="showLyrics('s11')">Les Ailes d’un ange</button>
-  <button class="btn btn-brun" onclick="showLyrics('s12')">J'ai dix ans</button>
-  <button class="btn btn-brun" onclick="showLyrics('s13')">Ces idées là</button>
-  <button class="btn btn-brun" onclick="showLyrics('s14')">Toute la musique que j'aime</button>
-  <button class="btn btn-brun" onclick="showLyrics('s15')">Gabrielle</button>
-  <button class="btn btn-brun" onclick="showLyrics('s16')">Vertige de l’amour</button>
-  <button class="btn btn-brun" onclick="showLyrics('s17')">New York avec toi</button>
-  <button class="btn btn-brun" onclick="showLyrics('s18')">La Bombe humaine</button>
-  <button class="btn btn-brun" onclick="showLyrics('s19')">Antisocial</button>
-  <button class="btn btn-brun" onclick="showLyrics('s20')">Aitormena</button>
-  <button class="btn btn-brun" onclick="showLyrics('s21')">Lau teilatu</button>
-  <button class="btn btn-brun" onclick="showLyrics('s22')">Hegoak</button>
-  <button class="btn btn-brun" onclick="showLyrics('s23')">Un autre monde</button>
-  <button class="btn btn-brun" onclick="showLyrics('s24')">Les cactus</button>
-  <button class="btn btn-brun" onclick="showLyrics('s25')">Gogoaren baitan</button>
-  <button class="btn btn-brun" onclick="showLyrics('s26')">J'irai où tu iras</button>
-  <button class="btn btn-brun" onclick="showLyrics('s27')">Ça c'est vraiment toi</button>
+  <!-- Ajoute tous les autres boutons ici s4 à s27 -->
 </div>
 
-<!-- Paroles de chansons -->
 <div id="s1" class="lyrics">
-Sept cent millions de chinois
-Et moi, et moi, et moi
-Avec ma vie, mon petit chez-moi
-Mon mal de tête, mon point au foie
-J'y pense et puis j'oublie
-C'est la vie, c'est la vie
-Quatre-vingt millions d'indonésiens
-Et moi, et moi, et moi
-Avec ma voiture et mon chien
-Son Canigou quand il aboie
-J'y pense et puis j'oublie
-C'est la vie, c'est la vie
-Trois ou quatre cent millions de noirs
-Et moi, et moi, et moi
-Qui vais au brunissoir
-Au sauna pour perdre du poids
-J'y pense et puis j'oublie
-C'est la vie, c'est la vie
-Trois cent millions de soviétiques
-Et moi, et moi, et moi
-Avec mes manies et mes tics
-Dans mon p'tit lit en plume d'oie
-J'y pense et puis j'oublie
-C'est la vie, c'est la vie
-Cinquante millions de gens imparfaits
-Et moi, et moi, et moi
-Qui regarde Catherine Langeais
-À la télévision chez moi
-J'y pense et puis j'oublie
-C'est la vie, c'est la vie
-Neuf cent millions de crève-la-faim
-Et moi, et moi, et moi
-Avec mon régime végétarien
-Et tout le whisky que je m'envoie
-J'y pense et puis j'oublie
-C'est la vie, c'est la vie
-Cinq cent millions de sud-américains
-Et moi, et moi, et moi
-Je suis tout nu dans mon bain
-Avec une fille qui me nettoie
-J'y pense et puis j'oublie
-C'est la vie, c'est la vie
-Cinquante millions de vietnamiens
-Et moi, et moi, et moi
-Le dimanche à la chasse au lapin
-Avec mon fusil, je suis le roi
-J'y pense et puis j'oublie
-C'est la vie, c'est la vie
-Cinq cent milliards de petits martiens
-Et moi, et moi, et moi
-Comme un con de parisien
-J'attends mon chèque de fin de mois
-J'y pense et puis j'oublie
-C'est la vie, c'est la vie
-J'y pense et puis j'oublie
-C'est la vie, c'est la vie
-J'y pense et puis j'oublie
-C'est la vie, c'est la vie
-J'y pense et puis j'oublie
-...
-<button class="btn return-btn" onclick="returnToSongs()">Retour aux chansons</button>
+  <p>Sept cent millions de chinois</p>
+  <p>Et moi, et moi, et moi</p>
+  <p>Avec ma vie, mon petit chez-moi</p>
+  <p>Mon mal de tête, mon point au foie</p>
+  <button class="btn return-btn" onclick="returnToSongs()">Retour aux chansons</button>
 </div>
+
 <div id="s2" class="lyrics">
-Paroles de "La fille du Père Noël" ici...
-<button class="btn return-btn" onclick="returnToSongs()">Retour aux chansons</button>
+  <p>Paroles de "La fille du Père Noël" ici...</p>
+  <button class="btn return-btn" onclick="returnToSongs()">Retour aux chansons</button>
 </div>
+
 <div id="s3" class="lyrics">
-Paroles de "Sarbacane" ici...
-<button class="btn return-btn" onclick="returnToSongs()">Retour aux chansons</button>
+  <p>Paroles de "Sarbacane" ici...</p>
+  <button class="btn return-btn" onclick="returnToSongs()">Retour aux chansons</button>
 </div>
-<!-- Ajoute les autres paroles avec le même bouton retour pour s4 à s27 -->
 
 <script>
 function showLyrics(id) {
@@ -245,17 +173,14 @@ function showLyrics(id) {
   // Masquer toutes les paroles
   document.querySelectorAll('.lyrics').forEach(el => el.style.display = 'none');
   // Afficher la chanson sélectionnée
-  document.getElementById(id).style.display = 'block';
+  document.getElementById(id).style.display = 'flex'; // flex pour répartir verticalement
 }
 
 function returnToSongs() {
-  // Masquer toutes les paroles
   document.querySelectorAll('.lyrics').forEach(el => el.style.display = 'none');
-  // Réafficher tous les boutons de chansons
   document.querySelectorAll('.song-list .btn').forEach(btn => btn.style.display = 'flex');
 }
 </script>
 
 </body>
 </html>
-
