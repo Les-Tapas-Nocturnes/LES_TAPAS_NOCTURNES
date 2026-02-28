@@ -19,10 +19,10 @@
 
 body {
   font-family: Arial, sans-serif;
-  color: rgba(0,0,0,0.85);
   background-color: var(--fond-clair);
-  position: relative;
   min-height: 100vh;
+  position: relative;
+  color: #111;
 }
 
 /* Logo en arrière-plan */
@@ -40,27 +40,34 @@ body::before {
   z-index: 0;
 }
 
-/* Contenu au-dessus */
-main, header, section {
+/* Sections */
+section {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: rgba(244,244,244,0.8);
+  border: 2px solid rgba(0,0,0,0.6);
+  border-radius: 15px;
   position: relative;
   z-index: 1;
 }
 
-/* HEADER */
-header {
-  background-color: transparent;
-  padding-top: 200px; /* navigation bien sous le logo */
-  padding-bottom: 20px;
-  text-align: center;
-}
+h2 { margin-bottom: 20px; }
+ul { list-style:none; }
+ul li { margin-bottom:10px; }
+a { color: var(--rouge); font-weight:bold; text-decoration:none; }
+a:hover { color: var(--vert); }
 
-/* NAVIGATION */
-.nav-buttons {
+/* MENU FLOTTANT BAS */
+.bottom-nav {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
-  justify-content: center;
-  gap: 18px;
+  gap: 16px;
   flex-wrap: wrap;
-  margin-top: 20px;
+  z-index: 2;
 }
 
 /* Boutons piment stylisés */
@@ -92,40 +99,14 @@ header {
 /* Hover */
 .btn:hover { transform: translateY(-4px) scale(1.05); filter: brightness(1.15); }
 
-/* Sections */
-section {
-  max-width: 900px;
-  margin: 50px auto;
-  padding: 30px;
-  background-color: rgba(244,244,244,0.8);
-  border: 2px solid rgba(0,0,0,0.6);
-  border-radius: 15px;
-  color: #111;
-}
-
-h2 { margin-bottom:20px; }
-ul { list-style:none; }
-ul li { margin-bottom:10px; }
-a { color: var(--rouge); font-weight:bold; text-decoration:none; }
-a:hover { color: var(--vert); }
-
 @media (max-width:600px){
-  .nav-buttons { flex-direction: column; gap:12px; }
+  .bottom-nav { flex-direction: column; gap:12px; }
   .btn { width:100%; justify-content:center; background-position: center right 16px; }
 }
 </style>
 </head>
 
 <body>
-<header>
-  <nav class="nav-buttons">
-    <button class="btn btn-rouge" onclick="scrollToSection('accueil')">🔥 Accueil</button>
-    <button class="btn btn-brun" onclick="scrollToSection('repertoire')">🎶 Répertoire</button>
-    <button class="btn btn-beige" onclick="scrollToSection('paroles')">📝 Paroles</button>
-    <button class="btn btn-vert" onclick="scrollToSection('contact')">📩 Contact</button>
-  </nav>
-</header>
-
 <main>
   <section id="accueil">
     <h2>Bienvenue</h2>
@@ -154,6 +135,14 @@ a:hover { color: var(--vert); }
     </p>
   </section>
 </main>
+
+<!-- MENU FLOTTANT BOUTONS -->
+<nav class="bottom-nav">
+  <button class="btn btn-rouge" onclick="scrollToSection('accueil')">🔥 Accueil</button>
+  <button class="btn btn-brun" onclick="scrollToSection('repertoire')">🎶 Répertoire</button>
+  <button class="btn btn-beige" onclick="scrollToSection('paroles')">📝 Paroles</button>
+  <button class="btn btn-vert" onclick="scrollToSection('contact')">📩 Contact</button>
+</nav>
 
 <script>
 function scrollToSection(id) {
