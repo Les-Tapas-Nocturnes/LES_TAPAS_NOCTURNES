@@ -6,125 +6,69 @@
 <title>Paroles - Les Tapas Nocturnes</title>
 
 <style>
-:root {
-  --rouge: #D41414;
-  --vert: #3E7F2B;
-  --beige: #F5E6C8;
-  --brun: #8B4513;
-  --noir: #000000;
-  --fond-clair: #faf7f0;
-}
-
-* { margin:0; padding:0; box-sizing:border-box; }
-
 body {
+  margin: 0;
   font-family: Arial, sans-serif;
-  background-color: var(--fond-clair);
-  min-height: 100vh;
+  background: #faf7f0;
   color: #111;
-  overflow-x: hidden;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 80vmin;
-  height: 80vmin;
-  background: url('logo.png') no-repeat center/contain;
-  opacity: 0.28;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  z-index: 0;
+  height: 100vh;
+  overflow: hidden; /* pour éviter scroll inutile */
 }
 
 header {
-  position: relative;
-  z-index: 1;
-  height: 180px;
+  height: 60px;
   display: flex;
-  align-items: flex-start;
   justify-content: center;
-  padding-top: 20px;
-}
-
-.nav-buttons {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.btn {
-  padding: 12px 36px;
-  border-radius: 60% 40% 60% 40% / 50% 60% 50% 60%;
-  border: 3px solid var(--noir);
-  font-size: 16px;
-  font-weight: 700;
-  cursor: pointer;
-  display: flex;
   align-items: center;
-  gap: 8px;
-  transition: transform 0.2s ease, filter 0.2s ease;
-  box-shadow: inset 0 3px 6px rgba(255,255,255,0.3), 0 4px 8px rgba(0,0,0,0.25);
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+  background: #fff;
+  z-index: 1;
 }
 
-.btn-rouge { background-color: var(--rouge); color: white; }
-.btn-brun { background-color: var(--brun); color: white; }
-.btn-beige { background-color: var(--beige); color: var(--noir); }
-.btn-vert { background-color: var(--vert); color: white; }
-.btn-agenda { background-color: #FFA500; color: white; }
-
-.btn-rouge::before { content: "🔥"; }
-.btn-brun::before { content: "🎵"; }
-.btn-beige::before { content: "📝"; }
-.btn-vert::before { content: "📞"; }
-.btn-agenda::before { content: "📅"; }
-
-.btn:hover {
-  transform: translateY(-4px) scale(1.05);
-  filter: brightness(1.15);
+.nav-buttons .btn {
+  margin: 0 5px;
+  padding: 8px 16px;
+  border-radius: 12px;
+  border: none;
+  font-weight: bold;
+  background-color: #8B4513;
+  color: white;
 }
 
 .song-list {
-  position: relative;
-  z-index: 1;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 16px;
-  margin: 30px 0;
+  gap: 10px;
+  padding: 10px;
+}
+
+.song-list .btn {
+  flex: 1 1 40%;
+  max-width: 180px;
 }
 
 .lyrics {
-  position: relative;
-  z-index: 1;
   display: none;
   flex-direction: column;
-  justify-content: space-evenly; /* répartir sur toute la hauteur */
+  justify-content: space-between; /* clé pour étaler les couplets */
   align-items: center;
-  height: calc(100vh - 180px); /* prend toute la hauteur sous le header */
-  max-width: 900px;
-  margin: 0 auto;
-  background: white;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
-  white-space: pre-line;
+  height: calc(100vh - 60px); /* toute la hauteur sous le header */
+  padding: 10px;
+  text-align: center;
 }
 
 .lyrics p {
-  text-align: center;
-  margin-bottom: 1.5em;
-  line-height: 1.6;
+  margin: 0;
+  line-height: 1.5;
 }
 
 .return-btn {
-  margin-top: 20px;
-  background-color: #3E7F2B;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background: #3E7F2B;
   color: white;
+  border: none;
+  border-radius: 12px;
 }
 </style>
 </head>
@@ -132,20 +76,16 @@ header {
 <body>
 
 <header>
-  <nav class="nav-buttons">
-    <button class="btn btn-rouge" onclick="window.location.href='index.html'">Accueil</button>
-    <button class="btn btn-brun" onclick="window.location.href='repertoire.html'">Répertoire</button>
-    <button class="btn btn-beige" onclick="window.location.href='paroles.html'">Paroles</button>
-    <button class="btn btn-agenda" onclick="window.location.href='concerts.html'">Agenda</button>
-    <button class="btn btn-vert" onclick="window.location.href='contact.html'">Contact</button>
-  </nav>
+  <div class="nav-buttons">
+    <button class="btn" onclick="window.location.href='index.html'">Accueil</button>
+    <button class="btn" onclick="window.location.href='repertoire.html'">Répertoire</button>
+    <button class="btn" onclick="window.location.href='paroles.html'">Paroles</button>
+  </div>
 </header>
 
 <div class="song-list">
-  <button class="btn btn-brun" onclick="showLyrics('s1')">Et moi, et moi, et moi</button>
-  <button class="btn btn-brun" onclick="showLyrics('s2')">La fille du Père Noël</button>
-  <button class="btn btn-brun" onclick="showLyrics('s3')">Sarbacane</button>
-  <!-- Ajoute tous les autres boutons ici s4 à s27 -->
+  <button class="btn" onclick="showLyrics('s1')">Et moi, et moi, et moi</button>
+  <button class="btn" onclick="showLyrics('s2')">La fille du Père Noël</button>
 </div>
 
 <div id="s1" class="lyrics">
@@ -153,32 +93,27 @@ header {
   <p>Et moi, et moi, et moi</p>
   <p>Avec ma vie, mon petit chez-moi</p>
   <p>Mon mal de tête, mon point au foie</p>
-  <button class="btn return-btn" onclick="returnToSongs()">Retour aux chansons</button>
+  <button class="return-btn" onclick="returnToSongs()">Retour aux chansons</button>
 </div>
 
 <div id="s2" class="lyrics">
   <p>Paroles de "La fille du Père Noël" ici...</p>
-  <button class="btn return-btn" onclick="returnToSongs()">Retour aux chansons</button>
-</div>
-
-<div id="s3" class="lyrics">
-  <p>Paroles de "Sarbacane" ici...</p>
-  <button class="btn return-btn" onclick="returnToSongs()">Retour aux chansons</button>
+  <button class="return-btn" onclick="returnToSongs()">Retour aux chansons</button>
 </div>
 
 <script>
 function showLyrics(id) {
-  // Masquer tous les boutons de chansons
-  document.querySelectorAll('.song-list .btn').forEach(btn => btn.style.display = 'none');
-  // Masquer toutes les paroles
-  document.querySelectorAll('.lyrics').forEach(el => el.style.display = 'none');
-  // Afficher la chanson sélectionnée
-  document.getElementById(id).style.display = 'flex'; // flex pour répartir verticalement
+  // masquer les boutons
+  document.querySelectorAll('.song-list .btn').forEach(b => b.style.display = 'none');
+  // masquer toutes les paroles
+  document.querySelectorAll('.lyrics').forEach(l => l.style.display = 'none');
+  // afficher la chanson
+  document.getElementById(id).style.display = 'flex';
 }
 
 function returnToSongs() {
-  document.querySelectorAll('.lyrics').forEach(el => el.style.display = 'none');
-  document.querySelectorAll('.song-list .btn').forEach(btn => btn.style.display = 'flex');
+  document.querySelectorAll('.lyrics').forEach(l => l.style.display = 'none');
+  document.querySelectorAll('.song-list .btn').forEach(b => b.style.display = 'flex');
 }
 </script>
 
