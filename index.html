@@ -21,36 +21,33 @@ body {
   font-family: Arial, sans-serif;
   background-color: var(--fond-clair);
   min-height: 100vh;
-  position: relative;
   color: #111;
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
-/* Logo en arrière-plan */
-body::before {
-  content: "";
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 80vmin;
-  height: 80vmin;
-  background: url('logo.png') no-repeat center/contain;
-  opacity: 0.28;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  z-index: 0;
-}
-
 /* HEADER */
 header {
-  position: relative;
-  z-index: 1;
-  height: 180px;
   display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  padding-top: 20px;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 40px;
+}
+
+/* LOGO */
+.logo {
+  width: 170px; /* taille idéale */
+  height: auto;
+  margin-bottom: 30px;
+  animation: fadeIn 1.2s ease forwards;
+  opacity: 0;
+}
+
+/* Animation apparition douce */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
 }
 
 /* NAVIGATION */
@@ -58,10 +55,11 @@ header {
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
+  justify-content: center;
   opacity: 0;
   transform: translateY(-20px);
   animation: slideDown 0.8s forwards;
-  animation-delay: 0.3s;
+  animation-delay: 0.4s;
 }
 
 @keyframes slideDown {
@@ -87,14 +85,14 @@ header {
   text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
 }
 
-/* Couleurs et icônes */
+/* Couleurs */
 .btn-rouge { background-color: var(--rouge); color: white; }
 .btn-brun { background-color: var(--brun); color: white; }
 .btn-beige { background-color: var(--beige); color: var(--noir); }
 .btn-vert { background-color: var(--vert); color: white; }
 .btn-agenda { background-color: #FFA500; color: white; }
 
-/* Icones emojis */
+/* Emojis */
 .btn-rouge::before { content: "🔥"; }
 .btn-brun::before { content: "🎵"; }
 .btn-beige::before { content: "📝"; }
@@ -102,18 +100,31 @@ header {
 .btn-agenda::before { content: "📅"; }
 
 /* Hover */
-.btn:hover { transform: translateY(-4px) scale(1.05); filter: brightness(1.15); }
+.btn:hover {
+  transform: translateY(-4px) scale(1.05);
+  filter: brightness(1.15);
+}
 
 /* Responsive */
 @media (max-width:600px){
-  .nav-buttons { flex-direction: column; gap:12px; }
-  .btn { width:100%; justify-content:center; }
+  .nav-buttons {
+    flex-direction: column;
+    gap:12px;
+  }
+  .btn {
+    width:100%;
+    justify-content:center;
+  }
 }
 </style>
 </head>
 
 <body>
+
 <header>
+  <!-- Logo visible normalement -->
+  <img src="logo.png" alt="Logo Les Tapas Nocturnes" class="logo">
+
   <nav class="nav-buttons">
     <button class="btn btn-rouge" onclick="window.location.href='index.html'">Accueil</button>
     <button class="btn btn-brun" onclick="window.location.href='repertoire.html'">Répertoire</button>
@@ -122,8 +133,8 @@ header {
     <button class="btn btn-vert" onclick="window.location.href='contact.html'">Contact</button>
   </nav>
 </header>
+
 </body>
 </html>
-
 
 
