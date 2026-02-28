@@ -24,6 +24,7 @@ body {
   color: #111;
   position: relative;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 /* Logo en arrière-plan */
@@ -107,11 +108,11 @@ main {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
 .song-list li {
-  padding: 12px 20px;
+  padding: 14px 20px;
   background-color: rgba(255,255,255,0.85);
   border-radius: 12px;
   border: 2px solid rgba(0,0,0,0.2);
@@ -120,10 +121,13 @@ main {
   font-weight: 500;
 }
 
+.song-title { font-weight:700; }
+.song-meta { font-size:0.9rem; color:#555; margin-top:4px; }
+
 /* RESPONSIVE */
 @media (max-width:600px){
   .nav-buttons { flex-direction: column; gap:12px; }
-  .btn { width:100%; justify-content:center; font-size:14px; padding:10px 24px; }
+  .btn { width:100%; justify-content:center; font-size:14px; }
   .song-list li { font-size:1rem; padding:10px 16px; }
 }
 </style>
@@ -142,39 +146,24 @@ main {
 
 <main>
   <ul class="song-list">
-    <li>Et moi et moi et moi</li>
-    <li>La fille du père Noël</li>
-    <li>Sarbacane</li>
-    <li>L'amour à la machine</li>
-    <li>La nuit je mens</li>
-    <li>Laisse béton</li>
-    <li>Jardin d'hiver</li>
-    <li>Vieille canaille</li>
-    <li>Les élucubrations</li>
-    <li>Encore une journée de foutue</li>
-    <li>Les ailes d'un ange</li>
-    <li>J'ai dix ans</li>
-    <li>Ces idées là</li>
-    <li>Toute la musique que j'aime</li>
-    <li>Gabrielle</li>
-    <li>Vertige de l'amour</li>
-    <li>New york avec toi</li>
-    <li>La bombe humaine</li>
-    <li>Antisocial</li>
-    <li>Aitormena</li>
-    <li>Lau teillatu</li>
-    <li>Hegoak</li>
-    <li>Un autre monde</li>
-    <li>Les cactus</li>
-    <li>Gogoaren baitan</li>
-    <li>J'irai où tu iras</li>
-    <li>Ca c'est vraiment toi</li>
+    <li>
+      <div class="song-title">Et moi, et moi, et moi</div>
+      <div class="song-meta">Jacques Dutronc — 1966</div>
+    </li>
+    <li>
+      <div class="song-title">La fille du Père Noël</div>
+      <div class="song-meta">Jacques Dutronc — 1966</div>
+    </li>
+    <li>
+      <div class="song-title">Sarbacane</div>
+      <div class="song-meta">Artist / Année à ajouter</div>
+    </li>
+    <li>
+      <div class="song-title">L'amour à la machine</div>
+      <div class="song-meta">Artist / Année à ajouter</div>
+    </li>
+    <!-- Ajoute les autres lignes selon ce modèle -->
   </ul>
 </main>
 </body>
 </html>
-
-
-
-
-
