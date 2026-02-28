@@ -24,40 +24,38 @@ body {
   text-align: center;
 }
 
-/* TITRE */
-h1 {
-  margin-bottom: 30px;
-}
-
-/* Boutons chansons */
-.song-btn {
-  padding: 10px 25px;
+/* Boutons identiques au menu */
+.btn {
+  padding: 12px 36px;
+  border-radius: 60% 40% 60% 40% / 50% 60% 50% 60%;
+  border: 3px solid var(--noir);
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
   margin: 8px;
-  border-radius: 40px;
-  border: 2px solid var(--noir);
+  transition: transform 0.2s ease, filter 0.2s ease;
+  box-shadow: inset 0 3px 6px rgba(255,255,255,0.3), 0 4px 8px rgba(0,0,0,0.25);
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
   background-color: var(--brun);
   color: white;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.2s;
 }
 
-.song-btn:hover {
-  transform: scale(1.05);
-  filter: brightness(1.1);
+.btn:hover {
+  transform: translateY(-4px) scale(1.05);
+  filter: brightness(1.15);
 }
 
 /* Zone paroles */
 .lyrics {
   margin-top: 40px;
-  max-width: 700px;
+  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
   text-align: left;
   background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
   display: none;
   white-space: pre-line;
 }
@@ -68,35 +66,75 @@ h1 {
 
 <h1>Paroles</h1>
 
-<!-- BOUTONS DES CHANSONS -->
-<button class="song-btn" onclick="showLyrics('song1')">Bella Ciao</button>
-<button class="song-btn" onclick="showLyrics('song2')">Volare</button>
-<button class="song-btn" onclick="showLyrics('song3')">La Bamba</button>
+<!-- LISTE DES CHANSONS -->
+<button class="btn" onclick="showLyrics('s1')">Et moi, et moi, et moi</button>
+<button class="btn" onclick="showLyrics('s2')">La fille du Père Noël</button>
+<button class="btn" onclick="showLyrics('s3')">Sarbacane</button>
+<button class="btn" onclick="showLyrics('s4')">L'amour à la machine</button>
+<button class="btn" onclick="showLyrics('s5')">La nuit je mens</button>
+<button class="btn" onclick="showLyrics('s6')">Laisse béton</button>
+<button class="btn" onclick="showLyrics('s7')">Jardin d’hiver</button>
+<button class="btn" onclick="showLyrics('s8')">Vieille canaille</button>
+<button class="btn" onclick="showLyrics('s9')">Les Élucubrations d’Antoine</button>
+<button class="btn" onclick="showLyrics('s10')">Encore une journée d’foutue</button>
+<button class="btn" onclick="showLyrics('s11')">Les Ailes d’un ange</button>
+<button class="btn" onclick="showLyrics('s12')">J'ai dix ans</button>
+<button class="btn" onclick="showLyrics('s13')">Ces idées là</button>
+<button class="btn" onclick="showLyrics('s14')">Toute la musique que j'aime</button>
+<button class="btn" onclick="showLyrics('s15')">Gabrielle</button>
+<button class="btn" onclick="showLyrics('s16')">Vertige de l’amour</button>
+<button class="btn" onclick="showLyrics('s17')">New York avec toi</button>
+<button class="btn" onclick="showLyrics('s18')">La Bombe humaine</button>
+<button class="btn" onclick="showLyrics('s19')">Antisocial</button>
+<button class="btn" onclick="showLyrics('s20')">Aitormena</button>
+<button class="btn" onclick="showLyrics('s21')">Lau teilatu</button>
+<button class="btn" onclick="showLyrics('s22')">Hegoak</button>
+<button class="btn" onclick="showLyrics('s23')">Un autre monde</button>
+<button class="btn" onclick="showLyrics('s24')">Les cactus</button>
+<button class="btn" onclick="showLyrics('s25')">Gogoaren baitan</button>
+<button class="btn" onclick="showLyrics('s26')">J'irai où tu iras</button>
+<button class="btn" onclick="showLyrics('s27')">Ça c'est vraiment toi</button>
 
-<!-- PAROLES -->
-<div id="song1" class="lyrics">
-Bella ciao, bella ciao, bella ciao ciao ciao...
-</div>
-
-<div id="song2" class="lyrics">
-Nel blu dipinto di blu...
-</div>
-
-<div id="song3" class="lyrics">
-Para bailar la bamba...
-</div>
+<!-- ZONE PAROLES -->
+<div id="s1" class="lyrics"></div>
+<div id="s2" class="lyrics"></div>
+<div id="s3" class="lyrics"></div>
+<div id="s4" class="lyrics"></div>
+<div id="s5" class="lyrics"></div>
+<div id="s6" class="lyrics"></div>
+<div id="s7" class="lyrics"></div>
+<div id="s8" class="lyrics"></div>
+<div id="s9" class="lyrics"></div>
+<div id="s10" class="lyrics"></div>
+<div id="s11" class="lyrics"></div>
+<div id="s12" class="lyrics"></div>
+<div id="s13" class="lyrics"></div>
+<div id="s14" class="lyrics"></div>
+<div id="s15" class="lyrics"></div>
+<div id="s16" class="lyrics"></div>
+<div id="s17" class="lyrics"></div>
+<div id="s18" class="lyrics"></div>
+<div id="s19" class="lyrics"></div>
+<div id="s20" class="lyrics"></div>
+<div id="s21" class="lyrics"></div>
+<div id="s22" class="lyrics"></div>
+<div id="s23" class="lyrics"></div>
+<div id="s24" class="lyrics"></div>
+<div id="s25" class="lyrics"></div>
+<div id="s26" class="lyrics"></div>
+<div id="s27" class="lyrics"></div>
 
 <script>
 function showLyrics(id) {
-  const allLyrics = document.querySelectorAll('.lyrics');
-  allLyrics.forEach(el => el.style.display = 'none');
-
+  const all = document.querySelectorAll('.lyrics');
+  all.forEach(el => el.style.display = 'none');
   document.getElementById(id).style.display = 'block';
 }
 </script>
 
 </body>
 </html>
+
 
 
 
