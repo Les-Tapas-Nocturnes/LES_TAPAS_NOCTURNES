@@ -42,7 +42,7 @@ body::before {
   z-index: 0;
 }
 
-/* HEADER IDENTIQUE */
+/* HEADER */
 header {
   position: relative;
   z-index: 1;
@@ -61,7 +61,6 @@ header {
   justify-content: center;
 }
 
-/* Boutons menu / chansons identiques */
 .btn {
   padding: 12px 36px;
   border-radius: 60% 40% 60% 40% / 50% 60% 50% 60%;
@@ -105,7 +104,7 @@ header {
   margin: 30px 0;
 }
 
-/* Zone paroles */
+/* ZONE PAROLES */
 .lyrics {
   position: relative;
   z-index: 1;
@@ -133,8 +132,8 @@ header {
   </nav>
 </header>
 
-<!-- LISTE CHANSONS -->
 <div class="song-list">
+<!-- BOUTONS CHANSONS -->
 <button class="btn btn-brun" onclick="showLyrics('s1')">Et moi, et moi, et moi</button>
 <button class="btn btn-brun" onclick="showLyrics('s2')">La fille du Père Noël</button>
 <button class="btn btn-brun" onclick="showLyrics('s3')">Sarbacane</button>
@@ -164,74 +163,8 @@ header {
 <button class="btn btn-brun" onclick="showLyrics('s27')">Ça c'est vraiment toi</button>
 </div>
 
-<!-- PAROLES -->
+<!-- DIVS PAROLES À REMPLIR -->
 <div id="s1" class="lyrics"></div>
-Sept cent millions de chinois
-Et moi, et moi, et moi
-Avec ma vie, mon petit chez-moi
-Mon mal de tête, mon point au foie
-J'y pense et puis j'oublie
-C'est la vie, c'est la vie
-
-Quatre-vingt millions d'indonésiens
-Et moi, et moi, et moi
-Avec ma voiture et mon chien
-Son Canigou quand il aboie
-J'y pense et puis j'oublie
-C'est la vie, c'est la vie
-
-Trois ou quatre cent millions de noirs
-Et moi, et moi, et moi
-Qui vais au brunissoir
-Au sauna pour perdre du poids
-J'y pense et puis j'oublie
-C'est la vie, c'est la vie
-  
-Trois cent millions de soviétiques
-Et moi, et moi, et moi
-Avec mes manies et mes tics
-Dans mon p'tit lit en plume d'oie
-J'y pense et puis j'oublie
-C'est la vie, c'est la vie
-
-Cinquante millions de gens imparfaits
-Et moi, et moi, et moi
-Qui regarde Catherine Langeais
-À la télévision chez moi
-J'y pense et puis j'oublie
-C'est la vie, c'est la vie
-Neuf cent millions de crève-la-faim
-Et moi, et moi, et moi
-Avec mon régime végétarien
-Et tout le whisky que je m'envoie
-J'y pense et puis j'oublie
-C'est la vie, c'est la vie
-Cinq cent millions de sud-américains
-Et moi, et moi, et moi
-Je suis tout nu dans mon bain
-Avec une fille qui me nettoie
-J'y pense et puis j'oublie
-C'est la vie, c'est la vie
-
-Cinquante millions de vietnamiens
-Et moi, et moi, et moi
-Le dimanche à la chasse au lapin
-Avec mon fusil, je suis le roi
-J'y pense et puis j'oublie
-C'est la vie, c'est la vie
-
-Cinq cent milliards de petits martiens
-Et moi, et moi, et moi
-Comme un con de parisien
-J'attends mon chèque de fin de mois
-J'y pense et puis j'oublie
-C'est la vie, c'est la vie
-J'y pense et puis j'oublie
-C'est la vie, c'est la vie
-J'y pense et puis j'oublie
-C'est la vie, c'est la vie
-J'y pense et puis j'oublie
-</div>
 <div id="s2" class="lyrics"></div>
 <div id="s3" class="lyrics"></div>
 <div id="s4" class="lyrics"></div>
@@ -269,13 +202,3 @@ function showLyrics(id) {
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
