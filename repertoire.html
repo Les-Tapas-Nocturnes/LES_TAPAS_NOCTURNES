@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8" />
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Répertoire - Les Tapas Nocturnes</title>
 
@@ -21,12 +21,12 @@ body {
   font-family: Arial, sans-serif;
   background-color: var(--fond-clair);
   min-height: 100vh;
-  position: relative;
   color: #111;
+  position: relative;
   overflow-x: hidden;
-  scroll-behavior: smooth;
 }
 
+/* Logo en arrière-plan */
 body::before {
   content: "";
   position: fixed;
@@ -35,20 +35,21 @@ body::before {
   width: 80vmin;
   height: 80vmin;
   background: url('logo.png') no-repeat center/contain;
-  opacity: 0.28;
+  opacity: 0.1;
   transform: translate(-50%, -50%);
   pointer-events: none;
   z-index: 0;
 }
 
+/* HEADER */
 header {
   position: relative;
   z-index: 1;
-  height: 180px;
   display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  padding-top: 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px 0;
 }
 
 .nav-buttons {
@@ -56,16 +57,12 @@ header {
   gap: 16px;
   flex-wrap: wrap;
   opacity: 0;
-  transform: translateY(-20px);
-  animation: slideDown 0.8s forwards;
-  animation-delay: 0.3s;
+  transform: translateY(-10px);
+  animation: slideDown 0.6s forwards;
 }
 
 @keyframes slideDown {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  to { opacity:1; transform: translateY(0); }
 }
 
 .btn {
@@ -83,23 +80,51 @@ header {
   text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
 }
 
-.btn-rouge { background-color: var(--rouge); color: white; }
-.btn-brun { background-color: var(--brun); color: white; }
-.btn-beige { background-color: var(--beige); color: var(--noir); }
-.btn-vert { background-color: var(--vert); color: white; }
-.btn-agenda { background-color: #FFA500; color: white; }
+.btn-rouge { background-color: var(--rouge); color:white; }
+.btn-brun { background-color: var(--brun); color:white; }
+.btn-beige { background-color: var(--beige); color:var(--noir); }
+.btn-vert { background-color: var(--vert); color:white; }
+.btn-agenda { background-color:#FFA500; color:white; }
 
-.btn-rouge::before { content: "🔥"; }
-.btn-brun::before { content: "🎵"; }
-.btn-beige::before { content: "📝"; }
-.btn-vert::before { content: "📞"; }
-.btn-agenda::before { content: "📅"; }
+.btn-rouge::before { content:"🔥"; }
+.btn-brun::before { content:"🎵"; }
+.btn-beige::before { content:"📝"; }
+.btn-vert::before { content:"📞"; }
+.btn-agenda::before { content:"📅"; }
 
 .btn:hover { transform: translateY(-4px) scale(1.05); filter: brightness(1.15); }
 
+/* CONTENU */
+main {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.song-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.song-list li {
+  padding: 12px 20px;
+  background-color: rgba(255,255,255,0.85);
+  border-radius: 12px;
+  border: 2px solid rgba(0,0,0,0.2);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* RESPONSIVE */
 @media (max-width:600px){
   .nav-buttons { flex-direction: column; gap:12px; }
-  .btn { width:100%; justify-content:center; }
+  .btn { width:100%; justify-content:center; font-size:14px; padding:10px 24px; }
+  .song-list li { font-size:1rem; padding:10px 16px; }
 }
 </style>
 </head>
@@ -116,21 +141,36 @@ header {
 </header>
 
 <main>
-  <!-- Contenu spécifique à Répertoire à ajouter ici -->
+  <ul class="song-list">
+    <li>Et moi et moi et moi</li>
+    <li>La fille du père Noël</li>
+    <li>Sarbacane</li>
+    <li>L'amour à la machine</li>
+    <li>La nuit je mens</li>
+    <li>Laisse béton</li>
+    <li>Jardin d'hiver</li>
+    <li>Vieille canaille</li>
+    <li>Les élucubrations</li>
+    <li>Encore une journée de foutue</li>
+    <li>Les ailes d'un ange</li>
+    <li>J'ai dix ans</li>
+    <li>Ces idées là</li>
+    <li>Toute la musique que j'aime</li>
+    <li>Gabrielle</li>
+    <li>Vertige de l'amour</li>
+    <li>New york avec toi</li>
+    <li>La bombe humaine</li>
+    <li>Antisocial</li>
+    <li>Aitormena</li>
+    <li>Lau teillatu</li>
+    <li>Hegoak</li>
+    <li>Un autre monde</li>
+    <li>Les cactus</li>
+    <li>Gogoaren baitan</li>
+    <li>J'irai où tu iras</li>
+    <li>Ca c'est vraiment toi</li>
+  </ul>
 </main>
-</body>
-</html> <p>Voici notre liste complète des tapas et établissements :</p>
-            <ul>
-                <li>Tapas Bar 1</li>
-                <li>Tapas Bar 2</li>
-                <li>Tapas Bar 3</li>
-            </ul>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 Les Tapas Nocturnes</p>
-    </footer>
 </body>
 </html>
 
