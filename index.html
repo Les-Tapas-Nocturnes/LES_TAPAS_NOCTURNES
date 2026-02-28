@@ -15,13 +15,11 @@
   --fond-clair: #faf7f0;
 }
 
-* {
-  margin: 0; padding: 0; box-sizing: border-box;
-}
+* { margin:0; padding:0; box-sizing:border-box; }
 
 body {
   font-family: Arial, sans-serif;
-  color: rgba(0, 0, 0, 0.85);
+  color: rgba(0,0,0,0.85);
   background-color: var(--fond-clair);
   position: relative;
   min-height: 100vh;
@@ -51,7 +49,8 @@ main, header, section {
 /* HEADER */
 header {
   background-color: transparent;
-  padding: 80px 20px 20px; /* navigation plus bas */
+  padding-top: 200px; /* navigation bien sous le logo */
+  padding-bottom: 20px;
   text-align: center;
 }
 
@@ -59,15 +58,14 @@ header {
 .nav-buttons {
   display: flex;
   justify-content: center;
-  gap: 16px; /* boutons un peu plus rapprochés */
+  gap: 18px;
   flex-wrap: wrap;
   margin-top: 20px;
 }
 
 /* Boutons piment stylisés */
 .btn {
-  position: relative;
-  padding: 10px 32px; /* légèrement plus petits */
+  padding: 12px 36px;
   border-radius: 60% 40% 60% 40% / 50% 60% 50% 60%;
   border: 3px solid var(--noir);
   font-size: 16px;
@@ -86,82 +84,40 @@ header {
 }
 
 /* Couleurs et icônes */
-.btn-rouge {
-  background-color: var(--rouge);
-  background-image: url('https://cdn-icons-png.flaticon.com/512/415/415729.png');
-}
-.btn-brun {
-  background-color: var(--brun);
-  background-image: url('https://cdn-icons-png.flaticon.com/512/414/414992.png');
-}
-.btn-beige {
-  background-color: var(--beige);
-  color: var(--noir);
-  background-image: url('https://cdn-icons-png.flaticon.com/512/476/476863.png');
-}
-.btn-vert {
-  background-color: var(--vert);
-  background-image: url('https://cdn-icons-png.flaticon.com/512/726/726691.png');
-}
+.btn-rouge { background-color: var(--rouge); background-image: url('https://cdn-icons-png.flaticon.com/512/415/415729.png'); }
+.btn-brun { background-color: var(--brun); background-image: url('https://cdn-icons-png.flaticon.com/512/414/414992.png'); }
+.btn-beige { background-color: var(--beige); color: var(--noir); background-image: url('https://cdn-icons-png.flaticon.com/512/476/476863.png'); }
+.btn-vert { background-color: var(--vert); background-image: url('https://cdn-icons-png.flaticon.com/512/726/726691.png'); }
 
 /* Hover */
-.btn:hover {
-  transform: translateY(-4px) scale(1.05);
-  filter: brightness(1.15);
-}
+.btn:hover { transform: translateY(-4px) scale(1.05); filter: brightness(1.15); }
 
-/* SECTIONS */
+/* Sections */
 section {
   max-width: 900px;
   margin: 50px auto;
   padding: 30px;
-  background-color: rgba(244, 244, 244, 0.8);
-  border: 2px solid rgba(0, 0, 0, 0.6);
+  background-color: rgba(244,244,244,0.8);
+  border: 2px solid rgba(0,0,0,0.6);
   border-radius: 15px;
-  box-shadow: none;
   color: #111;
 }
 
-h2 {
-  margin-bottom: 20px;
-}
+h2 { margin-bottom:20px; }
+ul { list-style:none; }
+ul li { margin-bottom:10px; }
+a { color: var(--rouge); font-weight:bold; text-decoration:none; }
+a:hover { color: var(--vert); }
 
-ul {
-  list-style: none;
-}
-
-ul li {
-  margin-bottom: 10px;
-}
-
-a {
-  color: var(--rouge);
-  font-weight: bold;
-  text-decoration: none;
-}
-
-a:hover {
-  color: var(--vert);
-}
-
-@media (max-width: 600px) {
-  .nav-buttons {
-    flex-direction: column;
-    gap: 12px;
-  }
-  .btn {
-    width: 100%;
-    justify-content: center;
-    background-position: center right 16px;
-  }
+@media (max-width:600px){
+  .nav-buttons { flex-direction: column; gap:12px; }
+  .btn { width:100%; justify-content:center; background-position: center right 16px; }
 }
 </style>
 </head>
 
 <body>
-
 <header>
-  <!-- Logo en arrière-plan, pas de texte -->
   <nav class="nav-buttons">
     <button class="btn btn-rouge" onclick="scrollToSection('accueil')">🔥 Accueil</button>
     <button class="btn btn-brun" onclick="scrollToSection('repertoire')">🎶 Répertoire</button>
@@ -204,6 +160,5 @@ function scrollToSection(id) {
   document.getElementById(id).scrollIntoView({ behavior: "smooth" });
 }
 </script>
-
 </body>
 </html>
