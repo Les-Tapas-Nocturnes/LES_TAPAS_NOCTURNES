@@ -131,9 +131,16 @@ header {
   margin-bottom: 15px;
 }
 
+/* ✅ LIMITATION À 4 LIGNES */
 .welcome p {
   font-size: 1.2rem;
   line-height: 1.5;
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;   /* limite à 4 lignes */
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 @media (max-width:600px){
@@ -190,7 +197,6 @@ header {
 
 <script>
 function scrollToSection(id) {
-  // Cache toutes les sections sauf accueil
   const sections = ['repertoire','paroles','contact'];
   sections.forEach(s => document.getElementById(s).style.display = 'none');
   if(id !== 'accueil'){
@@ -201,4 +207,5 @@ function scrollToSection(id) {
 </script>
 </body>
 </html>
+
 
