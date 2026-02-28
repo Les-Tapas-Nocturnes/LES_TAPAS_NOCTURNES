@@ -26,16 +26,20 @@ body {
   scroll-behavior: smooth;
 }
 
-/* LOGO placé exactement comme avant mais au premier plan */
+/* LOGO centré comme avant */
 .logo-center {
   position: fixed;
   top: 50%;
   left: 50%;
-  width: 80vmin;              /* même taille qu’avant */
+  width: 80vmin;
   height: 80vmin;
   transform: translate(-50%, -50%);
-  z-index: 1;                 /* au-dessus du fond */
-  pointer-events: none;       /* ne bloque pas les clics */
+  z-index: 1;
+  pointer-events: none;
+
+  /* ✨ Atténuation du blanc */
+  filter: brightness(0.97) contrast(0.95);
+  opacity: 0.95;
 }
 
 /* HEADER */
@@ -113,7 +117,6 @@ header {
 
 <body>
 
-<!-- Logo visible mais placé comme avant -->
 <img src="logo.png" alt="Logo Les Tapas Nocturnes" class="logo-center">
 
 <header>
@@ -128,6 +131,7 @@ header {
 
 </body>
 </html>
+
 
 
 
