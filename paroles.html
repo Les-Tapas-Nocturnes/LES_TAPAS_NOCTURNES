@@ -1,58 +1,674 @@
 <!DOCTYPE html>
+
 <html lang="fr">
+
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Paroles - Les Tapas Nocturnes</title>
-<link rel="stylesheet" href="style.css">
+<title>Paroles</title>
+
 <style>
-body { font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif; margin:0; padding:0; background:#fafafa; color:#222; }
-.logo { display:block; max-width:200px; margin:20px auto; }
-h1.page-title { font-weight:bold; font-size:28px; color:white; text-align:center; background:#7a3d00; padding:10px 0; border-radius:10px; margin:0 10px 20px 10px; }
-.btn-retour { display:block; width:180px; max-width:85%; margin:10px auto 20px auto; padding:14px; font-size:18px; font-weight:bold; color:white; background:#e8dcc0; border-radius:50px; border:4px solid black; box-shadow:0px 6px 10px rgba(0,0,0,0.4); text-align:center; text-decoration:none; }
-.btn-retour:hover { background:#d2c9a9; }
-.song-button { display:block; width:90%; max-width:500px; margin:8px auto; padding:12px; font-size:16px; font-weight:bold; color:black; background:#f0e2c0; border-radius:50px; border:3px solid #7a3d00; text-align:center; cursor:pointer; }
-.song-button:hover { background:#e0d0a0; }
-.lyrics { display:none; max-width:600px; margin:0 auto 20px auto; padding:15px 20px; background:#fff; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.1); white-space: pre-wrap; line-height:1.5; }
-@media screen and (max-width:600px){ h1.page-title { font-size:24px; } .btn-retour { font-size:16px; padding:12px; } .song-button { font-size:14px; padding:10px; } .lyrics { padding:12px; margin:0 10px 15px 10px; } }
-</style>
-</head>
-<body>
 
-<!-- LOGO -->
-<img src="logo.png" class="logo" alt="Les Tapas Nocturnes">
-
-<!-- TITRE DE LA PAGE -->
-<h1 class="page-title">Paroles</h1>
-
-<!-- BOUTON RETOUR -->
-<a href="index.html" class="btn-retour">← Retour à l’accueil</a>
-
-<!-- CONTENEUR DES CHANSONS -->
-<div class="songs-container"></div>
-
-<script>
-// Fonction pour afficher/masquer les paroles
-function toggleLyrics(id){
-  const el = document.getElementById(id);
-  el.style.display = el.style.display === 'none' ? 'block' : 'none';
+body{
+font-family: Arial;
+max-width:900px;
+margin:auto;
+padding:40px;
+background:#f4f4f4;
 }
 
-// Charger les chansons depuis JSON
-fetch('data/songs.json')
-  .then(res => res.json())
-  .then(data => {
-    const container = document.querySelector('.songs-container');
-    data.forEach((song, index) => {
-      // Créer un bouton pour chaque chanson
-      container.innerHTML += `
-        <button class="song-button" onclick="toggleLyrics('${song.id}')">${song.title}</button>
-        <div id="${song.id}" class="lyrics">${song.lyrics}</div>
-      `;
-    });
-  })
-  .catch(err => console.error("Erreur chargement JSON :", err));
-</script>
+h1{
+text-align:center;
+}
+
+nav{
+background:#222;
+padding:15px;
+margin-bottom:40px;
+}
+
+nav a{
+color:white;
+margin-right:15px;
+text-decoration:none;
+font-size:14px;
+}
+
+nav a:hover{
+text-decoration:underline;
+}
+
+.song{
+margin-bottom:80px;
+}
+
+pre{
+white-space:pre-wrap;
+font-family:inherit;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Paroles</h1>
+
+<nav>
+
+<a href="#etmoi">Et moi et moi et moi</a> <a href="#pereNoel">La fille du Père Noël</a> <a href="#sarbacane">Sarbacane</a> <a href="#machine">L'amour à la machine</a> <a href="#nuit">La nuit je mens</a> <a href="#laisse">Laisse béton</a> <a href="#jardin">Jardin d'hiver</a> <a href="#vieille">Vieille Canaille</a> <a href="#dixans">J'ai dix ans</a> <a href="#newyork">New York avec toi</a>
+
+</nav>
+
+<div class="song" id="etmoi">
+
+<h2>Et moi et moi et moi</h2>
+
+<pre>
+
+Sept cent millions de chinois 
+Et moi, et moi, et moi
+Avec ma vie, mon petit chez-moi
+Mon mal de tête, mon point au foie
+J'y pense et puis j'oublie
+C'est la vie, c'est la vie
+
+Quatre-vingt millions d'indonésiens
+Et moi, et moi, et moi
+Avec ma voiture et mon chien
+Son Canigou quand il aboie
+J'y pense et puis j'oublie
+C'est la vie, c'est la vie
+
+Trois ou quatre cent millions de noirs
+Et moi, et moi, et moi
+Qui vais au brunissoir
+Au sauna pour perdre du poids
+J'y pense et puis j'oublie
+C'est la vie, c'est la vie
+
+Trois cent millions de soviétiques
+Et moi, et moi, et moi
+Avec mes manies et mes tics
+Dans mon p'tit lit en plume d'oie
+J'y pense et puis j'oublie
+C'est la vie, c'est la vie
+
+Cinquante millions de gens imparfaits
+Et moi, et moi, et moi
+Qui regarde Catherine Langeais
+À la télévision chez moi
+J'y pense et puis j'oublie
+C'est la vie, c'est la vie
+
+Neuf cent millions de crève-la-faim
+Et moi, et moi, et moi
+Avec mon régime végétarien
+Et tout le whisky que je m'envoie
+J'y pense et puis j'oublie
+C'est la vie, c'est la vie
+
+Cinq cent millions de sud-américains
+Et moi, et moi, et moi
+Je suis tout nu dans mon bain
+Avec une fille qui me nettoie
+J'y pense et puis j'oublie
+C'est la vie, c'est la vie
+
+Cinquante millions de vietnamiens
+Et moi, et moi, et moi
+Le dimanche à la chasse au lapin
+Avec mon fusil, je suis le roi
+J'y pense et puis j'oublie
+C'est la vie, c'est la vie
+
+Cinq cent milliards de petits martiens
+Et moi, et moi, et moi
+Comme un con de parisien
+J'attends mon chèque de fin de mois
+J'y pense et puis j'oublie
+C'est la vie, c'est la vie
+J'y pense et puis j'oublie
+C'est la vie, c'est la vie
+J'y pense et puis j'oublie
+C'est la vie, c'est la vie
+J'y pense et puis j'oublie
+
+
+</pre>
+
+</div>
+
+<div class="song" id="pereNoel">
+
+<h2>La fille du Père Noël</h2>
+
+<pre>
+
+Je l'ai trouvée au petit matin
+Toute nue dans mes grands souliers
+Placés devant la cheminée
+Pas besoin de vous faire un dessin
+De battre mon cœur s'est arrêté
+Sur le lit j'ai jeté mon fouet
+Tout contre elle je me suis penché
+Et sa beauté m'a rendu muet
+
+Fatigué j'ai la gueule de bois
+Toute la nuit j'avais aidé mon père
+Dans le feu j'ai remis du bois
+Dans la ch'minée y avait pas son père
+
+C'était la fille du Père Noël
+J'étais le fils du Père Fouettard
+Elle s'appelait Marie Noël
+Je m'appelais Jean Balthazar
+
+Je prends la fille dans mes bras
+Elle me dit mais non Balthazar
+Ne fais donc pas le fier à bras
+Je suis tombée là par hasard
+
+Toute la nuit j'avais fouetté
+A tour de bras les gens méchants
+Toute la nuit elle avait donné
+Des cadeaux à tous les enfants
+
+C'était la fille du Père Noël
+J'étais le fils du Père Fouettard
+Elle s'appelait Marie Noël
+Je m'appelais Jean Balthazar
+
+Descendue chez moi par erreur
+Elle était là dans mes souliers
+Et comme je ne pouvais prendre son cœur
+Je l'ai remise sur le palier
+
+C'était la fille du Père Noël
+J'étais le fils du Père Fouettard
+Et elle m'a dit d'une voix d'crécelle
+Bye bye au hasard Balthazar
+
+C'était la fille du Père Noël
+J'étais le fils du Père Fouettard
+Elle s'appelait Marie Noël
+Je m'appelais Jean Balthazar
+
+
+</pre>
+
+</div>
+
+<div class="song" id="sarbacane">
+
+<h2>Sarbacane</h2>
+
+<pre>
+
+On croyait savoir tout sur l’amour, Depuis toujours
+Nos corps par cœur et nos cœurs au chaud, Dans le velours
+Et puis te voilà, bout de femme, Comme soufflée d’une sarbacane
+Le ciel a même un autre éclat, Depuis toi
+
+Les hommes poursuivent ce temps, Qui court depuis toujours
+Voilà que t’arrives Et que tout s’éclaire, sur mon parcours
+Pendue à mon cou comme une liane, Comme le roseau de la sarbacane
+Le ciel s’est ouvert par endroits, Depuis toi          
+
+Pas besoin de phrases ni de longs discours
+Ça change tout dedans, ça change tout autour
+Finis les matins paupières en panne
+Lourdes comme les bouteilles de butane
+J’ai presque plus ma tête à moi, Depuis toi
+
+Pas besoin de faire de trop longs discours
+Ça change tout dedans, ça change tout autour
+Pourvu que jamais tu ne t’éloignes
+Plus loin qu’un jet de sarbacane
+J’ai presque plus ma tête à moi, Depuis toi
+
+Alors te voilà, bout de femme, Comme soufflée d’une sarbacane
+Le ciel s’est ouvert par endroits, Depuis toi, Oh ! Depuis toi              
+
+
+</pre>
+
+</div>
+
+<div class="song" id="machine">
+
+<h2>L'amour à la machine</h2>
+
+<pre>
+
+Passez notre amour à la machine, Faites le bouillir
+Pour voir si les couleurs d'origine, Peuvent revenir
+Est-ce qu'on peut ravoir à l'eau de Javel? , des sentiments
+La blancheur qu'on croyait éternelle, Avant
+
+Pour retrouver le rose initial, De ta joue, devenue pâle
+Le bleu de nos baisers du début, Tant d'azur, perdu
+
+Passez notre amour à la machine, Faites le bouillir
+Pour voir si les couleurs d'origine, Peuvent revenir
+Est-ce qu'on peut ravoir à l'eau de Javel? Des sentiments
+La blancheur qu'on croyait éternelle, Avant
+
+Matisse, l'amour, c'est bleu, difficile
+Les caresses, rouges, fragiles
+Le soleil de la vie les tabasse
+Et alors, elles passent
+Allez, à la machine!
+Allez, à la machine!
+
+Le rouge pour faire tomber la misère
+De nos gentils petits grands-pères
+Noires, les mains dans les boucles blondes
+Tout autour du monde
+
+Passez notre amour à la machine, Faites le bouillir
+Pour voir si les couleurs d'origine, Peuvent revenir
+Est-ce qu'on peut ravoir à l'eau de Javel?, Des sentiments
+La blancheur qu'on croyait éternelle, Avant
+Allez, à la machine!
+Allez, à la machine!
+Allez, à la machine!
+Allez, à la machine!
+Allez, à la machine!
+
+
+</pre>
+
+</div>
+
+<div class="song" id="nuit">
+
+<h2>La nuit je mens</h2>
+
+<pre>
+
+On m'a vu dans le Vercors
+Sauter à l'élastique
+Voleur d'amphores
+Au fond des criques
+J'ai fait la cour à des murennes
+J'ai fait l'amour
+J'ai fait le mort
+T'étais pas née
+À la station balnéaire
+Tu t'es pas fait prier
+J'étais gant de crin, geyser
+Pour un peu, je trempais
+Histoire d'eau
+La nuit je mens
+Je prends des trains à travers la plaine
+La nuit je mens
+Je m'en lave les mains
+J'ai dans les bottes des montagnes de questions
+Où subsiste encore ton écho
+Où subsiste encore ton écho
+
+J'ai fait la saison
+Dans cette boite crânienne
+Tes pensées, je les faisais miennes
+T'accaparer, seulement t'accaparer
+D'estrade en estrade
+J'ai fait danser tant de malentendus
+Des kilomètres de vie en rose
+Un jour au cirque, un autre à chercher à te plaire
+Dresseur de loulous, dynamiteur d'aqueducs
+La nuit je mens
+Je prends des trains à travers la plaine
+La nuit je mens
+Effrontément
+J'ai dans les bottes des montagnes de questions
+Où subsiste encore ton écho
+Où subsiste encore ton écho
+
+On m'a vu dans le Vercors
+Sauter à l'élastique
+Voleur d'amphores
+Au fond des criques
+J'ai fait la cour à des murennes
+J'ai fait l'amour
+J'ai fait le mort
+T'étais pas née
+La nuit je mens
+Je prends des trains à travers la plaine
+La nuit je mens
+Je m'en lave les mains
+J'ai dans les bottes des montagnes de questions
+Où subsiste encore ton écho
+Où subsiste encore ton écho
+
+La nuit je mens
+Je prends des trains à travers la plaine
+La nuit je mens
+Je m'en lave les mains
+J'ai dans les bottes des montagnes de questions
+Où subsiste encore ton écho
+
+
+</pre>
+
+</div>
+
+<div class="song" id="laisse">
+
+<h2>Laisse béton</h2>
+
+<pre>
+
+J'étais tranquille, j'étais peinard
+Accoudé au flipper
+Le type est entré dans le bar
+A commandé un jambon beurre
+Puis, il s'est approché de moi
+Puis il m'a regardé comme ça
+T'as des bottes, mon pote
+Elles me bottent
+J'parie qu'c'est des Santiags
+Viens faire un tour dans l'terrain vague
+J'vais t'apprendre un jeu rigolo
+A grands coups de chaînes de vélo
+J'te fais tes bottes à la baston
+Moi je lui dis "laisse béton"
+Il m'a filé une beigne
+Je lui ai filé une torgnole
+Il m'a filé une châtaigne
+Je lui ai filé mes grolles
+
+J'étais tranquille, j'étais pénard
+Accoudé au comptoir
+Le type est entré dans le bar
+A commandé un café noir
+Puis il m'a tapé sur l'épaule
+Et m'a regardé d'un air drôle
+T'as un blouson, mecton
+Il est pas bidon
+Moi, j'me les gèle sur mon scooter
+Avec ça, j'serai un vrai rocker
+Viens faire un tour dans la ruelle
+Je te montrerai mon Opinel
+Je te chouraverai ton blouson
+Moi je lui dis "laisse béton"
+Il m'a filé une beigne
+Je lui ai filé une marron
+Il m'a filé une châtaigne
+Je lui ai filé mon blouson
+
+J'étais tranquille, j'étais pénard
+Je réparais ma mobylette
+Le type a surgi sur le boulevard
+Sur sa grosse moto, super chouette
+S'est arrêté le long du trottoir
+Et m'a regardé d'un air bête
+T'as le même blue jean que James Dean
+T'arrêtes ta frime
+Je parie qu'c'est un vrai Lévis Strauss
+Il est carrément pas craignos
+Viens faire un tour derrière l'église
+Histoire que je te dévalise
+A grands coups de ceinturon
+Moi je lui dis "laisse béton"
+Il m'a filé une beigne
+Je lui ai filé une mandale
+Il m'a filé une châtaigne
+Je lui ai filé mon futal
+
+La morale de c'te pauvre histoire
+C'est quand t'es tranquille et peinard
+Faut pas trop traîner dans les bars
+À moins d'être fringuer en costard
+Quand à la fin d'une chanson
+Tu t'retrouve à poil, sans tes bottes
+Faut avoir d'l'imagination
+Pour trouver une chute rigolote
+
+
+</pre>
+
+</div>
+
+<div class="song" id="jardin">
+
+<h2>Jardin d'hiver</h2>
+
+<pre>
+
+Je voudrais du soleil vert
+Des dentelles et des théières
+Des photos de bord de mer
+Dans mon jardin d'hiver
+
+Je voudrais de la lumière
+Comme en Nouvelle Angleterre
+Je veux changer d'atmosphère
+Dans mon jardin d'hiver
+
+Ta robe à fleur
+Sous la pluie de novembre
+Mes mains qui courent
+Je n'en peux plus de t'attendre
+Les années passent
+Qu'il est loin l'âge tendre
+Nul ne peut nous entendre
+
+Je voudrais du Fred Astaire
+Revoir un Latécoère
+Je voudrais toujours te plaire
+Dans mon jardin d'hiver
+
+Je veux déjeuner par terre
+Comme au long des golfes clairs
+T'embrasser les yeux ouverts
+Dans mon jardin d'hiver
+
+Ta robe à fleur
+Sous la pluie de novembre
+Mes mains qui courent
+Je n'en peux plus de t'attendre
+Les années passent
+Qu'il est loin l'âge tendre
+Nul ne peut nous entendre
+
+
+</pre>
+
+</div>
+
+<div class="song" id="vieille">
+
+<h2>Vieille Canaille</h2>
+
+<pre>
+
+J's'rai content quand tu s'ras mort
+Vieille Canaille
+J's'rai content quand tu s'ras mort
+Vieille Canaille
+Tu ne perds rien pour attendre
+Je saurai bien te descendre
+J's'rai content d'avoir ta peau
+Vieux Chameau
+
+Moi je t'ai reçu à bras ouverts
+Vieille Canaille
+Y'avais toujours ton couvert
+Vieux Bandit
+
+Puis j't'ai présenté ma femme
+Vieille Canaille
+J't'ai présenté ma femme
+Vieille Canaille
+Tu lui a fait du baratin
+Tu l'as embrassé dans les coins
+Dès que j'avais tourné le dos
+Vieux Chameau
+
+
+Mais j'suis parti avec elle
+Vieille Canaille
+Oui je suis parti avec elle
+Vieille Canaille
+En emportant la vaisselle
+Le dessus d'lit en dentelle,
+Vieille Canaille
+T'as brûlé tous mes tapis
+T'as même fumé dans mon lit
+T'as sifflé tout mon Wisky
+Vieux Bandit
+
+Puis j't'ai présenté ma femme
+Vieille Canaille
+J't'ai présenté ma femme
+Vieille Canaille
+Tu lui a fait du baratin
+Tu l'as embrassé dans les coins
+Dès que j'avais tourné le dos
+Vieux Chameau
+
+
+Mais j'suis parti avec elle
+Vieille Canaille
+Oui je suis parti avec elle
+Vieille Canaille
+En emportant la vaisselle
+Le dessus d'lit en dentelle,
+Sera pour tes funérailles
+Vieille Canaille
+Vieille Canaille
+
+
+
+</pre>
+
+</div>
+
+<div class="song" id="dixans">
+
+<h2>J'ai dix ans</h2>
+
+<pre>
+
+J'ai dix ans
+Je sais qu'c'est pas vrai mais j'ai dix ans
+Laissez-moi rêver que j'ai dix ans
+Ça fait bientôt quinze ans que j'ai dix ans
+Ça paraît bizarre mais
+
+Si tu m'crois pas, hé
+Tar' ta gueule à la récré
+
+J'ai dix ans
+Je vais a l'école et j'entends
+De belles paroles doucement
+Moi je rigole, cerf-volant
+Je rêve, je vole
+
+Si tu m'crois pas, hé
+T'ar ta gueule à la récré
+
+Le mercredi je m'balade
+Une paille dans ma limonade
+Je vais embêter les quilles à la vanille
+Et les gars en chocolat
+
+J'ai dix ans
+Je vis dans des sphères où les grands
+N'ont rien à faire, j'vois souvent
+Dans des montgolfières, des géants
+Et des petits hommes verts
+
+Si tu m'crois pas, hé
+T'ar ta gueule à la récré
+
+J'ai dix ans
+Des billes plein les poches, j'ai dix ans
+Les filles c'est des cloches, j'ai dix ans
+Laissez-moi rêver que j'ai dix ans
+
+Si tu m'crois pas, hé
+T'ar ta gueule à la récré
+Bien caché dans ma cabane
+Je suis l'roi d'la sarbacane
+J'envoie des chewing-gums mâchés à tous les vents
+J'ai des prix chez le marchand
+
+J'ai dix ans
+Je sais que c'est pas vrai mais j'ai dix ans
+Laissez-moi rêver que j'ai dix ans
+Ça fait bientôt quinze ans que j'ai dix ans
+Ça paraît bizarre mais
+
+Si tu m'crois pas, hé
+T'ar ta gueule à la récré
+
+Si tu m'crois pas, hé
+T'ar ta gueule à la récré
+
+Si tu m'crois pas
+T'ar ta gueule
+À la récré
+T'ar ta gueule
+
+
+</pre>
+
+</div>
+
+<div class="song" id="newyork">
+
+<h2>New York avec toi</h2>
+
+<pre>
+
+Un jour, j'irai à New York avec toi
+Toutes les nuits déconner
+Et voir aucun film en entier, ça va d'soi
+Avoir la vie partagée, tailladée
+Bercés par le ronron de l'air conditionné
+Dormir dans un hôtel délatté
+Traîner du côté gay et voir leurs corps se serrer
+Voir leurs cœurs se vider et saigner
+Oui, saigner
+
+Un jour j'irai là-bas
+Un jour Chat, un autre Rat
+Voir si le cœur de la ville bat en toi
+Et tu m'emmèneras
+Emmène-moi
+	
+Un jour j'aurai New York au bout des doigts
+On y jouera, tu verras
+Dans les clubs il fait noir, mais il ne fait pas froid
+Ne fait pas froid si t'y crois
+Et j'y crois
+Les flaques de peinture sur les murs ont parfois
+La couleur des sons que tu bois
+Et puis c'est tellement grand que vite on oubliera
+Que nulle part c'est chez moi, chez toi
+Chez nous, quoi
+
+Un jour j'irai là-bas
+Un jour Chat, un autre Rat
+Voir si le cœur de la ville bat en toi
+Et tu m'emmèneras
+Un jour (emmène-moi, emmène-moi)
+(Emmène-moi, emmène-moi)
+(Un jour) toucher à ci, toucher à ça
+Voir si le cœur de la ville bat en moi
+Et tu m'emmèneras
+Emmène-moi
+
+
+</pre>
+
+</div>
+
+<br><br>
+
+<a href="index.html">← Retour au site</a>
 
 </body>
 </html>
