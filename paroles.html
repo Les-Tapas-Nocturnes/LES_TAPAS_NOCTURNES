@@ -1,153 +1,57 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Paroles - Les Tapas Nocturnes</title>
-<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="style.css">
 <style>
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #fafafa;
-    color: #222;
-  }
-
-  /* Logo */
-  .logo {
-    display: block;
-    max-width: 200px;
-    margin: 20px auto;
-  }
-
-  /* Titre page */
-  h1.page-title {
-    font-weight: bold;
-    font-size: 28px;
-    color: white;
-    text-align: center;
-    background: #7a3d00;
-    padding: 10px 0;
-    border-radius: 10px;
-    margin: 0 10px 20px 10px;
-  }
-
-  /* Bouton retour */
-  .btn-retour {
-    display: block;
-    width: 180px;
-    max-width: 85%;
-    margin: 10px auto 20px auto;
-    padding: 14px;
-    font-size: 18px;
-    font-weight: bold;
-    color: white;
-    background: #e8dcc0;
-    border-radius: 50px;
-    border: 4px solid black;
-    box-shadow: 0px 6px 10px rgba(0,0,0,0.4);
-    text-align: center;
-    text-decoration: none;
-  }
-  .btn-retour:hover {
-    background: #d2c9a9;
-  }
-
-  /* Boutons chansons */
-  .song-button {
-    display: block;
-    width: 90%;
-    max-width: 500px;
-    margin: 8px auto;
-    padding: 12px;
-    font-size: 16px;
-    font-weight: bold;
-    color: black;
-    background: #f0e2c0;
-    border-radius: 50px;
-    border: 3px solid #7a3d00;
-    text-align: center;
-    cursor: pointer;
-  }
-  .song-button:hover {
-    background: #e0d0a0;
-  }
-
-  /* Conteneur paroles */
-  .lyrics {
-    display: none;
-    max-width: 600px;
-    margin: 0 auto 20px auto;
-    padding: 15px 20px;
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    white-space: pre-wrap;
-    line-height: 1.5;
-  }
-
-  @media screen and (max-width: 600px) {
-    h1.page-title { font-size: 24px; }
-    .btn-retour { font-size: 16px; padding: 12px; }
-    .song-button { font-size: 14px; padding: 10px; }
-    .lyrics { padding: 12px; margin: 0 10px 15px 10px; }
-  }
+body { font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif; margin:0; padding:0; background:#fafafa; color:#222; }
+.logo { display:block; max-width:200px; margin:20px auto; }
+h1.page-title { font-weight:bold; font-size:28px; color:white; text-align:center; background:#7a3d00; padding:10px 0; border-radius:10px; margin:0 10px 20px 10px; }
+.btn-retour { display:block; width:180px; max-width:85%; margin:10px auto 20px auto; padding:14px; font-size:18px; font-weight:bold; color:white; background:#e8dcc0; border-radius:50px; border:4px solid black; box-shadow:0px 6px 10px rgba(0,0,0,0.4); text-align:center; text-decoration:none; }
+.btn-retour:hover { background:#d2c9a9; }
+.song-button { display:block; width:90%; max-width:500px; margin:8px auto; padding:12px; font-size:16px; font-weight:bold; color:black; background:#f0e2c0; border-radius:50px; border:3px solid #7a3d00; text-align:center; cursor:pointer; }
+.song-button:hover { background:#e0d0a0; }
+.lyrics { display:none; max-width:600px; margin:0 auto 20px auto; padding:15px 20px; background:#fff; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.1); white-space: pre-wrap; line-height:1.5; }
+@media screen and (max-width:600px){ h1.page-title { font-size:24px; } .btn-retour { font-size:16px; padding:12px; } .song-button { font-size:14px; padding:10px; } .lyrics { padding:12px; margin:0 10px 15px 10px; } }
 </style>
 </head>
 <body>
 
 <!-- LOGO -->
-<img src="logo.png" class="logo" alt="Les Tapas Nocturnes" />
+<img src="logo.png" class="logo" alt="Les Tapas Nocturnes">
 
-<!-- TITRE PAGE -->
+<!-- TITRE DE LA PAGE -->
 <h1 class="page-title">Paroles</h1>
 
 <!-- BOUTON RETOUR -->
 <a href="index.html" class="btn-retour">← Retour à l’accueil</a>
 
-<!-- BOUTONS CHANSONS ET PAROLES -->
-<div class="songs-container">
-
-  <button class="song-button" onclick="toggleLyrics('song1')">Et moi, et moi, et moi</button>
-  <div id="song1" class="lyrics">
-Jacques Dutronc — 1966
-Et moi, et moi, et moi…
-(Les paroles complètes ici)
-  </div>
-
-  <button class="song-button" onclick="toggleLyrics('song2')">La fille du Père Noël</button>
-  <div id="song2" class="lyrics">
-Jacques Dutronc — 1966
-Paroles de La fille du Père Noël…
-  </div>
-
-  <button class="song-button" onclick="toggleLyrics('song3')">Sarbacane</button>
-  <div id="song3" class="lyrics">
-Francis Cabrel — 1989
-Paroles de Sarbacane…
-  </div>
-
-  <button class="song-button" onclick="toggleLyrics('song4')">L'amour à la machine</button>
-  <div id="song4" class="lyrics">
-Alain Souchon — 1993
-Paroles de L'amour à la machine…
-  </div>
-
-  <button class="song-button" onclick="toggleLyrics('song5')">La nuit je mens</button>
-  <div id="song5" class="lyrics">
-Alain Bashung — 1998
-Paroles de La nuit je mens…
-  </div>
-
-  <!-- Continue le même format pour toutes tes chansons -->
-</div>
+<!-- CONTENEUR DES CHANSONS -->
+<div class="songs-container"></div>
 
 <script>
+// Fonction pour afficher/masquer les paroles
 function toggleLyrics(id){
   const el = document.getElementById(id);
   el.style.display = el.style.display === 'none' ? 'block' : 'none';
 }
+
+// Charger les chansons depuis JSON
+fetch('data/songs.json')
+  .then(res => res.json())
+  .then(data => {
+    const container = document.querySelector('.songs-container');
+    data.forEach((song, index) => {
+      // Créer un bouton pour chaque chanson
+      container.innerHTML += `
+        <button class="song-button" onclick="toggleLyrics('${song.id}')">${song.title}</button>
+        <div id="${song.id}" class="lyrics">${song.lyrics}</div>
+      `;
+    });
+  })
+  .catch(err => console.error("Erreur chargement JSON :", err));
 </script>
 
 </body>
