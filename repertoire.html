@@ -6,7 +6,7 @@
 <title>Répertoire - Les Tapas Nocturnes</title>
 <link rel="stylesheet" href="style.css" />
 <style>
-  /* Conteneur pour la liste des chansons */
+  /* Conteneur liste chansons */
   .song-container {
     background: #fefefe;
     max-width: 600px;
@@ -47,7 +47,28 @@
     margin-top: 2px;
   }
 
-  /* Responsive pour mobile */
+  /* Bouton retour */
+  .btn-retour {
+    display: block;
+    width: 180px;
+    max-width: 85%;
+    margin: 20px auto;
+    padding: 14px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(#b87333,#7a3d00);
+    border-radius: 50px;
+    border: 4px solid black;
+    box-shadow: 0px 6px 10px rgba(0,0,0,0.4);
+    text-align: center;
+    text-decoration: none;
+  }
+  .btn-retour:hover {
+    background: linear-gradient(#7a3d00,#b87333);
+  }
+
+  /* Responsive mobile */
   @media screen and (max-width: 600px) {
     .song-container {
       margin: 15px 10px 30px 10px;
@@ -62,6 +83,12 @@
     .song-meta {
       font-size: 12px;
     }
+
+    .btn-retour {
+      width: 85%;
+      font-size: 16px;
+      padding: 12px;
+    }
   }
 </style>
 </head>
@@ -70,31 +97,39 @@
 <!-- LOGO -->
 <img src="logo.png" class="logo" alt="Les Tapas Nocturnes" />
 
-<!-- MENU COMMUN -->
-<div class="menu">
-  <a href="index.html" class="menu-button accueil">ACCUEIL</a>
-  <a href="repertoire.html" class="menu-button repertoire">RÉPERTOIRE</a>
-  <a href="paroles.html" class="menu-button paroles">PAROLES</a>
-  <a href="agenda.html" class="menu-button agenda">AGENDA</a>
-  <a href="contact.html" class="menu-button contact">CONTACT</a>
-</div>
+<!-- BOUTON RETOUR -->
+<a href="index.html" class="btn-retour">← Retour à l’accueil</a>
 
-<!-- CONTENEUR LISTE CHANSONS -->
+<!-- LISTE DES CHANSONS -->
 <div class="song-container">
   <ul class="song-list">
-    <li>
-      <div class="song-title">Et moi, et moi, et moi</div>
-      <div class="song-meta">Jacques Dutronc — 1966</div>
-    </li>
-    <li>
-      <div class="song-title">La fille du Père Noël</div>
-      <div class="song-meta">Jacques Dutronc — 1966</div>
-    </li>
-    <li>
-      <div class="song-title">Sarbacane</div>
-      <div class="song-meta">Francis Cabrel — 1989</div>
-    </li>
-    <!-- ajoute le reste de tes chansons ici, dans ce même format -->
+    <li><div class="song-title">Et moi, et moi, et moi</div><div class="song-meta">Jacques Dutronc — 1966</div></li>
+    <li><div class="song-title">La fille du Père Noël</div><div class="song-meta">Jacques Dutronc — 1966</div></li>
+    <li><div class="song-title">Sarbacane</div><div class="song-meta">Francis Cabrel — 1989</div></li>  
+    <li><div class="song-title">L'amour à la machine</div><div class="song-meta">Alain Souchon — 1993</div></li>
+    <li><div class="song-title">La nuit je mens</div><div class="song-meta">Alain Bashung — 1998</div></li>
+    <li><div class="song-title">Laisse béton</div><div class="song-meta">Renaud — 1977</div></li>
+    <li><div class="song-title">Jardin d’hiver</div><div class="song-meta">Henri Salvador — 2000</div></li>
+    <li><div class="song-title">Vieille canaille</div><div class="song-meta">Serge Gainsbourg — 1986</div></li>
+    <li><div class="song-title">Les Élucubrations d’Antoine</div><div class="song-meta">Antoine — 1966</div></li>
+    <li><div class="song-title">Encore une journée d’foutue</div><div class="song-meta">Jacques Higelin — 1982</div></li>
+    <li><div class="song-title">Les Ailes d’un ange</div><div class="song-meta">Robert Charlebois — 1969</div></li>  
+    <li><div class="song-title">J'ai dix ans</div><div class="song-meta">Alain Souchon — 1974</div></li>
+    <li><div class="song-title">Ces idées là</div><div class="song-meta">Louis Bertignac — 1994</div></li>
+    <li><div class="song-title">Toute la musique que j'aime </div><div class="song-meta">Johnny Hallyday — 1973</div></li>
+    <li><div class="song-title">Gabrielle</div><div class="song-meta">Johnny Hallyday — 1976</div></li>
+    <li><div class="song-title">Vertige de l’amour</div><div class="song-meta">Alain Bashung — 19816</div></li>
+    <li><div class="song-title">New York avec toi</div><div class="song-meta">Téléphone  — 1984</div></li>
+    <li><div class="song-title">La Bombe humainel</div><div class="song-meta">Téléphone — 1979</div></li>
+    <li><div class="song-title">Antisocial</div><div class="song-meta">Trust — 1980</div></li>  
+    <li><div class="song-title">Aitormena</div><div class="song-meta">Hertzainak  — 1989</div></li>
+    <li><div class="song-title">Lau teilatu</div><div class="song-meta">Itoiz  — 1976</div></li>
+    <li><div class="song-title">Hegoaj</div><div class="song-meta">Joxean Artze — 1974</div></li>
+    <li><div class="song-title">Un autre monde</div><div class="song-meta">Téléphone — 1984</div></li>
+    <li><div class="song-title">Les cactus</div><div class="song-meta">Jacques Dutronc — 1966</div></li>
+    <li><div class="song-title">Gogoaren baitan</div><div class="song-meta">Anje Duhalde — 1992</div></li>
+    <li><div class="song-title">J'irai où tu iras</div><div class="song-meta">Jean-J.J Goldman C. Dion — 1995</div></li>
+    <li><div class="song-title">Ca c'est vraiment toi</div><div class="song-meta">Téléphone  — 1982</div></li>  
   </ul>
 </div>
 
