@@ -3,6 +3,25 @@
 <html lang="fr">
 
 <head>
+<script>
+
+function showSong(id){
+
+var songs = document.querySelectorAll(".song");
+
+songs.forEach(function(song){
+song.style.display="none";
+});
+
+document.getElementById(id).style.display="block";
+
+}
+
+window.onload = function(){
+showSong('etmoi');
+}
+
+</script>
 <meta charset="UTF-8">
 <title>Paroles</title>
 
@@ -672,3 +691,4 @@ Emmène-moi
 
 </body>
 </html>
+
