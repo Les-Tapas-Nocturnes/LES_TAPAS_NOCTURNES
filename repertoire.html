@@ -4,146 +4,23 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Répertoire - Les Tapas Nocturnes</title>
-
-<style>
-:root {
-  --rouge: #D41414;
-  --vert: #3E7F2B;
-  --beige: #F5E6C8;
-  --brun: #8B4513;
-  --noir: #000000;
-  --fond-clair: #faf7f0;
-}
-
-* { margin:0; padding:0; box-sizing:border-box; }
-
-body {
-  font-family: Arial, sans-serif;
-  background-color: var(--fond-clair);
-  min-height: 100vh;
-  color: #111;
-  position: relative;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-}
-
-/* Logo en arrière-plan */
-body::before {
-  content: "";
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 80vmin;
-  height: 80vmin;
-  background: url('logo.png') no-repeat center/contain;
-  opacity: 0.1;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* HEADER */
-header {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 20px 0;
-}
-
-.nav-buttons {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  opacity: 0;
-  transform: translateY(-10px);
-  animation: slideDown 0.6s forwards;
-}
-
-@keyframes slideDown {
-  to { opacity:1; transform: translateY(0); }
-}
-
-.btn {
-  padding: 12px 36px;
-  border-radius: 60% 40% 60% 40% / 50% 60% 50% 60%;
-  border: 3px solid var(--noir);
-  font-size: 16px;
-  font-weight: 700;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  transition: transform 0.2s ease, filter 0.2s ease;
-  box-shadow: inset 0 3px 6px rgba(255,255,255,0.3), 0 4px 8px rgba(0,0,0,0.25);
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
-}
-
-.btn-rouge { background-color: var(--rouge); color:white; }
-.btn-brun { background-color: var(--brun); color:white; }
-.btn-beige { background-color: var(--beige); color:var(--noir); }
-.btn-vert { background-color: var(--vert); color:white; }
-.btn-agenda { background-color:#FFA500; color:white; }
-
-.btn-rouge::before { content:"🔥"; }
-.btn-brun::before { content:"🎵"; }
-.btn-beige::before { content:"📝"; }
-.btn-vert::before { content:"📞"; }
-.btn-agenda::before { content:"📅"; }
-
-.btn:hover { transform: translateY(-4px) scale(1.05); filter: brightness(1.15); }
-
-/* CONTENU */
-main {
-  position: relative;
-  z-index: 1;
-  max-width: 800px;
-  margin: 30px auto;
-  padding: 0 20px;
-}
-
-.song-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.song-list li {
-  padding: 14px 20px;
-  background-color: rgba(255,255,255,0.85);
-  border-radius: 12px;
-  border: 2px solid rgba(0,0,0,0.2);
-  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
-  font-size: 1.1rem;
-  font-weight: 500;
-}
-
-.song-title { font-weight:700; }
-.song-meta { font-size:0.9rem; color:#555; margin-top:4px; }
-
-/* RESPONSIVE */
-@media (max-width:600px){
-  .nav-buttons { flex-direction: column; gap:12px; }
-  .btn { width:100%; justify-content:center; font-size:14px; }
-  .song-list li { font-size:1rem; padding:10px 16px; }
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-<header>
-  <nav class="nav-buttons">
-    <button class="btn btn-rouge" onclick="window.location.href='index.html'">Accueil</button>
-    <button class="btn btn-brun" onclick="window.location.href='repertoire.html'">Répertoire</button>
-    <button class="btn btn-beige" onclick="window.location.href='paroles.html'">Paroles</button>
-    <button class="btn btn-agenda" onclick="window.location.href='concerts.html'">Agenda</button>
-    <button class="btn btn-vert" onclick="window.location.href='contact.html'">Contact</button>
-  </nav>
-</header>
 
+<!-- LOGO -->
+<img src="logo.png" class="logo" alt="Les Tapas Nocturnes">
+
+<!-- MENU COMMUN -->
+<div class="menu">
+    <a href="index.html" class="menu-button accueil">ACCUEIL</a>
+    <a href="repertoire.html" class="menu-button repertoire">RÉPERTOIRE</a>
+    <a href="paroles.html" class="menu-button paroles">PAROLES</a>
+    <a href="agenda.html" class="menu-button agenda">AGENDA</a>
+    <a href="contact.html" class="menu-button contact">CONTACT</a>
+</div>
+
+<!-- CONTENU DE LA PAGE -->
 <main>
   <ul class="song-list">
     <li>
@@ -210,7 +87,7 @@ main {
       <div class="song-title">Vertige de l’amour</div>
       <div class="song-meta">Alain Bashung — 19816</div>
     </li>
-     <li>
+    <li>
       <div class="song-title">New York avec toi</div>
       <div class="song-meta">Téléphone  — 1984</div>
     </li>
@@ -253,14 +130,11 @@ main {
     <li>
       <div class="song-title">Ca c'est vraiment toi</div>
       <div class="song-meta">Téléphone  — 1982</div>
-    </li>  
-    <li>
-          <!-- Ajoute les autres lignes selon ce modèle -->
+    </li>
+    <!-- ajoute ici toutes les autres chansons restantes -->
   </ul>
 </main>
+
 </body>
 </html>
-
-
-
 
