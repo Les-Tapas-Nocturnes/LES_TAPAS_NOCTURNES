@@ -53,12 +53,11 @@ pre {
 function showSong(id){
     var songs = document.querySelectorAll(".song");
     songs.forEach(function(song){
-        song.style.display="none"; // cache toutes les chansons
+        song.style.display="none";
     });
-    document.getElementById(id).style.display="block"; // affiche celle sélectionnée
+    document.getElementById(id).style.display="block";
 }
 
-// Afficher la première chanson au chargement
 window.onload = function(){
     showSong('etmoi');
 }
@@ -76,499 +75,54 @@ window.onload = function(){
     <button onclick="showSong('nuit')">La nuit je mens</button>
     <button onclick="showSong('laisse')">Laisse béton</button>
     <button onclick="showSong('jardin')">Jardin d'hiver</button>
-    <button onclick="showSong('jardin')">JVieille Canaille</button>
-    <button onclick="showSong('jardin')">JLes élucubrations </button>
-    <button onclick="showSong('dixans')">Encore une journée d’foutue</button>
-    <button onclick="showSong('newyork')">Les Ailes d’un ange</button>
-	<button onclick="showSong('dixans')">J'ai dix ans</button>
-    <button onclick="showSong('newyork')">Ces idées là</button>
-	<button onclick="showSong('dixans')">Toute la musique que j'aime</button>
-    <button onclick="showSong('newyork')">Ces idées là</button>
-	<button onclick="showSong('dixans')">Toute la musique que j'aime</button>
-    <button onclick="showSong('newyork')">Gabrielle</button>
-	<button onclick="showSong('newyork')">Vertige de l’amour</button>
-	<button onclick="showSong('newyork')">New York avec toi</button>
-	<button onclick="showSong('newyork')">La Bombe humaine</button>
-	<button onclick="showSong('newyork')">Antisocial</button>
-	<button onclick="showSong('newyork')">Aitormena</button>
-	<button onclick="showSong('newyork')">Lau Teilatu</button>
-	<button onclick="showSong('newyork')">Hegoak</button>
-	<button onclick="showSong('newyork')">Les cactus</button>
-	<button onclick="showSong('newyork')">Gogoaren baitan</button>
-	<button onclick="showSong('newyork')">J'irai où tu iras</button>
-	<button onclick="showSong('newyork')">Ça (c’est vraiment toi)</button>
-	
+    <button onclick="showSong('vieille')">Vieille Canaille</button>
+    <button onclick="showSong('elu')">Les élucubrations</button>
+    <button onclick="showSong('journée')">Encore une journée d’foutue</button>
+    <button onclick="showSong('ailes')">Les Ailes d’un ange</button>
+    <button onclick="showSong('dixans')">J'ai dix ans</button>
+    <button onclick="showSong('idees')">Ces idées là</button>
+    <button onclick="showSong('musique')">Toute la musique que j'aime</button>
+    <button onclick="showSong('gabrielle')">Gabrielle</button>
+    <button onclick="showSong('vertige')">Vertige de l’amour</button>
+    <button onclick="showSong('newyork')">New York avec toi</button>
+    <button onclick="showSong('bombe')">La Bombe humaine</button>
+    <button onclick="showSong('antisocial')">Antisocial</button>
+    <button onclick="showSong('aitormena')">Aitormena</button>
+    <button onclick="showSong('lau')">Lau Teilatu</button>
+    <button onclick="showSong('hegoak')">Hegoak</button>
+    <button onclick="showSong('cactus')">Les cactus</button>
+    <button onclick="showSong('gogoaren')">Gogoaren baitan</button>
+    <button onclick="showSong('jirai')">J'irai où tu iras</button>
+    <button onclick="showSong('ca')">Ça (c’est vraiment toi)</button>
 </nav>
 
 <!-- Chansons -->
-<div class="song" id="etmoi">
-<h2>Et moi et moi et moi</h2>
-<pre>
-Sept cent millions de chinois 
-Et moi, et moi, et moi
-Avec ma vie, mon petit chez-moi
-Mon mal de tête, mon point au foie
-J'y pense et puis j'oublie
-C'est la vie, c'est la vie
-
-Quatre-vingt millions d'indonésiens
-Et moi, et moi, et moi
-Avec ma voiture et mon chien
-Son Canigou quand il aboie
-J'y pense et puis j'oublie
-C'est la vie, c'est la vie
-
-Trois ou quatre cent millions de noirs
-Et moi, et moi, et moi
-Qui vais au brunissoir
-Au sauna pour perdre du poids
-J'y pense et puis j'oublie
-C'est la vie, c'est la vie
-
-Trois cent millions de soviétiques
-Et moi, et moi, et moi
-Avec mes manies et mes tics
-Dans mon p'tit lit en plume d'oie
-J'y pense et puis j'oublie
-C'est la vie, c'est la vie
-
-Cinquante millions de gens imparfaits
-Et moi, et moi, et moi
-Qui regarde Catherine Langeais
-À la télévision chez moi
-J'y pense et puis j'oublie
-C'est la vie, c'est la vie
-
-Neuf cent millions de crève-la-faim
-Et moi, et moi, et moi
-Avec mon régime végétarien
-Et tout le whisky que je m'envoie
-J'y pense et puis j'oublie
-C'est la vie, c'est la vie
-
-Cinq cent millions de sud-américains
-Et moi, et moi, et moi
-Je suis tout nu dans mon bain
-Avec une fille qui me nettoie
-J'y pense et puis j'oublie
-C'est la vie, c'est la vie
-
-Cinquante millions de vietnamiens
-Et moi, et moi, et moi
-Le dimanche à la chasse au lapin
-Avec mon fusil, je suis le roi
-J'y pense et puis j'oublie
-C'est la vie, c'est la vie
-
-Cinq cent milliards de petits martiens
-Et moi, et moi, et moi
-Comme un con de parisien
-J'attends mon chèque de fin de mois
-J'y pense et puis j'oublie
-C'est la vie, c'est la vie
-J'y pense et puis j'oublie
-C'est la vie, c'est la vie
-J'y pense et puis j'oublie
-C'est la vie, c'est la vie
-J'y pense et puis j'oublie    
-
-...
-</pre>
-</div>
-
-<div class="song" id="pereNoel">
-<h2>La fille du Père Noël</h2>
-<pre>
- Je l'ai trouvée au petit matin
-Toute nue dans mes grands souliers
-Placés devant la cheminée
-Pas besoin de vous faire un dessin
-De battre mon cœur s'est arrêté
-Sur le lit j'ai jeté mon fouet
-Tout contre elle je me suis penché
-Et sa beauté m'a rendu muet
-
-Fatigué j'ai la gueule de bois
-Toute la nuit j'avais aidé mon père
-Dans le feu j'ai remis du bois
-Dans la ch'minée y avait pas son père
-
-C'était la fille du Père Noël
-J'étais le fils du Père Fouettard
-Elle s'appelait Marie Noël
-Je m'appelais Jean Balthazar
-
-Je prends la fille dans mes bras
-Elle me dit mais non Balthazar
-Ne fais donc pas le fier à bras
-Je suis tombée là par hasard
-
-Toute la nuit j'avais fouetté
-A tour de bras les gens méchants
-Toute la nuit elle avait donné
-Des cadeaux à tous les enfants
-
-C'était la fille du Père Noël
-J'étais le fils du Père Fouettard
-Elle s'appelait Marie Noël
-Je m'appelais Jean Balthazar
-
-Descendue chez moi par erreur
-Elle était là dans mes souliers
-Et comme je ne pouvais prendre son cœur
-Je l'ai remise sur le palier
-
-C'était la fille du Père Noël
-J'étais le fils du Père Fouettard
-Et elle m'a dit d'une voix d'crécelle
-Bye bye au hasard Balthazar
-
-C'était la fille du Père Noël
-J'étais le fils du Père Fouettard
-Elle s'appelait Marie Noël
-Je m'appelais Jean Balthazar
-
-...
-</pre>
-</div>
-
-<div class="song" id="sarbacane">
-<h2>Sarbacane</h2>
-<pre>
-On croyait savoir tout sur l’amour, Depuis toujours
-Nos corps par cœur et nos cœurs au chaud, Dans le velours
-Et puis te voilà, bout de femme, Comme soufflée d’une sarbacane
-Le ciel a même un autre éclat, Depuis toi
-
-Les hommes poursuivent ce temps, Qui court depuis toujours
-Voilà que t’arrives Et que tout s’éclaire, sur mon parcours
-Pendue à mon cou comme une liane, Comme le roseau de la sarbacane
-Le ciel s’est ouvert par endroits, Depuis toi          
-
-Pas besoin de phrases ni de longs discours
-Ça change tout dedans, ça change tout autour
-Finis les matins paupières en panne
-Lourdes comme les bouteilles de butane
-J’ai presque plus ma tête à moi, Depuis toi
-
-Pas besoin de faire de trop longs discours
-Ça change tout dedans, ça change tout autour
-Pourvu que jamais tu ne t’éloignes
-Plus loin qu’un jet de sarbacane
-J’ai presque plus ma tête à moi, Depuis toi
-
-Alors te voilà, bout de femme, Comme soufflée d’une sarbacane
-Le ciel s’est ouvert par endroits, Depuis toi, Oh ! Depuis toi              
-
-...
-</pre>
-</div>
-
-<div class="song" id="machine">
-<h2>L'amour à la machine</h2>
-<pre>
-Passez notre amour à la machine, Faites le bouillir
-Pour voir si les couleurs d'origine, Peuvent revenir
-Est-ce qu'on peut ravoir à l'eau de Javel? , des sentiments
-La blancheur qu'on croyait éternelle, Avant
-
-Pour retrouver le rose initial, De ta joue, devenue pâle
-Le bleu de nos baisers du début, Tant d'azur, perdu
-
-Passez notre amour à la machine, Faites le bouillir
-Pour voir si les couleurs d'origine, Peuvent revenir
-Est-ce qu'on peut ravoir à l'eau de Javel? Des sentiments
-La blancheur qu'on croyait éternelle, Avant
-
-Matisse, l'amour, c'est bleu, difficile
-Les caresses, rouges, fragiles
-Le soleil de la vie les tabasse
-Et alors, elles passent
-Allez, à la machine!
-Allez, à la machine!
-
-Le rouge pour faire tomber la misère
-De nos gentils petits grands-pères
-Noires, les mains dans les boucles blondes
-Tout autour du monde
-
-Passez notre amour à la machine, Faites le bouillir
-Pour voir si les couleurs d'origine, Peuvent revenir
-Est-ce qu'on peut ravoir à l'eau de Javel?, Des sentiments
-La blancheur qu'on croyait éternelle, Avant
-Allez, à la machine!
-Allez, à la machine!
-Allez, à la machine!
-Allez, à la machine!
-Allez, à la machine!
-
-...
-</pre>
-</div>
-
-<div class="song" id="nuit">
-<h2>La nuit je mens</h2>
-<pre>
-On m'a vu dans le Vercors
-Sauter à l'élastique
-Voleur d'amphores
-Au fond des criques
-J'ai fait la cour à des murennes
-J'ai fait l'amour
-J'ai fait le mort
-T'étais pas née
-À la station balnéaire
-Tu t'es pas fait prier
-J'étais gant de crin, geyser
-Pour un peu, je trempais
-Histoire d'eau
-La nuit je mens
-Je prends des trains à travers la plaine
-La nuit je mens
-Je m'en lave les mains
-J'ai dans les bottes des montagnes de questions
-Où subsiste encore ton écho
-Où subsiste encore ton écho
-
-J'ai fait la saison
-Dans cette boite crânienne
-Tes pensées, je les faisais miennes
-T'accaparer, seulement t'accaparer
-D'estrade en estrade
-J'ai fait danser tant de malentendus
-Des kilomètres de vie en rose
-Un jour au cirque, un autre à chercher à te plaire
-Dresseur de loulous, dynamiteur d'aqueducs
-La nuit je mens
-Je prends des trains à travers la plaine
-La nuit je mens
-Effrontément
-J'ai dans les bottes des montagnes de questions
-Où subsiste encore ton écho
-Où subsiste encore ton écho
-
-On m'a vu dans le Vercors
-Sauter à l'élastique
-Voleur d'amphores
-Au fond des criques
-J'ai fait la cour à des murennes
-J'ai fait l'amour
-J'ai fait le mort
-T'étais pas née
-La nuit je mens
-Je prends des trains à travers la plaine
-La nuit je mens
-Je m'en lave les mains
-J'ai dans les bottes des montagnes de questions
-Où subsiste encore ton écho
-Où subsiste encore ton écho
-
-La nuit je mens
-Je prends des trains à travers la plaine
-La nuit je mens
-Je m'en lave les mains
-J'ai dans les bottes des montagnes de questions
-Où subsiste encore ton écho
-
-...
-</pre>
-</div>
-
-<div class="song" id="laisse">
-<h2>Laisse béton</h2>
-<pre>
-J'étais tranquille, j'étais peinard
-Accoudé au flipper
-Le type est entré dans le bar
-A commandé un jambon beurre
-Puis, il s'est approché de moi
-Puis il m'a regardé comme ça
-T'as des bottes, mon pote
-Elles me bottent
-J'parie qu'c'est des Santiags
-Viens faire un tour dans l'terrain vague
-J'vais t'apprendre un jeu rigolo
-A grands coups de chaînes de vélo
-J'te fais tes bottes à la baston
-Moi je lui dis "laisse béton"
-Il m'a filé une beigne
-Je lui ai filé une torgnole
-Il m'a filé une châtaigne
-Je lui ai filé mes grolles
-
-J'étais tranquille, j'étais pénard
-Accoudé au comptoir
-Le type est entré dans le bar
-A commandé un café noir
-Puis il m'a tapé sur l'épaule
-Et m'a regardé d'un air drôle
-T'as un blouson, mecton
-Il est pas bidon
-Moi, j'me les gèle sur mon scooter
-Avec ça, j'serai un vrai rocker
-Viens faire un tour dans la ruelle
-Je te montrerai mon Opinel
-Je te chouraverai ton blouson
-Moi je lui dis "laisse béton"
-Il m'a filé une beigne
-Je lui ai filé une marron
-Il m'a filé une châtaigne
-Je lui ai filé mon blouson
-
-J'étais tranquille, j'étais pénard
-Je réparais ma mobylette
-Le type a surgi sur le boulevard
-Sur sa grosse moto, super chouette
-S'est arrêté le long du trottoir
-Et m'a regardé d'un air bête
-T'as le même blue jean que James Dean
-T'arrêtes ta frime
-Je parie qu'c'est un vrai Lévis Strauss
-Il est carrément pas craignos
-Viens faire un tour derrière l'église
-Histoire que je te dévalise
-A grands coups de ceinturon
-Moi je lui dis "laisse béton"
-Il m'a filé une beigne
-Je lui ai filé une mandale
-Il m'a filé une châtaigne
-Je lui ai filé mon futal
-
-La morale de c'te pauvre histoire
-C'est quand t'es tranquille et peinard
-Faut pas trop traîner dans les bars
-À moins d'être fringuer en costard
-Quand à la fin d'une chanson
-Tu t'retrouve à poil, sans tes bottes
-Faut avoir d'l'imagination
-Pour trouver une chute rigolote
-
-...
-</pre>
-</div>
-
-<div class="song" id="jardin">
-<h2>Jardin d'hiver</h2>
-<pre>
-Je voudrais du soleil vert
-Des dentelles et des théières
-Des photos de bord de mer
-Dans mon jardin d'hiver
-
-Je voudrais de la lumière
-Comme en Nouvelle Angleterre
-Je veux changer d'atmosphère
-Dans mon jardin d'hiver
-
-Ta robe à fleur
-Sous la pluie de novembre
-Mes mains qui courent
-Je n'en peux plus de t'attendre
-Les années passent
-Qu'il est loin l'âge tendre
-Nul ne peut nous entendre
-
-Je voudrais du Fred Astaire
-Revoir un Latécoère
-Je voudrais toujours te plaire
-Dans mon jardin d'hiver
-
-Je veux déjeuner par terre
-Comme au long des golfes clairs
-T'embrasser les yeux ouverts
-Dans mon jardin d'hiver
-
-Ta robe à fleur
-Sous la pluie de novembre
-Mes mains qui courent
-Je n'en peux plus de t'attendre
-Les années passent
-Qu'il est loin l'âge tendre
-Nul ne peut nous entendre
-
-...
-</pre>
-</div>
-
-<div class="song" id="vieille">
-<h2>Vieille Canaille</h2>
-<pre>
-J's'rai content quand tu s'ras mort
-Vieille Canaille
-J's'rai content quand tu s'ras mort
-Vieille Canaille
-Tu ne perds rien pour attendre
-Je saurai bien te descendre
-J's'rai content d'avoir ta peau
-Vieux Chameau
-
-Moi je t'ai reçu à bras ouverts
-Vieille Canaille
-Y'avais toujours ton couvert
-Vieux Bandit
-
-Puis j't'ai présenté ma femme
-Vieille Canaille
-J't'ai présenté ma femme
-Vieille Canaille
-Tu lui a fait du baratin
-Tu l'as embrassé dans les coins
-Dès que j'avais tourné le dos
-Vieux Chameau
-
-
-Mais j'suis parti avec elle
-Vieille Canaille
-Oui je suis parti avec elle
-Vieille Canaille
-En emportant la vaisselle
-Le dessus d'lit en dentelle,
-Vieille Canaille
-T'as brûlé tous mes tapis
-T'as même fumé dans mon lit
-T'as sifflé tout mon Wisky
-Vieux Bandit
-
-Puis j't'ai présenté ma femme
-Vieille Canaille
-J't'ai présenté ma femme
-Vieille Canaille
-Tu lui a fait du baratin
-Tu l'as embrassé dans les coins
-Dès que j'avais tourné le dos
-Vieux Chameau
-
-
-Mais j'suis parti avec elle
-Vieille Canaille
-Oui je suis parti avec elle
-Vieille Canaille
-En emportant la vaisselle
-Le dessus d'lit en dentelle,
-Sera pour tes funérailles
-Vieille Canaille
-Vieille Canaille
-
-...
-</pre>
-</div>
-
-<div class="song" id="dixans">
-<h2>J'ai dix ans</h2>
-<pre>
-J'ai dix ans
-...
-</pre>
-</div>
-
-<div class="song" id="newyork">
-<h2>New York avec toi</h2>
-<pre>
-Un jour, j'irai à New York avec toi
-...
-</pre>
-</div>
+<div class="song" id="etmoi"><h2>Et moi et moi et moi</h2><pre></pre></div>
+<div class="song" id="pereNoel"><h2>La fille du Père Noël</h2><pre></pre></div>
+<div class="song" id="sarbacane"><h2>Sarbacane</h2><pre></pre></div>
+<div class="song" id="machine"><h2>L'amour à la machine</h2><pre></pre></div>
+<div class="song" id="nuit"><h2>La nuit je mens</h2><pre></pre></div>
+<div class="song" id="laisse"><h2>Laisse béton</h2><pre></pre></div>
+<div class="song" id="jardin"><h2>Jardin d'hiver</h2><pre></pre></div>
+<div class="song" id="vieille"><h2>Vieille Canaille</h2><pre></pre></div>
+<div class="song" id="elu"><h2>Les élucubrations</h2><pre></pre></div>
+<div class="song" id="journée"><h2>Encore une journée d’foutue</h2><pre></pre></div>
+<div class="song" id="ailes"><h2>Les Ailes d’un ange</h2><pre></pre></div>
+<div class="song" id="dixans"><h2>J'ai dix ans</h2><pre></pre></div>
+<div class="song" id="idees"><h2>Ces idées là</h2><pre></pre></div>
+<div class="song" id="musique"><h2>Toute la musique que j'aime</h2><pre></pre></div>
+<div class="song" id="gabrielle"><h2>Gabrielle</h2><pre></pre></div>
+<div class="song" id="vertige"><h2>Vertige de l’amour</h2><pre></pre></div>
+<div class="song" id="newyork"><h2>New York avec toi</h2><pre></pre></div>
+<div class="song" id="bombe"><h2>La Bombe humaine</h2><pre></pre></div>
+<div class="song" id="antisocial"><h2>Antisocial</h2><pre></pre></div>
+<div class="song" id="aitormena"><h2>Aitormena</h2><pre></pre></div>
+<div class="song" id="lau"><h2>Lau Teilatu</h2><pre></pre></div>
+<div class="song" id="hegoak"><h2>Hegoak</h2><pre></pre></div>
+<div class="song" id="cactus"><h2>Les cactus</h2><pre></pre></div>
+<div class="song" id="gogoaren"><h2>Gogoaren baitan</h2><pre></pre></div>
+<div class="song" id="jirai"><h2>J'irai où tu iras</h2><pre></pre></div>
+<div class="song" id="ca"><h2>Ça (c’est vraiment toi)</h2><pre></pre></div>
 
 </body>
 </html>
-
