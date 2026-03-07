@@ -1,204 +1,124 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-<meta charset="UTF-8" />
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Paroles - Les Tapas Nocturnes</title>
 
+<link rel="stylesheet" href="style.css">
+
 <style>
-:root {
-  --rouge: #D41414;
-  --vert: #3E7F2B;
-  --beige: #F5E6C8;
-  --brun: #8B4513;
-  --noir: #000000;
-  --fond-clair: #faf7f0;
+
+/* zone chansons */
+
+.chanson{
+background:white;
+border-radius:10px;
+margin:15px;
+padding:15px;
+max-width:600px;
+margin-left:auto;
+margin-right:auto;
+cursor:pointer;
+box-shadow:0px 4px 8px rgba(0,0,0,0.2);
 }
 
-* { margin:0; padding:0; box-sizing:border-box; }
+/* titre chanson */
 
-body {
-  font-family: Arial, sans-serif;
-  background-color: var(--fond-clair);
-  min-height: 100vh;
-  position: relative;
-  color: #111;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
+.titre{
+font-size:20px;
+font-weight:bold;
 }
 
-body::before {
-  content: "";
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 80vmin;
-  height: 80vmin;
-  background: url('logo.png') no-repeat center/contain;
-  opacity: 0.28;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  z-index: 0;
+/* paroles */
+
+.paroles{
+display:none;
+margin-top:10px;
+white-space:pre-line;
 }
 
-header {
-  position: relative;
-  z-index: 1;
-  height: 180px;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  padding-top: 20px;
-}
-
-.nav-buttons {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.btn {
-  padding: 12px 36px;
-  border-radius: 60% 40% 60% 40% / 50% 60% 50% 60%;
-  border: 3px solid var(--noir);
-  font-size: 16px;
-  font-weight: 700;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  transition: transform 0.2s ease, filter 0.2s ease;
-  box-shadow: inset 0 3px 6px rgba(255,255,255,0.3), 0 4px 8px rgba(0,0,0,0.25);
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
-}
-
-.btn-rouge { background-color: var(--rouge); color: white; }
-.btn-brun { background-color: var(--brun); color: white; }
-.btn-beige { background-color: var(--beige); color: var(--noir); }
-.btn-vert { background-color: var(--vert); color: white; }
-.btn-agenda { background-color: #FFA500; color: white; }
-
-.btn-rouge::before { content: "🔥"; }
-.btn-brun::before { content: "🎵"; }
-.btn-beige::before { content: "📝"; }
-.btn-vert::before { content: "📞"; }
-.btn-agenda::before { content: "📅"; }
-
-.btn:hover {
-  transform: translateY(-4px) scale(1.05);
-  filter: brightness(1.15);
-}
-
-.song-list {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 16px;
-  margin: 30px 0;
-}
-
-.lyrics {
-  position: relative;
-  z-index: 1;
-  margin: 40px auto;
-  max-width: 800px;
-  background: white;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
-  display: none;
-  white-space: pre-line;
-}
-
-.return-btn {
-  margin-top: 20px;
-  background-color: #3E7F2B;
-  color: white;
-}
 </style>
+
+<script>
+
+function toggleParoles(id){
+
+var texte = document.getElementById(id);
+
+if(texte.style.display === "block"){
+texte.style.display = "none";
+}else{
+texte.style.display = "block";
+}
+
+}
+
+</script>
+
 </head>
 
 <body>
 
-<header>
-  <nav class="nav-buttons">
-    <button class="btn btn-rouge" onclick="window.location.href='index.html'">Accueil</button>
-    <button class="btn btn-brun" onclick="window.location.href='repertoire.html'">Répertoire</button>
-    <button class="btn btn-beige" onclick="window.location.href='paroles.html'">Paroles</button>
-    <button class="btn btn-agenda" onclick="window.location.href='concerts.html'">Agenda</button>
-    <button class="btn btn-vert" onclick="window.location.href='contact.html'">Contact</button>
-  </nav>
-</header>
+<img src="logo.png" class="logo">
 
-<div class="song-list">
-  <!-- Tous les boutons des chansons -->
-  <button class="btn btn-brun" onclick="showLyrics('s1')">Et moi, et moi, et moi</button>
-  <button class="btn btn-brun" onclick="showLyrics('s2')">La fille du Père Noël</button>
-  <button class="btn btn-brun" onclick="showLyrics('s3')">Sarbacane</button>
-  <button class="btn btn-brun" onclick="showLyrics('s4')">L'amour à la machine</button>
-  <button class="btn btn-brun" onclick="showLyrics('s5')">La nuit je mens</button>
-  <button class="btn btn-brun" onclick="showLyrics('s6')">Laisse béton</button>
-  <button class="btn btn-brun" onclick="showLyrics('s7')">Jardin d’hiver</button>
-  <button class="btn btn-brun" onclick="showLyrics('s8')">Vieille canaille</button>
-  <button class="btn btn-brun" onclick="showLyrics('s9')">Les Élucubrations d’Antoine</button>
-  <button class="btn btn-brun" onclick="showLyrics('s10')">Encore une journée d’foutue</button>
-  <button class="btn btn-brun" onclick="showLyrics('s11')">Les Ailes d’un ange</button>
-  <button class="btn btn-brun" onclick="showLyrics('s12')">J'ai dix ans</button>
-  <button class="btn btn-brun" onclick="showLyrics('s13')">Ces idées là</button>
-  <button class="btn btn-brun" onclick="showLyrics('s14')">Toute la musique que j'aime</button>
-  <button class="btn btn-brun" onclick="showLyrics('s15')">Gabrielle</button>
-  <button class="btn btn-brun" onclick="showLyrics('s16')">Vertige de l’amour</button>
-  <button class="btn btn-brun" onclick="showLyrics('s17')">New York avec toi</button>
-  <button class="btn btn-brun" onclick="showLyrics('s18')">La Bombe humaine</button>
-  <button class="btn btn-brun" onclick="showLyrics('s19')">Antisocial</button>
-  <button class="btn btn-brun" onclick="showLyrics('s20')">Aitormena</button>
-  <button class="btn btn-brun" onclick="showLyrics('s21')">Lau teilatu</button>
-  <button class="btn btn-brun" onclick="showLyrics('s22')">Hegoak</button>
-  <button class="btn btn-brun" onclick="showLyrics('s23')">Un autre monde</button>
-  <button class="btn btn-brun" onclick="showLyrics('s24')">Les cactus</button>
-  <button class="btn btn-brun" onclick="showLyrics('s25')">Gogoaren baitan</button>
-  <button class="btn btn-brun" onclick="showLyrics('s26')">J'irai où tu iras</button>
-  <button class="btn btn-brun" onclick="showLyrics('s27')">Ça c'est vraiment toi</button>
+<h1>Paroles</h1>
+
+<div class="chanson" onclick="toggleParoles('c1')">
+
+<div class="titre">🎵 Bella Ciao</div>
+
+<div id="c1" class="paroles">
+
+Una mattina mi son svegliato  
+O bella ciao bella ciao bella ciao ciao ciao  
+
+Una mattina mi son svegliato  
+E ho trovato l'invasor
+
 </div>
 
-<!-- Paroles de chansons -->
-<div id="s1" class="lyrics">
-Sept cent millions de chinois
-Et moi, et moi, et moi
-Avec ma vie, mon petit chez-moi
-...
-<button class="btn return-btn" onclick="returnToSongs()">Retour aux chansons</button>
 </div>
-<div id="s2" class="lyrics">
-Paroles de "La fille du Père Noël" ici...
-<button class="btn return-btn" onclick="returnToSongs()">Retour aux chansons</button>
-</div>
-<div id="s3" class="lyrics">
-Paroles de "Sarbacane" ici...
-<button class="btn return-btn" onclick="returnToSongs()">Retour aux chansons</button>
-</div>
-<!-- Ajoute les autres paroles avec le même bouton retour pour s4 à s27 -->
 
-<script>
-function showLyrics(id) {
-  // Masquer tous les boutons de chansons
-  document.querySelectorAll('.song-list .btn').forEach(btn => btn.style.display = 'none');
-  // Masquer toutes les paroles
-  document.querySelectorAll('.lyrics').forEach(el => el.style.display = 'none');
-  // Afficher la chanson sélectionnée
-  document.getElementById(id).style.display = 'block';
-}
 
-function returnToSongs() {
-  // Masquer toutes les paroles
-  document.querySelectorAll('.lyrics').forEach(el => el.style.display = 'none');
-  // Réafficher tous les boutons de chansons
-  document.querySelectorAll('.song-list .btn').forEach(btn => btn.style.display = 'flex');
-}
-</script>
+
+<div class="chanson" onclick="toggleParoles('c2')">
+
+<div class="titre">🎵 Bambino</div>
+
+<div id="c2" class="paroles">
+
+Bambino Bambino  
+Ne pleure pas Bambino  
+
+Ta maman est partie  
+Mais elle reviendra
+
+</div>
+
+</div>
+
+
+
+<div class="chanson" onclick="toggleParoles('c3')">
+
+<div class="titre">🎵 La Bamba</div>
+
+<div id="c3" class="paroles">
+
+Para bailar la Bamba  
+Para bailar la Bamba  
+Se necesita una poca de gracia
+
+</div>
+
+</div>
+
+
 
 </body>
+
 </html>
+
