@@ -1,8 +1,29 @@
 [
-  {
-    "id": "song1",
-    "title": "Et moi, et moi, et moi",
-    "author": "Jacques Dutronc — 1966",
-    "lyrics": "Et moi, et moi, et moi…\n(Les paroles complètes ici)"
-  }
+  {"id":"song1","title":"Et moi, et moi, et moi","lyrics":"Paroles de Et moi, et moi, et moi…"},
+  {"id":"song2","title":"La fille du Père Noël","lyrics":"Paroles de La fille du Père Noël…"},
+  {"id":"song3","title":"Sarbacane","lyrics":"Paroles de Sarbacane…"},
+  {"id":"song4","title":"L'amour à la machine","lyrics":"Paroles de L'amour à la machine…"},
+  {"id":"song5","title":"La nuit je mens","lyrics":"Paroles de La nuit je mens…"},
+  {"id":"song6","title":"Laisse béton","lyrics":"Paroles de Laisse béton…"},
+  {"id":"song7","title":"Jardin d’hiver","lyrics":"Paroles de Jardin d’hiver…"},
+  {"id":"song8","title":"Vieille canaille","lyrics":"Paroles de Vieille canaille…"},
+  {"id":"song9","title":"Les Élucubrations d’Antoine","lyrics":"Paroles de Les Élucubrations d’Antoine…"},
+  {"id":"song10","title":"Encore une journée d’foutue","lyrics":"Paroles de Encore une journée d’foutue…"},
+  {"id":"song11","title":"Les Ailes d’un ange","lyrics":"Paroles de Les Ailes d’un ange…"},
+  {"id":"song12","title":"J'ai dix ans","lyrics":"Paroles de J'ai dix ans…"},
+  {"id":"song13","title":"Ces idées là","lyrics":"Paroles de Ces idées là…"},
+  {"id":"song14","title":"Toute la musique que j'aime","lyrics":"Paroles de Toute la musique que j'aime…"},
+  {"id":"song15","title":"Gabrielle","lyrics":"Paroles de Gabrielle…"},
+  {"id":"song16","title":"Vertige de l’amour","lyrics":"Paroles de Vertige de l’amour…"},
+  {"id":"song17","title":"New York avec toi","lyrics":"Paroles de New York avec toi…"},
+  {"id":"song18","title":"La Bombe humaine","lyrics":"Paroles de La Bombe humaine…"},
+  {"id":"song19","title":"Antisocial","lyrics":"Paroles de Antisocial…"},
+  {"id":"song20","title":"Aitormena","lyrics":"Paroles de Aitormena…"},
+  {"id":"song21","title":"Lau teilatu","lyrics":"Paroles de Lau teilatu…"},
+  {"id":"song22","title":"Hegoaj","lyrics":"Paroles de Hegoaj…"},
+  {"id":"song23","title":"Un autre monde","lyrics":"Paroles de Un autre monde…"},
+  {"id":"song24","title":"Les cactus","lyrics":"Paroles de Les cactus…"},
+  {"id":"song25","title":"Gogoaren baitan","lyrics":"Paroles de Gogoaren baitan…"},
+  {"id":"song26","title":"J'irai où tu iras","lyrics":"Paroles de J'irai où tu iras…"},
+  {"id":"song27","title":"Ca c'est vraiment toi","lyrics":"Paroles de Ca c'est vraiment toi…"}
 ]
