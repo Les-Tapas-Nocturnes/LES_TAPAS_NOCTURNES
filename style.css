@@ -1,90 +1,74 @@
-/* STYLE GENERAL */
-
 body{
-background:#d9d6cf;
-font-family: Arial, Helvetica, sans-serif;
-text-align:center;
-margin:0;
-padding:0;
+    background:#d9d6cf;
+    font-family:Arial, Helvetica, sans-serif;
+    text-align:center;
+    margin:0;
+    padding:0;
 }
 
 /* LOGO */
-
 .logo{
-margin-top:20px;
-width:80%;
-max-width:380px;
+    margin-top:20px;
+    width:80%;
+    max-width:380px;
 }
 
-/* MENU */
-
+/* MENU GENERAL */
 .menu{
-margin-top:15px;
+    margin-top:20px;
 }
 
-/* BOUTONS */
-
+/* BOUTONS COMMUNS */
 .menu-button{
-display:block;
-width:300px;
-margin:14px auto;
-padding:14px;
-font-size:22px;
-font-weight:bold;
-color:white;
-text-decoration:none;
-border-radius:50px;
-border:4px solid black;
-box-shadow:0px 6px 10px rgba(0,0,0,0.4);
+    display:block;
+    width:300px;
+    margin:14px auto;
+    padding:16px;
+    font-size:22px;
+    font-weight:bold;
+    color:white;
+    text-decoration:none;
+    border-radius:50px;
+    border:4px solid black;
+    box-shadow:0px 6px 10px rgba(0,0,0,0.4);
 }
 
-/* COULEURS */
-
+/* COULEURS DES BOUTONS */
 .accueil{
-background:linear-gradient(#ff3b3b,#c40000);
+    background:linear-gradient(#ff3b3b,#c40000);
 }
 
 .repertoire{
-background:linear-gradient(#b87333,#7a3d00);
+    background:linear-gradient(#b87333,#7a3d00);
 }
 
 .paroles{
-background:#e8dcc0;
-color:black;
+    background:#e8dcc0;
+    color:black;
 }
 
 .agenda{
-background:linear-gradient(#ffbf3f,#ff9500);
+    background:linear-gradient(#ffbf3f,#ff9500);
 }
 
 .contact{
-background:linear-gradient(#4caf50,#2e7d32);
+    background:linear-gradient(#4caf50,#2e7d32);
 }
 
-/* -------- VERSION TELEPHONE -------- */
-
+/* VERSION MOBILE */
 @media screen and (max-width:600px){
 
-.menu-button{
-width:200px;
-padding:8px;
-font-size:16px;
-margin:6px auto;
+    .menu-button{
+        width:85%;
+        max-width:220px;
+        padding:10px;
+        font-size:18px;
+        margin:8px auto;
+    }
+
+    .logo{
+        width:85%;
+        max-width:260px;
+    }
+
 }
-
-.logo{
-width:85%;
-max-width:260px;
-}
-
-}
-
-
-
-
-
-
-
-
-
-
