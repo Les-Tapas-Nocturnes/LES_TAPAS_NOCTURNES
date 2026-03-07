@@ -10,7 +10,7 @@
     display: block;
     width: 180px;
     max-width: 85%;
-    margin: 20px auto;
+    margin: 20px auto 10px auto;
     padding: 14px;
     font-size: 18px;
     font-weight: bold;
@@ -35,6 +35,16 @@
     text-align: center;
   }
 
+  h1.page-title {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 28px;
+    color: #4a4a4a;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
   @media screen and (max-width: 600px) {
     .btn-retour {
       width: 85%;
@@ -47,6 +57,11 @@
       padding: 15px 15px;
       max-width: 100%;
     }
+
+    h1.page-title {
+      font-size: 24px;
+      margin-top: 15px;
+    }
   }
 </style>
 </head>
@@ -55,12 +70,14 @@
 <!-- LOGO -->
 <img src="logo.png" class="logo" alt="Les Tapas Nocturnes" />
 
+<!-- TITRE PAGE -->
+<h1 class="page-title">Contact</h1>
+
 <!-- BOUTON RETOUR -->
 <a href="index.html" class="btn-retour">← Retour à l’accueil</a>
 
 <!-- CONTENU CONTACT -->
 <div class="contact-container">
-  <h2>Contact</h2>
   <p>Pour nous joindre, écrivez-nous à : <a href="mailto:contact@lestapasnocturnes.com">contact@lestapasnocturnes.com</a></p>
 </div>
 
