@@ -110,6 +110,17 @@ form button:hover {
   color: black;
   transform: scale(1.05);
 }
+@media screen and (max-width: 600px) {
+
+button{
+display:block;
+width:90%;
+margin:10px auto;
+font-size:18px;
+}
+
+}
+
 
 
 
