@@ -1,124 +1,97 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Paroles - Les Tapas Nocturnes</title>
-
 <link rel="stylesheet" href="style.css">
 
 <style>
-
-/* zone chansons */
-
+/* Zone chansons */
 .chanson{
-background:white;
-border-radius:10px;
-margin:15px;
-padding:15px;
-max-width:600px;
-margin-left:auto;
-margin-right:auto;
-cursor:pointer;
-box-shadow:0px 4px 8px rgba(0,0,0,0.2);
+    background:white;
+    border-radius:10px;
+    margin:15px;
+    padding:15px;
+    max-width:600px;
+    margin-left:auto;
+    margin-right:auto;
+    cursor:pointer;
+    box-shadow:0px 4px 8px rgba(0,0,0,0.2);
 }
 
-/* titre chanson */
-
+/* Titre chanson */
 .titre{
-font-size:20px;
-font-weight:bold;
+    font-size:20px;
+    font-weight:bold;
 }
 
-/* paroles */
-
+/* Paroles cachées au départ */
 .paroles{
-display:none;
-margin-top:10px;
-white-space:pre-line;
+    display:none;
+    margin-top:10px;
+    white-space:pre-line;
 }
-
 </style>
 
 <script>
-
 function toggleParoles(id){
-
-var texte = document.getElementById(id);
-
-if(texte.style.display === "block"){
-texte.style.display = "none";
-}else{
-texte.style.display = "block";
+    var texte = document.getElementById(id);
+    if(texte.style.display === "block"){
+        texte.style.display = "none";
+    } else {
+        texte.style.display = "block";
+    }
 }
-
-}
-
 </script>
 
 </head>
-
 <body>
 
-<img src="logo.png" class="logo">
+<img src="logo.png" class="logo" alt="Les Tapas Nocturnes">
+
+<!-- MENU COMMUN -->
+<div class="menu">
+    <a href="index.html" class="menu-button accueil">ACCUEIL</a>
+    <a href="repertoire.html" class="menu-button repertoire">RÉPERTOIRE</a>
+    <a href="paroles.html" class="menu-button paroles">PAROLES</a>
+    <a href="agenda.html" class="menu-button agenda">AGENDA</a>
+    <a href="contact.html" class="menu-button contact">CONTACT</a>
+</div>
 
 <h1>Paroles</h1>
 
+<!-- CHANSONS -->
 <div class="chanson" onclick="toggleParoles('c1')">
-
-<div class="titre">🎵 Bella Ciao</div>
-
-<div id="c1" class="paroles">
-
+    <div class="titre">🎵 Bella Ciao</div>
+    <div id="c1" class="paroles">
 Una mattina mi son svegliato  
 O bella ciao bella ciao bella ciao ciao ciao  
 
 Una mattina mi son svegliato  
 E ho trovato l'invasor
-
+    </div>
 </div>
-
-</div>
-
-
 
 <div class="chanson" onclick="toggleParoles('c2')">
-
-<div class="titre">🎵 Bambino</div>
-
-<div id="c2" class="paroles">
-
+    <div class="titre">🎵 Bambino</div>
+    <div id="c2" class="paroles">
 Bambino Bambino  
 Ne pleure pas Bambino  
 
 Ta maman est partie  
 Mais elle reviendra
-
+    </div>
 </div>
-
-</div>
-
-
 
 <div class="chanson" onclick="toggleParoles('c3')">
-
-<div class="titre">🎵 La Bamba</div>
-
-<div id="c3" class="paroles">
-
+    <div class="titre">🎵 La Bamba</div>
+    <div id="c3" class="paroles">
 Para bailar la Bamba  
 Para bailar la Bamba  
 Se necesita una poca de gracia
-
+    </div>
 </div>
-
-</div>
-
-
 
 </body>
-
 </html>
-
