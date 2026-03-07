@@ -13,22 +13,21 @@ padding:0;
 .logo{
 margin-top:20px;
 width:80%;
-max-width:400px;
+max-width:380px;
 }
 
 /* MENU */
 
 .menu{
-margin-top:20px;
+margin-top:15px;
 }
 
 /* BOUTONS */
 
 .menu-button{
 display:block;
-width:90%;
-max-width:320px;
-margin:12px auto;
+width:300px;
+margin:14px auto;
 padding:14px;
 font-size:22px;
 font-weight:bold;
@@ -39,7 +38,7 @@ border:4px solid black;
 box-shadow:0px 6px 10px rgba(0,0,0,0.4);
 }
 
-/* COULEURS DES BOUTONS */
+/* COULEURS */
 
 .accueil{
 background:linear-gradient(#ff3b3b,#c40000);
@@ -62,21 +61,20 @@ background:linear-gradient(#ffbf3f,#ff9500);
 background:linear-gradient(#4caf50,#2e7d32);
 }
 
-/* VERSION TELEPHONE */
+/* -------- VERSION TELEPHONE -------- */
 
 @media screen and (max-width:600px){
 
 .menu-button{
-width:85%;
-max-width:240px;
-padding:10px;
-font-size:18px;
-margin:8px auto;
+width:200px;
+padding:8px;
+font-size:16px;
+margin:6px auto;
 }
 
 .logo{
-width:90%;
-max-width:300px;
+width:85%;
+max-width:260px;
 }
 
 }
