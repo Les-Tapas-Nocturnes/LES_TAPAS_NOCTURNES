@@ -6,16 +6,43 @@
 <title>Paroles - Les Tapas Nocturnes</title>
 <link rel="stylesheet" href="style.css" />
 <style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #fafafa;
+    color: #222;
+  }
+
+  /* Logo */
+  .logo {
+    display: block;
+    max-width: 200px;
+    margin: 20px auto;
+  }
+
+  /* Titre page */
+  h1.page-title {
+    font-weight: bold;
+    font-size: 28px;
+    color: white;
+    text-align: center;
+    background: #7a3d00;
+    padding: 10px 0;
+    border-radius: 10px;
+    margin: 0 10px 20px 10px;
+  }
+
   /* Bouton retour */
   .btn-retour {
     display: block;
     width: 180px;
     max-width: 85%;
-    margin: 20px auto 10px auto;
+    margin: 10px auto 20px auto;
     padding: 14px;
     font-size: 18px;
     font-weight: bold;
-    color: black;
+    color: white;
     background: #e8dcc0;
     border-radius: 50px;
     border: 4px solid black;
@@ -27,49 +54,44 @@
     background: #d2c9a9;
   }
 
-  /* Titre page */
-  h1.page-title {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* Boutons chansons */
+  .song-button {
+    display: block;
+    width: 90%;
+    max-width: 500px;
+    margin: 8px auto;
+    padding: 12px;
+    font-size: 16px;
     font-weight: bold;
-    font-size: 28px;
-    color: #4a4a4a;
+    color: black;
+    background: #f0e2c0;
+    border-radius: 50px;
+    border: 3px solid #7a3d00;
     text-align: center;
-    margin-top: 20px;
-    margin-bottom: 10px;
+    cursor: pointer;
+  }
+  .song-button:hover {
+    background: #e0d0a0;
   }
 
   /* Conteneur paroles */
-  .lyrics-container {
-    background: #fefefe;
+  .lyrics {
+    display: none;
     max-width: 600px;
-    margin: 0 auto 40px auto;
-    padding: 20px 25px;
-    border-radius: 15px;
+    margin: 0 auto 20px auto;
+    padding: 15px 20px;
+    background: #fff;
+    border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #222;
-    text-align: left;
-    white-space: pre-wrap; /* conserve retours à la ligne */
+    white-space: pre-wrap;
+    line-height: 1.5;
   }
 
-  /* Responsive mobile */
   @media screen and (max-width: 600px) {
-    .btn-retour {
-      width: 85%;
-      font-size: 16px;
-      padding: 12px;
-    }
-
-    .lyrics-container {
-      margin: 0 10px 30px 10px;
-      padding: 15px 15px;
-      max-width: 100%;
-    }
-
-    h1.page-title {
-      font-size: 24px;
-      margin-top: 15px;
-    }
+    h1.page-title { font-size: 24px; }
+    .btn-retour { font-size: 16px; padding: 12px; }
+    .song-button { font-size: 14px; padding: 10px; }
+    .lyrics { padding: 12px; margin: 0 10px 15px 10px; }
   }
 </style>
 </head>
@@ -84,17 +106,49 @@
 <!-- BOUTON RETOUR -->
 <a href="index.html" class="btn-retour">← Retour à l’accueil</a>
 
-<!-- CONTENU PAROLES -->
-<div class="lyrics-container">
-  <!-- Remplace ce texte par les paroles que tu veux afficher -->
-  <h2>Nom de la chanson</h2>
-  <p>
-    Ici les paroles de la chanson, avec des retours à la ligne préservés.<br/>
-    Par exemple :<br/>
-    Bonjour, bonjour, comment ça va ?<br/>
-    Moi je chante sous la pluie.<br/>
-  </p>
+<!-- BOUTONS CHANSONS ET PAROLES -->
+<div class="songs-container">
+
+  <button class="song-button" onclick="toggleLyrics('song1')">Et moi, et moi, et moi</button>
+  <div id="song1" class="lyrics">
+Jacques Dutronc — 1966
+Et moi, et moi, et moi…
+(Les paroles complètes ici)
+  </div>
+
+  <button class="song-button" onclick="toggleLyrics('song2')">La fille du Père Noël</button>
+  <div id="song2" class="lyrics">
+Jacques Dutronc — 1966
+Paroles de La fille du Père Noël…
+  </div>
+
+  <button class="song-button" onclick="toggleLyrics('song3')">Sarbacane</button>
+  <div id="song3" class="lyrics">
+Francis Cabrel — 1989
+Paroles de Sarbacane…
+  </div>
+
+  <button class="song-button" onclick="toggleLyrics('song4')">L'amour à la machine</button>
+  <div id="song4" class="lyrics">
+Alain Souchon — 1993
+Paroles de L'amour à la machine…
+  </div>
+
+  <button class="song-button" onclick="toggleLyrics('song5')">La nuit je mens</button>
+  <div id="song5" class="lyrics">
+Alain Bashung — 1998
+Paroles de La nuit je mens…
+  </div>
+
+  <!-- Continue le même format pour toutes tes chansons -->
 </div>
+
+<script>
+function toggleLyrics(id){
+  const el = document.getElementById(id);
+  el.style.display = el.style.display === 'none' ? 'block' : 'none';
+}
+</script>
 
 </body>
 </html>
