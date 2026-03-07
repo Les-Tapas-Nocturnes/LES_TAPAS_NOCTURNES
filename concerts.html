@@ -2,28 +2,67 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Agenda - Les Tapas Nocturnes</title>
+<link rel="stylesheet" href="style.css" />
 <style>
-/* Même CSS que index.html (identique aux autres pages) */
-/* ... copié exactement comme ci-dessus ... */
+  .btn-retour {
+    display: block;
+    width: 180px;
+    max-width: 85%;
+    margin: 20px auto;
+    padding: 14px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(#ffbf3f,#ff9500);
+    border-radius: 50px;
+    border: 4px solid black;
+    box-shadow: 0px 6px 10px rgba(0,0,0,0.4);
+    text-align: center;
+    text-decoration: none;
+  }
+  .btn-retour:hover {
+    background: linear-gradient(#ff9500,#ffbf3f);
+  }
+
+  .agenda-container {
+    max-width: 600px;
+    margin: 20px auto 40px auto;
+    padding: 20px 25px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #222;
+    text-align: center;
+  }
+
+  @media screen and (max-width: 600px) {
+    .btn-retour {
+      width: 85%;
+      font-size: 16px;
+      padding: 12px;
+    }
+
+    .agenda-container {
+      margin: 15px 10px 30px 10px;
+      padding: 15px 15px;
+      max-width: 100%;
+    }
+  }
 </style>
 </head>
 <body>
-<header>
-<nav class="nav-buttons">
-<button class="btn btn-rouge" onclick="window.location.href='index.html'">Accueil</button>
-<button class="btn btn-brun" onclick="window.location.href='repertoire.html'">Répertoire</button>
-<button class="btn btn-beige" onclick="window.location.href='paroles.html'">Paroles</button>
-<button class="btn btn-agenda" onclick="window.location.href='concerts.html'">Agenda</button>
-<button class="btn btn-vert" onclick="window.location.href='contact.html'">Contact</button>
-</nav>
-</header>
-<main>
-  <!-- Contenu spécifique à Agenda / Concerts à ajouter ici -->
-</main>
+
+<!-- LOGO -->
+<img src="logo.png" class="logo" alt="Les Tapas Nocturnes" />
+
+<!-- BOUTON RETOUR -->
+<a href="index.html" class="btn-retour">← Retour à l’accueil</a>
+
+<!-- CONTENU AGENDA -->
+<div class="agenda-container">
+  <h2>Agenda</h2>
+  <p>Aucun événement prévu pour l’instant.</p>
+</div>
+
 </body>
 </html>
-
-
-
