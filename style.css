@@ -13,12 +13,12 @@ body{
     max-width:380px;
 }
 
-/* MENU GENERAL */
+/* MENU COMMUN */
 .menu{
     margin-top:20px;
 }
 
-/* BOUTONS COMMUNS */
+/* BOUTONS */
 .menu-button{
     display:block;
     width:300px;
@@ -33,7 +33,7 @@ body{
     box-shadow:0px 6px 10px rgba(0,0,0,0.4);
 }
 
-/* COULEURS DES BOUTONS */
+/* COULEURS */
 .accueil{
     background:linear-gradient(#ff3b3b,#c40000);
 }
@@ -57,7 +57,6 @@ body{
 
 /* VERSION MOBILE */
 @media screen and (max-width:600px){
-
     .menu-button{
         width:85%;
         max-width:220px;
@@ -70,5 +69,5 @@ body{
         width:85%;
         max-width:260px;
     }
-
 }
+
