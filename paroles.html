@@ -6,27 +6,6 @@
 <title>Paroles - Les Tapas Nocturnes</title>
 <link rel="stylesheet" href="style.css">
 <style>
-  body {
-    background: #d9d6cf;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-  }
-
-  /* Logo en filigrane en haut */
-  .logo-bg {
-    display: block;
-    width: 120px;
-    margin: 10px auto 0;
-    opacity: 0.25;
-  }
-
-  /* Menu compact */
-  .menu {
-    margin: 6px 0 16px;
-  }
-
   .song-button {
     display: block;
     width: 300px;
@@ -46,13 +25,12 @@
     background: linear-gradient(#b87333, #7a3d00);
     color: white;
   }
-
   .lyrics-box {
     display: none;
     width: 90%;
     max-width: 500px;
     margin: 4px auto 16px;
-    background: white;
+    background: rgba(255,255,255,0.88);
     border: 4px solid black;
     border-radius: 20px;
     box-shadow: 0px 6px 10px rgba(0,0,0,0.3);
@@ -72,24 +50,12 @@
     color: #222;
     margin: 0;
   }
-
   @media screen and (max-width: 600px) {
-    .song-button {
-      width: 85%;
-      max-width: 220px;
-      padding: 10px;
-      font-size: 16px;
-      margin: 6px auto;
-    }
-    .logo-bg {
-      width: 80px;
-    }
+    .song-button { width: 85%; max-width: 220px; padding: 10px; font-size: 16px; margin: 6px auto; }
   }
 </style>
 </head>
 <body>
-
-<img src="logo.png" class="logo-bg" alt="Les Tapas Nocturnes">
 
 <div class="menu">
   <a href="index.html" class="menu-button accueil">ACCUEIL</a>
@@ -100,9 +66,7 @@
 </div>
 
 <button class="song-button" onclick="toggle('etmoi', this)">Et moi et moi et moi</button>
-<div id="etmoi" class="lyrics-box">
-  <h2>Et moi et moi et moi</h2>
-  <pre>Sept cent millions de chinois
+<div id="etmoi" class="lyrics-box"><h2>Et moi et moi et moi</h2><pre>Sept cent millions de chinois
 Et moi, et moi, et moi
 Avec ma vie, mon petit chez-moi
 Mon mal de tête, mon point au foie
@@ -163,13 +127,10 @@ Et moi, et moi, et moi
 Comme un con de parisien
 J'attends mon chèque de fin de mois
 J'y pense et puis j'oublie
-C'est la vie, c'est la vie</pre>
-</div>
+C'est la vie, c'est la vie</pre></div>
 
 <button class="song-button" onclick="toggle('pereNoel', this)">La fille du Père Noël</button>
-<div id="pereNoel" class="lyrics-box">
-  <h2>La fille du Père Noël</h2>
-  <pre>Je l'ai trouvée au petit matin
+<div id="pereNoel" class="lyrics-box"><h2>La fille du Père Noël</h2><pre>Je l'ai trouvée au petit matin
 Toute nue dans mes grands souliers
 Placés devant la cheminée
 Pas besoin de vous faire un dessin
@@ -188,28 +149,15 @@ J'étais le fils du Père Fouettard
 Elle s'appelait Marie Noël
 Je m'appelais Jean Balthazar
 
-Je prends la fille dans mes bras
-Elle me dit mais non Balthazar
-Ne fais donc pas le fier à bras
-Je suis tombée là par hasard
-
-C'était la fille du Père Noël
-J'étais le fils du Père Fouettard
-Elle s'appelait Marie Noël
-Je m'appelais Jean Balthazar
-
 Descendue chez moi par erreur
 Elle était là dans mes souliers
 Et comme je ne pouvais prendre son cœur
 Je l'ai remise sur le palier
 
-Bye bye au hasard Balthazar</pre>
-</div>
+Bye bye au hasard Balthazar</pre></div>
 
 <button class="song-button" onclick="toggle('sarbacane', this)">Sarbacane</button>
-<div id="sarbacane" class="lyrics-box">
-  <h2>Sarbacane</h2>
-  <pre>On croyait savoir tout sur l'amour, Depuis toujours
+<div id="sarbacane" class="lyrics-box"><h2>Sarbacane</h2><pre>On croyait savoir tout sur l'amour, Depuis toujours
 Nos corps par cœur et nos cœurs au chaud, Dans le velours
 Et puis te voilà, bout de femme, Comme soufflée d'une sarbacane
 Le ciel a même un autre éclat, Depuis toi
@@ -225,29 +173,21 @@ Finis les matins paupières en panne
 Lourdes comme les bouteilles de butane
 J'ai presque plus ma tête à moi, Depuis toi
 
-Pas besoin de faire de trop longs discours
-Ça change tout dedans, ça change tout autour
 Pourvu que jamais tu ne t'éloignes
 Plus loin qu'un jet de sarbacane
 J'ai presque plus ma tête à moi, Depuis toi
 
 Alors te voilà, bout de femme, Comme soufflée d'une sarbacane
-Le ciel s'est ouvert par endroits, Depuis toi, Oh ! Depuis toi</pre>
-</div>
+Le ciel s'est ouvert par endroits, Depuis toi, Oh ! Depuis toi</pre></div>
 
 <button class="song-button" onclick="toggle('machine', this)">L'amour à la machine</button>
-<div id="machine" class="lyrics-box">
-  <h2>L'amour à la machine</h2>
-  <pre>Passez notre amour à la machine, Faites le bouillir
+<div id="machine" class="lyrics-box"><h2>L'amour à la machine</h2><pre>Passez notre amour à la machine, Faites le bouillir
 Pour voir si les couleurs d'origine, Peuvent revenir
 Est-ce qu'on peut ravoir à l'eau de Javel?, des sentiments
 La blancheur qu'on croyait éternelle, Avant
 
 Pour retrouver le rose initial, De ta joue, devenue pâle
 Le bleu de nos baisers du début, Tant d'azur, perdu
-
-Passez notre amour à la machine, Faites le bouillir
-Pour voir si les couleurs d'origine, Peuvent revenir
 
 Matisse, l'amour, c'est bleu, difficile
 Les caresses, rouges, fragiles
@@ -259,20 +199,15 @@ Le rouge pour faire tomber la misère
 De nos gentils petits grands-pères
 Noires, les mains dans les boucles blondes
 Tout autour du monde
-
-Allez, à la machine!</pre>
-</div>
+Allez, à la machine!</pre></div>
 
 <button class="song-button" onclick="toggle('nuit', this)">La nuit je mens</button>
-<div id="nuit" class="lyrics-box">
-  <h2>La nuit je mens</h2>
-  <pre>On m'a vu dans le Vercors
+<div id="nuit" class="lyrics-box"><h2>La nuit je mens</h2><pre>On m'a vu dans le Vercors
 Sauter à l'élastique
 Voleur d'amphores
 Au fond des criques
 J'ai fait la cour à des murennes
-J'ai fait l'amour
-J'ai fait le mort
+J'ai fait l'amour, j'ai fait le mort
 T'étais pas née
 
 La nuit je mens
@@ -294,22 +229,15 @@ Je prends des trains à travers la plaine
 La nuit je mens
 Effrontément
 J'ai dans les bottes des montagnes de questions
-Où subsiste encore ton écho</pre>
-</div>
+Où subsiste encore ton écho</pre></div>
 
 <button class="song-button" onclick="toggle('laisse', this)">Laisse béton</button>
-<div id="laisse" class="lyrics-box">
-  <h2>Laisse béton</h2>
-  <pre>J'étais tranquille, j'étais peinard
+<div id="laisse" class="lyrics-box"><h2>Laisse béton</h2><pre>J'étais tranquille, j'étais peinard
 Accoudé au flipper
 Le type est entré dans le bar
 A commandé un jambon beurre
-Puis, il s'est approché de moi
-Puis il m'a regardé comme ça
 T'as des bottes, mon pote, Elles me bottent
 Viens faire un tour dans l'terrain vague
-J'vais t'apprendre un jeu rigolo
-A grands coups de chaînes de vélo
 J'te fais tes bottes à la baston
 Moi je lui dis "laisse béton"
 Il m'a filé une beigne
@@ -317,13 +245,8 @@ Je lui ai filé une torgnole
 Il m'a filé une châtaigne
 Je lui ai filé mes grolles
 
-J'étais tranquille, j'étais pénard
-Accoudé au comptoir
-Le type est entré dans le bar
-A commandé un café noir
 T'as un blouson, mecton, Il est pas bidon
 Viens faire un tour dans la ruelle
-Je te montrerai mon Opinel
 Je te chouraverai ton blouson
 Moi je lui dis "laisse béton"
 Il m'a filé une beigne
@@ -334,13 +257,10 @@ Je lui ai filé mon blouson
 La morale de c'te pauvre histoire
 C'est quand t'es tranquille et peinard
 Faut pas trop traîner dans les bars
-À moins d'être fringuer en costard</pre>
-</div>
+À moins d'être fringuer en costard</pre></div>
 
 <button class="song-button" onclick="toggle('jardin', this)">Jardin d'hiver</button>
-<div id="jardin" class="lyrics-box">
-  <h2>Jardin d'hiver</h2>
-  <pre>Je voudrais du soleil vert
+<div id="jardin" class="lyrics-box"><h2>Jardin d'hiver</h2><pre>Je voudrais du soleil vert
 Des dentelles et des théières
 Des photos de bord de mer
 Dans mon jardin d'hiver
@@ -366,25 +286,15 @@ Dans mon jardin d'hiver
 Je veux déjeuner par terre
 Comme au long des golfes clairs
 T'embrasser les yeux ouverts
-Dans mon jardin d'hiver</pre>
-</div>
+Dans mon jardin d'hiver</pre></div>
 
 <button class="song-button" onclick="toggle('vieille', this)">Vieille Canaille</button>
-<div id="vieille" class="lyrics-box">
-  <h2>Vieille Canaille</h2>
-  <pre>J's'rai content quand tu s'ras mort
-Vieille Canaille
-J's'rai content quand tu s'ras mort
+<div id="vieille" class="lyrics-box"><h2>Vieille Canaille</h2><pre>J's'rai content quand tu s'ras mort
 Vieille Canaille
 Tu ne perds rien pour attendre
 Je saurai bien te descendre
 J's'rai content d'avoir ta peau
 Vieux Chameau
-
-Moi je t'ai reçu à bras ouverts
-Vieille Canaille
-Y'avais toujours ton couvert
-Vieux Bandit
 
 Puis j't'ai présenté ma femme
 Vieille Canaille
@@ -398,13 +308,10 @@ Vieille Canaille
 En emportant la vaisselle
 Le dessus d'lit en dentelle
 Sera pour tes funérailles
-Vieille Canaille</pre>
-</div>
+Vieille Canaille</pre></div>
 
 <button class="song-button" onclick="toggle('elucubrations', this)">Les élucubrations</button>
-<div id="elucubrations" class="lyrics-box">
-  <h2>Les élucubrations</h2>
-  <pre>Oh, yeah
+<div id="elucubrations" class="lyrics-box"><h2>Les élucubrations</h2><pre>Oh, yeah
 Ma mère m'a dit "Antoine, fais-toi couper les cheveux"
 Je lui ai dit "ma mère, dans 20 ans si tu veux
 Je ne les garde pas pour me faire remarquer
@@ -432,23 +339,16 @@ Oh, yeah
 J'ai reçu une lettre de la Présidence
 Me demandant "Antoine, vous avez du bon sens
 Comment faire pour enrichir le pays"
-"Mettez la pilule en vente dans les Monoprix"</pre>
-</div>
+"Mettez la pilule en vente dans les Monoprix"</pre></div>
 
 <button class="song-button" onclick="toggle('journee', this)">Encore une journée d'foutue</button>
-<div id="journee" class="lyrics-box">
-  <h2>Encore une journée d'foutue</h2>
-  <pre>(Paroles à compléter)</pre>
-</div>
+<div id="journee" class="lyrics-box"><h2>Encore une journée d'foutue</h2><pre>(Paroles à compléter)</pre></div>
 
 <button class="song-button" onclick="toggle('dixans', this)">J'ai dix ans</button>
-<div id="dixans" class="lyrics-box">
-  <h2>J'ai dix ans</h2>
-  <pre>J'ai dix ans
+<div id="dixans" class="lyrics-box"><h2>J'ai dix ans</h2><pre>J'ai dix ans
 Je sais qu'c'est pas vrai mais j'ai dix ans
 Laissez-moi rêver que j'ai dix ans
 Ça fait bientôt quinze ans que j'ai dix ans
-Ça paraît bizarre mais
 
 Si tu m'crois pas, hé
 Tar' ta gueule à la récré
@@ -465,25 +365,16 @@ Je vais embêter les quilles à la vanille
 Et les gars en chocolat
 
 J'ai dix ans
-Je vis dans des sphères où les grands
-N'ont rien à faire, j'vois souvent
-Dans des montgolfières, des géants
-Et des petits hommes verts
-
-J'ai dix ans
 Des billes plein les poches, j'ai dix ans
 Les filles c'est des cloches, j'ai dix ans
 Laissez-moi rêver que j'ai dix ans
 
 Bien caché dans ma cabane
 Je suis l'roi d'la sarbacane
-J'envoie des chewing-gums mâchés à tous les vents</pre>
-</div>
+J'envoie des chewing-gums mâchés à tous les vents</pre></div>
 
 <button class="song-button" onclick="toggle('lesAiles', this)">Les Ailes d'un ange</button>
-<div id="lesAiles" class="lyrics-box">
-  <h2>Les Ailes d'un ange</h2>
-  <pre>Si j'avais les ailes d'un ange
+<div id="lesAiles" class="lyrics-box"><h2>Les Ailes d'un ange</h2><pre>Si j'avais les ailes d'un ange
 Je partirais pour Québec
 Si j'avais des lumières sur mon bike
 Je partirais pour Québec
@@ -502,16 +393,10 @@ Mais si j'me rappelle bien, ça fermait un p'tit peu trop tôt
 Je suis un Hell's Angel à pied
 Je roule à bille sur du papier
 J'mange des hot-dogs mais j'bois du thé
-Je suis un Satan's Choice raté
-
-Si j'avais les ailes d'un ange
-Je partirais pour Québec</pre>
-</div>
+Je suis un Satan's Choice raté</pre></div>
 
 <button class="song-button" onclick="toggle('cesIdees', this)">Ces idées là</button>
-<div id="cesIdees" class="lyrics-box">
-  <h2>Ces idées là</h2>
-  <pre>Bébé, faudrait rentrer, tu vois
+<div id="cesIdees" class="lyrics-box"><h2>Ces idées là</h2><pre>Bébé, faudrait rentrer, tu vois
 Je suis en mal d'être avec toi
 La machine à café est détraquée
 Les cendriers tous renversés
@@ -530,19 +415,10 @@ Comment ne pas m'imaginer
 Ta petite gueule entre ses bras
 Comment ne pas crier?
 Comment ne pas pleurer?
-Oh, je suis fatigué
-
-Faut pas m'laisser traîner là
-Seul avec ces idées-là
-J'suis pas si fort que tu crois
-Faut pas m'laisser traîner là
-J'ai besoin de toi</pre>
-</div>
+Oh, je suis fatigué</pre></div>
 
 <button class="song-button" onclick="toggle('touteMusique', this)">Toute la musique que j'aime</button>
-<div id="touteMusique" class="lyrics-box">
-  <h2>Toute la musique que j'aime</h2>
-  <pre>Toute la musique que j'aime
+<div id="touteMusique" class="lyrics-box"><h2>Toute la musique que j'aime</h2><pre>Toute la musique que j'aime
 Elle vient de là, elle vient du blues
 Les mots ne sont jamais les mêmes
 Pour exprimer ce qu'est le blues
@@ -560,18 +436,13 @@ Pour chanter Dieu et puis l'amour
 Le blues ça veut dire que je t'aime
 Et que j'ai mal à en crever
 Je pleure, mais je chante quand même
-C'est ma prière pour te garder</pre>
-</div>
+C'est ma prière pour te garder</pre></div>
 
 <button class="song-button" onclick="toggle('gabrielle', this)">Gabrielle</button>
-<div id="gabrielle" class="lyrics-box">
-  <h2>Gabrielle</h2>
-  <pre>Gabrielle, tu brûles mon esprit
+<div id="gabrielle" class="lyrics-box"><h2>Gabrielle</h2><pre>Gabrielle, tu brûles mon esprit
 Ton amour étrangle ma vie
 Et l'enfer, devient comme un espoir
 Car dans tes mains je meurs chaque soir
-Je veux partager autre chose que l'amour dans ton lit
-Et entendre la vie et ne plus m'essouffler sous tes cris
 
 Dix ans de chaîne sans voir le jour c'était ma peine forçat de l'amour
 Et bonne chance à celui qui veut ma place
@@ -582,18 +453,13 @@ Gabrielle, tu flottes dans mon cœur
 C'est une illusion de douceur
 Et tu chantes, c'est la voix d'une enfant
 Avec laquelle tu glaces mon sang
-Je veux t'approcher, mais tu tournes le dos et tu t'enfuis</pre>
-</div>
+Je veux t'approcher, mais tu tournes le dos et tu t'enfuis</pre></div>
 
 <button class="song-button" onclick="toggle('vertigeAmour', this)">Vertige de l'amour</button>
-<div id="vertigeAmour" class="lyrics-box">
-  <h2>Vertige de l'amour</h2>
-  <pre>J'ai crevé l'oreiller
+<div id="vertigeAmour" class="lyrics-box"><h2>Vertige de l'amour</h2><pre>J'ai crevé l'oreiller
 J'ai dû rêver trop fort
 Ça me prend les jours fériés
 Quand Gisèle clape dehors
-J'aurais pas dû ouvrir
-À la rouquine carmélite
 
 Vertige de l'amour
 Mes circuits sont niqués
@@ -604,13 +470,10 @@ Tu te chopes des suées à Saïgon
 J'm'écris des cartes postales du front
 Si ça continue j'vais me découper
 Suivant les points, les pointillés
-Vertige de l'amour</pre>
-</div>
+Vertige de l'amour</pre></div>
 
 <button class="song-button" onclick="toggle('newyork', this)">New York avec toi</button>
-<div id="newyork" class="lyrics-box">
-  <h2>New York avec toi</h2>
-  <pre>Un jour, j'irai à New York avec toi
+<div id="newyork" class="lyrics-box"><h2>New York avec toi</h2><pre>Un jour, j'irai à New York avec toi
 Toutes les nuits déconner
 Et voir aucun film en entier, ça va d'soi
 
@@ -626,13 +489,10 @@ Et j'y crois
 
 Toucher à ci, toucher à ça
 Voir si le cœur de la ville bat en moi
-Et tu m'emmèneras, Emmène-moi</pre>
-</div>
+Et tu m'emmèneras, Emmène-moi</pre></div>
 
 <button class="song-button" onclick="toggle('bombeHumaine', this)">La Bombe humaine</button>
-<div id="bombeHumaine" class="lyrics-box">
-  <h2>La Bombe humaine</h2>
-  <pre>Je veux vous parler de l'arme de demain
+<div id="bombeHumaine" class="lyrics-box"><h2>La Bombe humaine</h2><pre>Je veux vous parler de l'arme de demain
 Enfantée du monde, elle en sera la fin
 Je veux vous parler de moi, de vous
 
@@ -650,13 +510,10 @@ Maman ne travaille plus sans ses excitants
 
 Je suis un électron bombardé de protons
 Le rythme de la ville, c'est ça, mon vrai patron
-Je suis chargé d'électricité</pre>
-</div>
+Je suis chargé d'électricité</pre></div>
 
 <button class="song-button" onclick="toggle('antisocial', this)">Antisocial</button>
-<div id="antisocial" class="lyrics-box">
-  <h2>Antisocial</h2>
-  <pre>Tu bosses toute ta vie pour payer ta pierre tombale
+<div id="antisocial" class="lyrics-box"><h2>Antisocial</h2><pre>Tu bosses toute ta vie pour payer ta pierre tombale
 Tu masques ton visage en lisant ton journal
 Tu marches tel un robot dans les couloirs du métro
 Les gens ne te touchent pas, faut faire le premier pas
@@ -671,14 +528,10 @@ Enfin le temps perdu qu'on ne rattrape plus
 
 Écraser les gens est devenu ton passe-temps
 Dans ton désespoir, il reste un peu d'espoir
-Celui de voir les gens sans fard et moins bâtards
-Relève la gueule, je suis là, t'es pas seul</pre>
-</div>
+Relève la gueule, je suis là, t'es pas seul</pre></div>
 
 <button class="song-button" onclick="toggle('aitormena', this)">Aitormena</button>
-<div id="aitormena" class="lyrics-box">
-  <h2>Aitormena</h2>
-  <pre>Ez dira betiko garai onenak
+<div id="aitormena" class="lyrics-box"><h2>Aitormena</h2><pre>Ez dira betiko garai onenak
 Azken finean gizaki hutsak gara
 Barearen ostean dator ekaitza
 Udaberri berririk ez guretzat
@@ -689,13 +542,10 @@ Laztana lehen baino lehen aska gaitezan
 Bai, zin dagizut, ez dizudala inoiz gezurrilk esan eta
 Zaude ziur ezin izango zaitudala ahaztu inoiz
 Aitortzen dut izan zarela ene bizitzaren onena
-Baina orain maitia lehen baino lehen aska gaitezan</pre>
-</div>
+Baina orain maitia lehen baino lehen aska gaitezan</pre></div>
 
 <button class="song-button" onclick="toggle('lauTeilatu', this)">Lau Teilatu</button>
-<div id="lauTeilatu" class="lyrics-box">
-  <h2>Lau Teilatu</h2>
-  <pre>Hemen gaude
+<div id="lauTeilatu" class="lyrics-box"><h2>Lau Teilatu</h2><pre>Hemen gaude
 Ta poztutzen naiz
 Ta ziur zure aita ere bai
 
@@ -713,13 +563,10 @@ Berriz egongo gara
 Txanpain apur batekin
 Diru gabe baina
 Izarrak gurekin daude
-Piano baten soinuaz</pre>
-</div>
+Piano baten soinuaz</pre></div>
 
 <button class="song-button" onclick="toggle('hegoak', this)">Hegoak</button>
-<div id="hegoak" class="lyrics-box">
-  <h2>Hegoak</h2>
-  <pre>Hegoak ebaki banizkio
+<div id="hegoak" class="lyrics-box"><h2>Hegoak</h2><pre>Hegoak ebaki banizkio
 Neria izango zen
 Ez zuen aldegingo.
 
@@ -727,19 +574,13 @@ Bainan horrela
 Ez zen gehiago txoria izango.
 
 Eta nik,
-Txoria nuen maite.</pre>
-</div>
+Txoria nuen maite.</pre></div>
 
 <button class="song-button" onclick="toggle('autreMonde', this)">Un autre monde</button>
-<div id="autreMonde" class="lyrics-box">
-  <h2>Un autre monde</h2>
-  <pre>(Paroles à compléter)</pre>
-</div>
+<div id="autreMonde" class="lyrics-box"><h2>Un autre monde</h2><pre>(Paroles à compléter)</pre></div>
 
 <button class="song-button" onclick="toggle('lesCactus', this)">Les cactus</button>
-<div id="lesCactus" class="lyrics-box">
-  <h2>Les cactus</h2>
-  <pre>Le monde entier est un cactus
+<div id="lesCactus" class="lyrics-box"><h2>Les cactus</h2><pre>Le monde entier est un cactus
 Il est impossible de s'assoir
 Dans la vie, il y a qu'des cactus
 Moi, je me pique de le savoir
@@ -759,13 +600,10 @@ Aïe, aïe, aïe
 Dans leurs sourires, il y a des cactus
 Dans leurs bonjours, il y a des cactus
 Dans leurs cactus, il y a des cactus
-Aïe, aïe, aïe</pre>
-</div>
+Aïe, aïe, aïe</pre></div>
 
 <button class="song-button" onclick="toggle('gogoarenBaitan', this)">Gogoaren baitan</button>
-<div id="gogoarenBaitan" class="lyrics-box">
-  <h2>Gogoaren baitan</h2>
-  <pre>Erabaki nuen, tinko ta fermuki,
+<div id="gogoarenBaitan" class="lyrics-box"><h2>Gogoaren baitan</h2><pre>Erabaki nuen, tinko ta fermuki,
 Ez zitzaidala gertatuko,
 Maitasun saretan ez nintzela berriz
 Uste gabean eroriko.
@@ -777,15 +615,10 @@ Zu hor zaude, dantzan, jauzitan,
 Zer debru bada pasatzen zait gogoaren baitan.
 
 Geroak zer dakar, ez dut pentsatu nahi,
-Uneak nahi ditut bizi.
-Lau egun dira ta bi omen lanotsu
-Galtzera ez ditut nahi utzi.</pre>
-</div>
+Uneak nahi ditut bizi.</pre></div>
 
 <button class="song-button" onclick="toggle('jIrai', this)">J'irai où tu iras</button>
-<div id="jIrai" class="lyrics-box">
-  <h2>J'irai où tu iras</h2>
-  <pre>Chez moi, les forêts se balancent
+<div id="jIrai" class="lyrics-box"><h2>J'irai où tu iras</h2><pre>Chez moi, les forêts se balancent
 Et les toits grattent le ciel
 Les eaux des torrents sont violence
 Et les neiges sont éternelles
@@ -806,21 +639,12 @@ Et des palmiers sous le vent
 Le feu du soleil au visage
 Et le bleu des océans
 
-Je veux des chameaux, des mirages
-Et des déserts envoûtants
-Des caravanes et des voyages
-Comme sur les dépliants
-
 Prends tes clic et tes clac, et tes rêves et ta vie
 Tes mots, tes tabernacles et ta langue d'ici
-L'escampette et la poudre et la fille de l'air
-Montre-moi tes édens, montre-moi tes enfers</pre>
-</div>
+Montre-moi tes édens, montre-moi tes enfers</pre></div>
 
 <button class="song-button" onclick="toggle('caVraimentToi', this)">Ça (c'est vraiment toi)</button>
-<div id="caVraimentToi" class="lyrics-box">
-  <h2>Ça (c'est vraiment toi)</h2>
-  <pre>Quelque chose en toi
+<div id="caVraimentToi" class="lyrics-box"><h2>Ça (c'est vraiment toi)</h2><pre>Quelque chose en toi
 Ne tourne pas rond
 Un je ne sais quoi
 Qui me laisse con
@@ -837,19 +661,14 @@ Car c'est vraiment toi
 Et rien d'autre que toi
 
 Car ça, c'est vraiment toi
-Oui, oui ça, c'est vraiment toi</pre>
-</div>
+Oui, oui ça, c'est vraiment toi</pre></div>
 
 <script>
 function toggle(id, btn) {
   var box = document.getElementById(id);
   var isOpen = box.style.display === 'block';
-  document.querySelectorAll('.lyrics-box').forEach(function(el) {
-    el.style.display = 'none';
-  });
-  document.querySelectorAll('.song-button').forEach(function(b) {
-    b.classList.remove('ouvert');
-  });
+  document.querySelectorAll('.lyrics-box').forEach(function(el) { el.style.display = 'none'; });
+  document.querySelectorAll('.song-button').forEach(function(b) { b.classList.remove('ouvert'); });
   if (!isOpen) {
     box.style.display = 'block';
     btn.classList.add('ouvert');
@@ -857,7 +676,5 @@ function toggle(id, btn) {
   }
 }
 </script>
-
 </body>
 </html>
-
