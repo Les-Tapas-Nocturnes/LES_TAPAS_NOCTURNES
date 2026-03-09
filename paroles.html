@@ -120,9 +120,9 @@ window.onload = function() {
 </nav>
 
 <!-- Toutes les chansons avec les bons IDs (doivent correspondre aux boutons) -->
-<details>
+
 <div class="song" id="etmoi">
-<h2>Et moi et moi et moi</h2>
+<h2 onclick="toggleParoles(this)">Et moi et moi et moi</h2>
 <pre>
 Sept cent millions de chinois 
 Et moi, et moi, et moi
@@ -191,7 +191,7 @@ C'est la vie, c'est la vie
 J'y pense et puis j'oublie
 C'est la vie, c'est la vie
 J'y pense et puis j'oublie  
-<details>
+
 
 </pre>
 </div>
@@ -1432,12 +1432,23 @@ C'est vraiment toi
 
 </pre>
 </div>
+<script>
+function toggleParoles(titre) {
+  let paroles = titre.nextElementSibling;
 
+  if (paroles.style.display === "block") {
+    paroles.style.display = "none";
+  } else {
+    paroles.style.display = "block";
+  }
+}
+</script>
 </body>
 </html>
 
 </body>
 </html>
+
 
 
 
