@@ -6,53 +6,20 @@
 <title>Accueil - Les Tapas Nocturnes</title>
 <link rel="stylesheet" href="style.css">
 <style>
-  .home-logo {
-    display: block;
-    width: 70%;
-    max-width: 260px;
-    margin: 20px auto 8px;
-    border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-  }
-
-  .welcome p {
-    font-size: 13px;
-    color: #555;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    margin: 0 auto 16px;
-    max-width: 300px;
-  }
-
-  .menu {
-    margin-top: 8px;
-    padding-bottom: 30px;
-  }
-
-  .menu-button {
-    display: block;
-    width: 78%;
-    max-width: 300px;
-    margin: 9px auto;
-    padding: 14px;
-    font-size: 18px;
+  /* Désactive le filigrane sur l'accueil */
+  body::before {
+    display: none;
   }
 </style>
 </head>
 <body>
-
-<img src="logo.png" class="home-logo" alt="Les Tapas Nocturnes">
-<div class="welcome">
-  <p>Musique pour l'apéro</p>
-</div>
-
+<img src="logo.png" class="logo" alt="Les Tapas Nocturnes">
 <div class="menu">
-  <a href="index.html" class="menu-button accueil">ACCUEIL</a>
-  <a href="repertoire.html" class="menu-button repertoire">RÉPERTOIRE</a>
-  <a href="paroles.html" class="menu-button paroles">PAROLES</a>
-  <a href="agenda.html" class="menu-button agenda">AGENDA</a>
-  <a href="contact.html" class="menu-button contact">CONTACT</a>
+    <a href="index.html" class="menu-button accueil">ACCUEIL</a>
+    <a href="repertoire.html" class="menu-button repertoire">RÉPERTOIRE</a>
+    <a href="paroles.html" class="menu-button paroles">PAROLES</a>
+    <a href="agenda.html" class="menu-button agenda">AGENDA</a>
+    <a href="contact.html" class="menu-button contact">CONTACT</a>
 </div>
-
 </body>
 </html>
