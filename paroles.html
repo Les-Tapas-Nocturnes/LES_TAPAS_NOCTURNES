@@ -6,10 +6,31 @@
 <title>Paroles - Les Tapas Nocturnes</title>
 <link rel="stylesheet" href="style.css">
 <style>
+  body {
+    background: #d9d6cf;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Logo en filigrane en haut */
+  .logo-bg {
+    display: block;
+    width: 120px;
+    margin: 10px auto 0;
+    opacity: 0.25;
+  }
+
+  /* Menu compact */
+  .menu {
+    margin: 6px 0 16px;
+  }
+
   .song-button {
     display: block;
     width: 300px;
-    margin: 10px auto;
+    margin: 8px auto;
     padding: 14px;
     font-size: 18px;
     font-weight: bold;
@@ -25,11 +46,12 @@
     background: linear-gradient(#b87333, #7a3d00);
     color: white;
   }
+
   .lyrics-box {
     display: none;
     width: 90%;
     max-width: 500px;
-    margin: 10px auto 20px;
+    margin: 4px auto 16px;
     background: white;
     border: 4px solid black;
     border-radius: 20px;
@@ -50,19 +72,24 @@
     color: #222;
     margin: 0;
   }
+
   @media screen and (max-width: 600px) {
     .song-button {
       width: 85%;
       max-width: 220px;
       padding: 10px;
       font-size: 16px;
+      margin: 6px auto;
+    }
+    .logo-bg {
+      width: 80px;
     }
   }
 </style>
 </head>
 <body>
 
-<img src="logo.png" class="logo" alt="Les Tapas Nocturnes">
+<img src="logo.png" class="logo-bg" alt="Les Tapas Nocturnes">
 
 <div class="menu">
   <a href="index.html" class="menu-button accueil">ACCUEIL</a>
@@ -71,11 +98,6 @@
   <a href="agenda.html" class="menu-button agenda">AGENDA</a>
   <a href="contact.html" class="menu-button contact">CONTACT</a>
 </div>
-
-<section>
-  <h2>Paroles</h2>
-  <p>Cliquez sur une chanson pour afficher les paroles.</p>
-</section>
 
 <button class="song-button" onclick="toggle('etmoi', this)">Et moi et moi et moi</button>
 <div id="etmoi" class="lyrics-box">
@@ -94,6 +116,48 @@ Son Canigou quand il aboie
 J'y pense et puis j'oublie
 C'est la vie, c'est la vie
 
+Trois ou quatre cent millions de noirs
+Et moi, et moi, et moi
+Qui vais au brunissoir
+Au sauna pour perdre du poids
+J'y pense et puis j'oublie
+C'est la vie, c'est la vie
+
+Trois cent millions de soviétiques
+Et moi, et moi, et moi
+Avec mes manies et mes tics
+Dans mon p'tit lit en plume d'oie
+J'y pense et puis j'oublie
+C'est la vie, c'est la vie
+
+Cinquante millions de gens imparfaits
+Et moi, et moi, et moi
+Qui regarde Catherine Langeais
+À la télévision chez moi
+J'y pense et puis j'oublie
+C'est la vie, c'est la vie
+
+Neuf cent millions de crève-la-faim
+Et moi, et moi, et moi
+Avec mon régime végétarien
+Et tout le whisky que je m'envoie
+J'y pense et puis j'oublie
+C'est la vie, c'est la vie
+
+Cinq cent millions de sud-américains
+Et moi, et moi, et moi
+Je suis tout nu dans mon bain
+Avec une fille qui me nettoie
+J'y pense et puis j'oublie
+C'est la vie, c'est la vie
+
+Cinquante millions de vietnamiens
+Et moi, et moi, et moi
+Le dimanche à la chasse au lapin
+Avec mon fusil, je suis le roi
+J'y pense et puis j'oublie
+C'est la vie, c'est la vie
+
 Cinq cent milliards de petits martiens
 Et moi, et moi, et moi
 Comme un con de parisien
@@ -109,6 +173,25 @@ C'est la vie, c'est la vie</pre>
 Toute nue dans mes grands souliers
 Placés devant la cheminée
 Pas besoin de vous faire un dessin
+De battre mon cœur s'est arrêté
+Sur le lit j'ai jeté mon fouet
+Tout contre elle je me suis penché
+Et sa beauté m'a rendu muet
+
+Fatigué j'ai la gueule de bois
+Toute la nuit j'avais aidé mon père
+Dans le feu j'ai remis du bois
+Dans la ch'minée y avait pas son père
+
+C'était la fille du Père Noël
+J'étais le fils du Père Fouettard
+Elle s'appelait Marie Noël
+Je m'appelais Jean Balthazar
+
+Je prends la fille dans mes bras
+Elle me dit mais non Balthazar
+Ne fais donc pas le fier à bras
+Je suis tombée là par hasard
 
 C'était la fille du Père Noël
 J'étais le fils du Père Fouettard
@@ -131,11 +214,25 @@ Nos corps par cœur et nos cœurs au chaud, Dans le velours
 Et puis te voilà, bout de femme, Comme soufflée d'une sarbacane
 Le ciel a même un autre éclat, Depuis toi
 
+Les hommes poursuivent ce temps, Qui court depuis toujours
+Voilà que t'arrives Et que tout s'éclaire, sur mon parcours
+Pendue à mon cou comme une liane, Comme le roseau de la sarbacane
+Le ciel s'est ouvert par endroits, Depuis toi
+
 Pas besoin de phrases ni de longs discours
+Ça change tout dedans, ça change tout autour
+Finis les matins paupières en panne
+Lourdes comme les bouteilles de butane
+J'ai presque plus ma tête à moi, Depuis toi
+
+Pas besoin de faire de trop longs discours
 Ça change tout dedans, ça change tout autour
 Pourvu que jamais tu ne t'éloignes
 Plus loin qu'un jet de sarbacane
-J'ai presque plus ma tête à moi, Depuis toi</pre>
+J'ai presque plus ma tête à moi, Depuis toi
+
+Alors te voilà, bout de femme, Comme soufflée d'une sarbacane
+Le ciel s'est ouvert par endroits, Depuis toi, Oh ! Depuis toi</pre>
 </div>
 
 <button class="song-button" onclick="toggle('machine', this)">L'amour à la machine</button>
@@ -143,13 +240,26 @@ J'ai presque plus ma tête à moi, Depuis toi</pre>
   <h2>L'amour à la machine</h2>
   <pre>Passez notre amour à la machine, Faites le bouillir
 Pour voir si les couleurs d'origine, Peuvent revenir
-Est-ce qu'on peut ravoir à l'eau de Javel? des sentiments
+Est-ce qu'on peut ravoir à l'eau de Javel?, des sentiments
 La blancheur qu'on croyait éternelle, Avant
+
+Pour retrouver le rose initial, De ta joue, devenue pâle
+Le bleu de nos baisers du début, Tant d'azur, perdu
+
+Passez notre amour à la machine, Faites le bouillir
+Pour voir si les couleurs d'origine, Peuvent revenir
 
 Matisse, l'amour, c'est bleu, difficile
 Les caresses, rouges, fragiles
 Le soleil de la vie les tabasse
 Et alors, elles passent
+Allez, à la machine!
+
+Le rouge pour faire tomber la misère
+De nos gentils petits grands-pères
+Noires, les mains dans les boucles blondes
+Tout autour du monde
+
 Allez, à la machine!</pre>
 </div>
 
@@ -160,11 +270,29 @@ Allez, à la machine!</pre>
 Sauter à l'élastique
 Voleur d'amphores
 Au fond des criques
+J'ai fait la cour à des murennes
+J'ai fait l'amour
+J'ai fait le mort
+T'étais pas née
 
 La nuit je mens
 Je prends des trains à travers la plaine
 La nuit je mens
 Je m'en lave les mains
+J'ai dans les bottes des montagnes de questions
+Où subsiste encore ton écho
+
+J'ai fait la saison
+Dans cette boite crânienne
+Tes pensées, je les faisais miennes
+T'accaparer, seulement t'accaparer
+D'estrade en estrade
+J'ai fait danser tant de malentendus
+
+La nuit je mens
+Je prends des trains à travers la plaine
+La nuit je mens
+Effrontément
 J'ai dans les bottes des montagnes de questions
 Où subsiste encore ton écho</pre>
 </div>
@@ -176,6 +304,12 @@ Où subsiste encore ton écho</pre>
 Accoudé au flipper
 Le type est entré dans le bar
 A commandé un jambon beurre
+Puis, il s'est approché de moi
+Puis il m'a regardé comme ça
+T'as des bottes, mon pote, Elles me bottent
+Viens faire un tour dans l'terrain vague
+J'vais t'apprendre un jeu rigolo
+A grands coups de chaînes de vélo
 J'te fais tes bottes à la baston
 Moi je lui dis "laisse béton"
 Il m'a filé une beigne
@@ -183,9 +317,24 @@ Je lui ai filé une torgnole
 Il m'a filé une châtaigne
 Je lui ai filé mes grolles
 
+J'étais tranquille, j'étais pénard
+Accoudé au comptoir
+Le type est entré dans le bar
+A commandé un café noir
+T'as un blouson, mecton, Il est pas bidon
+Viens faire un tour dans la ruelle
+Je te montrerai mon Opinel
+Je te chouraverai ton blouson
+Moi je lui dis "laisse béton"
+Il m'a filé une beigne
+Je lui ai filé une marron
+Il m'a filé une châtaigne
+Je lui ai filé mon blouson
+
 La morale de c'te pauvre histoire
 C'est quand t'es tranquille et peinard
-Faut pas trop traîner dans les bars</pre>
+Faut pas trop traîner dans les bars
+À moins d'être fringuer en costard</pre>
 </div>
 
 <button class="song-button" onclick="toggle('jardin', this)">Jardin d'hiver</button>
@@ -196,13 +345,28 @@ Des dentelles et des théières
 Des photos de bord de mer
 Dans mon jardin d'hiver
 
+Je voudrais de la lumière
+Comme en Nouvelle Angleterre
+Je veux changer d'atmosphère
+Dans mon jardin d'hiver
+
 Ta robe à fleur
 Sous la pluie de novembre
 Mes mains qui courent
 Je n'en peux plus de t'attendre
 Les années passent
 Qu'il est loin l'âge tendre
-Nul ne peut nous entendre</pre>
+Nul ne peut nous entendre
+
+Je voudrais du Fred Astaire
+Revoir un Latécoère
+Je voudrais toujours te plaire
+Dans mon jardin d'hiver
+
+Je veux déjeuner par terre
+Comme au long des golfes clairs
+T'embrasser les yeux ouverts
+Dans mon jardin d'hiver</pre>
 </div>
 
 <button class="song-button" onclick="toggle('vieille', this)">Vieille Canaille</button>
@@ -210,10 +374,17 @@ Nul ne peut nous entendre</pre>
   <h2>Vieille Canaille</h2>
   <pre>J's'rai content quand tu s'ras mort
 Vieille Canaille
+J's'rai content quand tu s'ras mort
+Vieille Canaille
 Tu ne perds rien pour attendre
 Je saurai bien te descendre
 J's'rai content d'avoir ta peau
 Vieux Chameau
+
+Moi je t'ai reçu à bras ouverts
+Vieille Canaille
+Y'avais toujours ton couvert
+Vieux Bandit
 
 Puis j't'ai présenté ma femme
 Vieille Canaille
@@ -222,6 +393,10 @@ Tu l'as embrassé dans les coins
 Dès que j'avais tourné le dos
 Vieux Chameau
 
+Mais j'suis parti avec elle
+Vieille Canaille
+En emportant la vaisselle
+Le dessus d'lit en dentelle
 Sera pour tes funérailles
 Vieille Canaille</pre>
 </div>
@@ -235,6 +410,25 @@ Je lui ai dit "ma mère, dans 20 ans si tu veux
 Je ne les garde pas pour me faire remarquer
 Ni parce que j'trouve ça beau mais parce que ça me plaît"
 
+Oh, yeah
+L'autre jour, j'écoute la radio en me réveillant
+C'était Yvette Horner qui jouait de l'accordéon
+Ton accordéon me fatigue Yvette
+Si tu jouais plutôt de la clarinette
+
+Oh, yeah
+Mon meilleur ami, si vous le connaissiez
+Vous ne pourriez plus vous en séparer
+L'autre jour il n'était pas très malin
+Il a pris un laxatif au lieu de prendre le train
+
+Oh, yeah
+Avec mon petit cousin qui a dix ans
+On regardait gros nounours à la télévision
+À nounours il a dit "bonne nuit mon bonhomme"
+Il est parti danser le jerk au Paladium
+
+Oh, yeah
 J'ai reçu une lettre de la Présidence
 Me demandant "Antoine, vous avez du bon sens
 Comment faire pour enrichir le pays"
@@ -254,9 +448,32 @@ Comment faire pour enrichir le pays"
 Je sais qu'c'est pas vrai mais j'ai dix ans
 Laissez-moi rêver que j'ai dix ans
 Ça fait bientôt quinze ans que j'ai dix ans
+Ça paraît bizarre mais
 
 Si tu m'crois pas, hé
 Tar' ta gueule à la récré
+
+J'ai dix ans
+Je vais a l'école et j'entends
+De belles paroles doucement
+Moi je rigole, cerf-volant
+Je rêve, je vole
+
+Le mercredi je m'balade
+Une paille dans ma limonade
+Je vais embêter les quilles à la vanille
+Et les gars en chocolat
+
+J'ai dix ans
+Je vis dans des sphères où les grands
+N'ont rien à faire, j'vois souvent
+Dans des montgolfières, des géants
+Et des petits hommes verts
+
+J'ai dix ans
+Des billes plein les poches, j'ai dix ans
+Les filles c'est des cloches, j'ai dix ans
+Laissez-moi rêver que j'ai dix ans
 
 Bien caché dans ma cabane
 Je suis l'roi d'la sarbacane
@@ -270,11 +487,25 @@ J'envoie des chewing-gums mâchés à tous les vents</pre>
 Je partirais pour Québec
 Si j'avais des lumières sur mon bike
 Je partirais pour Québec
+Si j'avais plus de gazoline
+Je monterais toutes les belles collines
+Et je roule, roulerais dans la nuit
+En chantant ces jolies mélodies
 
 J'ai passé d'belles nuits à Québec
 En te caressant avec des beaux becs
 J'ai passé d'belles nuits à Ottawa
-En te caressant, en te tenant dans mes bras</pre>
+En te caressant, en te tenant dans mes bras
+J'ai passé d'belles nuits à Toronto
+Mais si j'me rappelle bien, ça fermait un p'tit peu trop tôt
+
+Je suis un Hell's Angel à pied
+Je roule à bille sur du papier
+J'mange des hot-dogs mais j'bois du thé
+Je suis un Satan's Choice raté
+
+Si j'avais les ailes d'un ange
+Je partirais pour Québec</pre>
 </div>
 
 <button class="song-button" onclick="toggle('cesIdees', this)">Ces idées là</button>
@@ -282,16 +513,30 @@ En te caressant, en te tenant dans mes bras</pre>
   <h2>Ces idées là</h2>
   <pre>Bébé, faudrait rentrer, tu vois
 Je suis en mal d'être avec toi
+La machine à café est détraquée
+Les cendriers tous renversés
+Des nuits sans dormir à me demander
+Où tu peux bien aller
 
 Faut pas m'laisser traîner là
 Seul avec ces idées-là
 J'suis pas si fort que tu crois
 Non, pas si fort que ça
 
+Bébé, bébé, bébé
+Un doute en moi s'est figé
+Tu n'vas plus rentrer
 Comment ne pas m'imaginer
 Ta petite gueule entre ses bras
 Comment ne pas crier?
-Comment ne pas pleurer?</pre>
+Comment ne pas pleurer?
+Oh, je suis fatigué
+
+Faut pas m'laisser traîner là
+Seul avec ces idées-là
+J'suis pas si fort que tu crois
+Faut pas m'laisser traîner là
+J'ai besoin de toi</pre>
 </div>
 
 <button class="song-button" onclick="toggle('touteMusique', this)">Toute la musique que j'aime</button>
@@ -301,6 +546,16 @@ Comment ne pas pleurer?</pre>
 Elle vient de là, elle vient du blues
 Les mots ne sont jamais les mêmes
 Pour exprimer ce qu'est le blues
+
+J'y mets mes joies, ouais, j'y mets mes peines
+Et tout ça, ça devient le blues
+Moi, je le chante autant que je l'aime
+Et je le chanterai toujours
+
+Il y a longtemps, sur des guitares
+Des mains noires lui donnaient le jour
+Pour chanter les peines et les espoirs
+Pour chanter Dieu et puis l'amour
 
 Le blues ça veut dire que je t'aime
 Et que j'ai mal à en crever
@@ -315,11 +570,19 @@ C'est ma prière pour te garder</pre>
 Ton amour étrangle ma vie
 Et l'enfer, devient comme un espoir
 Car dans tes mains je meurs chaque soir
+Je veux partager autre chose que l'amour dans ton lit
+Et entendre la vie et ne plus m'essouffler sous tes cris
 
 Dix ans de chaîne sans voir le jour c'était ma peine forçat de l'amour
 Et bonne chance à celui qui veut ma place
 J'ai refusé mourir d'amour enchaîné
-Gabrielle</pre>
+Gabrielle
+
+Gabrielle, tu flottes dans mon cœur
+C'est une illusion de douceur
+Et tu chantes, c'est la voix d'une enfant
+Avec laquelle tu glaces mon sang
+Je veux t'approcher, mais tu tournes le dos et tu t'enfuis</pre>
 </div>
 
 <button class="song-button" onclick="toggle('vertigeAmour', this)">Vertige de l'amour</button>
@@ -329,12 +592,16 @@ Gabrielle</pre>
 J'ai dû rêver trop fort
 Ça me prend les jours fériés
 Quand Gisèle clape dehors
+J'aurais pas dû ouvrir
+À la rouquine carmélite
 
 Vertige de l'amour
 Mes circuits sont niqués
 Le courant peut plus passer
 Vertige de l'amour
 
+Tu te chopes des suées à Saïgon
+J'm'écris des cartes postales du front
 Si ça continue j'vais me découper
 Suivant les points, les pointillés
 Vertige de l'amour</pre>
@@ -350,8 +617,16 @@ Et voir aucun film en entier, ça va d'soi
 Un jour j'irai là-bas
 Un jour Chat, un autre Rat
 Voir si le cœur de la ville bat en toi
-Et tu m'emmèneras
-Emmène-moi</pre>
+Et tu m'emmèneras, Emmène-moi
+
+Un jour j'aurai New York au bout des doigts
+On y jouera, tu verras
+Dans les clubs il fait noir, mais il ne fait pas froid
+Et j'y crois
+
+Toucher à ci, toucher à ça
+Voir si le cœur de la ville bat en moi
+Et tu m'emmèneras, Emmène-moi</pre>
 </div>
 
 <button class="song-button" onclick="toggle('bombeHumaine', this)">La Bombe humaine</button>
@@ -359,12 +634,23 @@ Emmène-moi</pre>
   <h2>La Bombe humaine</h2>
   <pre>Je veux vous parler de l'arme de demain
 Enfantée du monde, elle en sera la fin
+Je veux vous parler de moi, de vous
+
+Nos sens sont nos fils, nous, pauvres marionnettes
+Nos sens sont le chemin qui mène droit à nos têtes
 
 La bombe humaine, tu la tiens dans ta main
 Tu as l'détonateur juste à côté du cœur
 La bombe humaine, c'est toi, elle t'appartient
 Si tu laisses quelqu'un prendre en main ton destin
-C'est la fin</pre>
+C'est la fin
+
+Mon père ne dort plus sans prendre ses calmants
+Maman ne travaille plus sans ses excitants
+
+Je suis un électron bombardé de protons
+Le rythme de la ville, c'est ça, mon vrai patron
+Je suis chargé d'électricité</pre>
 </div>
 
 <button class="song-button" onclick="toggle('antisocial', this)">Antisocial</button>
@@ -373,11 +659,20 @@ C'est la fin</pre>
   <pre>Tu bosses toute ta vie pour payer ta pierre tombale
 Tu masques ton visage en lisant ton journal
 Tu marches tel un robot dans les couloirs du métro
+Les gens ne te touchent pas, faut faire le premier pas
+
+Tu voudrais dialoguer sans renvoyer la balle
+Impossible d'avancer sans ton gilet pare-balles
 
 Antisocial, tu perds ton sang froid
 Repense à toutes ces années de service
 Antisocial, bientôt les années de sévices
-Enfin le temps perdu qu'on ne rattrape plus</pre>
+Enfin le temps perdu qu'on ne rattrape plus
+
+Écraser les gens est devenu ton passe-temps
+Dans ton désespoir, il reste un peu d'espoir
+Celui de voir les gens sans fard et moins bâtards
+Relève la gueule, je suis là, t'es pas seul</pre>
 </div>
 
 <button class="song-button" onclick="toggle('aitormena', this)">Aitormena</button>
@@ -388,7 +683,11 @@ Azken finean gizaki hutsak gara
 Barearen ostean dator ekaitza
 Udaberri berririk ez guretzat
 
+Rutinaren morroiak bihurtu gara
+Laztana lehen baino lehen aska gaitezan
+
 Bai, zin dagizut, ez dizudala inoiz gezurrilk esan eta
+Zaude ziur ezin izango zaitudala ahaztu inoiz
 Aitortzen dut izan zarela ene bizitzaren onena
 Baina orain maitia lehen baino lehen aska gaitezan</pre>
 </div>
@@ -398,6 +697,7 @@ Baina orain maitia lehen baino lehen aska gaitezan</pre>
   <h2>Lau Teilatu</h2>
   <pre>Hemen gaude
 Ta poztutzen naiz
+Ta ziur zure aita ere bai
 
 Lau teilatu gainean
 Ilargia erdian eta zu
@@ -405,7 +705,15 @@ Goruntz begira
 Zure keia eskuetan
 Neregana etorriko da
 Ta berriz izango gara
-Zoriontsu</pre>
+Zoriontsu
+Edozein herriko jaixetan
+
+Felix-felix bihar
+Berriz egongo gara
+Txanpain apur batekin
+Diru gabe baina
+Izarrak gurekin daude
+Piano baten soinuaz</pre>
 </div>
 
 <button class="song-button" onclick="toggle('hegoak', this)">Hegoak</button>
@@ -438,6 +746,16 @@ Moi, je me pique de le savoir
 Aïe, aïe, aïe
 
 Dans leurs cœurs, il y a des cactus
+Dans leurs portefeuilles, il y a des cactus
+Sous leurs pieds, il y a des cactus
+Aïe, aïe, aïe
+
+Pour me défendre de leurs cactus
+À mon tour, j'ai mis des cactus
+Dans mon lit, j'ai mis des cactus
+Dans mon slip, j'ai mis des cactus
+Aïe, aïe, aïe
+
 Dans leurs sourires, il y a des cactus
 Dans leurs bonjours, il y a des cactus
 Dans leurs cactus, il y a des cactus
@@ -452,8 +770,16 @@ Ez zitzaidala gertatuko,
 Maitasun saretan ez nintzela berriz
 Uste gabean eroriko.
 
+Bi begi izpitxu, irripar ezti bat
+Izan dira nere galtzaile,
+
 Zu hor zaude, dantzan, jauzitan,
-Zer debru bada pasatzen zait gogoaren baitan.</pre>
+Zer debru bada pasatzen zait gogoaren baitan.
+
+Geroak zer dakar, ez dut pentsatu nahi,
+Uneak nahi ditut bizi.
+Lau egun dira ta bi omen lanotsu
+Galtzera ez ditut nahi utzi.</pre>
 </div>
 
 <button class="song-button" onclick="toggle('jIrai', this)">J'irai où tu iras</button>
@@ -464,6 +790,11 @@ Et les toits grattent le ciel
 Les eaux des torrents sont violence
 Et les neiges sont éternelles
 
+Chez moi, les loups sont à nos portes
+Et tous les enfants les comprennent
+On entend les cris de New York
+Et les bateaux sur la Seine
+
 J'irai où tu iras
 Mon pays sera toi
 J'irai où tu iras
@@ -473,7 +804,17 @@ Qu'importe l'endroit
 Je veux des cocotiers, des plages
 Et des palmiers sous le vent
 Le feu du soleil au visage
-Et le bleu des océans</pre>
+Et le bleu des océans
+
+Je veux des chameaux, des mirages
+Et des déserts envoûtants
+Des caravanes et des voyages
+Comme sur les dépliants
+
+Prends tes clic et tes clac, et tes rêves et ta vie
+Tes mots, tes tabernacles et ta langue d'ici
+L'escampette et la poudre et la fille de l'air
+Montre-moi tes édens, montre-moi tes enfers</pre>
 </div>
 
 <button class="song-button" onclick="toggle('caVraimentToi', this)">Ça (c'est vraiment toi)</button>
@@ -483,30 +824,32 @@ Et le bleu des océans</pre>
 Ne tourne pas rond
 Un je ne sais quoi
 Qui me laisse con
+Mais autour de moi
+Tout tourne si rond
+
+Des balles doum, doum aux roues des bagnoles
+Au rythme tchouc tchouc du train des Batignolles
+Au murmure de la ville, au matin des nuits folles
 
 Rien ne t'affoles
 Et j'aime encore mieux ça
 Car c'est vraiment toi
 Et rien d'autre que toi
 
-Car ça
-C'est vraiment toi
-Oui, oui ça
-C'est vraiment toi</pre>
+Car ça, c'est vraiment toi
+Oui, oui ça, c'est vraiment toi</pre>
 </div>
 
 <script>
 function toggle(id, btn) {
   var box = document.getElementById(id);
   var isOpen = box.style.display === 'block';
-
   document.querySelectorAll('.lyrics-box').forEach(function(el) {
     el.style.display = 'none';
   });
   document.querySelectorAll('.song-button').forEach(function(b) {
     b.classList.remove('ouvert');
   });
-
   if (!isOpen) {
     box.style.display = 'block';
     btn.classList.add('ouvert');
@@ -517,3 +860,4 @@ function toggle(id, btn) {
 
 </body>
 </html>
+
