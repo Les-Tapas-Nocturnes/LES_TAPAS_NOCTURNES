@@ -6,7 +6,6 @@
 <title>Répertoire - Les Tapas Nocturnes</title>
 <link rel="stylesheet" href="style.css" />
 <style>
-  /* Bouton retour */
   .btn-retour {
     display: block;
     width: 180px;
@@ -23,24 +22,17 @@
     text-align: center;
     text-decoration: none;
   }
-  .btn-retour:hover {
-    background: linear-gradient(#7a3d00,#b87333);
-  }
-
-  /* Titre page */
+  .btn-retour:hover { background: linear-gradient(#7a3d00,#b87333); }
   h1.page-title {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: bold;
     font-size: 28px;
     color: #4a4a4a;
-    text-align: center;
     margin-top: 20px;
     margin-bottom: 10px;
   }
-
-  /* Conteneur liste chansons */
   .song-container {
-    background: #fefefe;
+    background: rgba(254,254,254,0.85);
     max-width: 600px;
     margin: 0 auto 40px auto;
     padding: 20px 25px;
@@ -50,107 +42,53 @@
     color: #222;
     text-align: left;
   }
-
-  .song-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .song-list li {
-    padding: 10px 0;
-    border-bottom: 1px solid #ddd;
-    font-size: 16px;
-    line-height: 1.4;
-  }
-
-  .song-list li:last-child {
-    border-bottom: none;
-  }
-
-  .song-title {
-    font-weight: 600;
-  }
-
-  .song-meta {
-    font-style: italic;
-    color: #666;
-    font-size: 14px;
-    margin-top: 2px;
-  }
-
-  /* Responsive mobile */
+  .song-list { list-style: none; padding: 0; margin: 0; }
+  .song-list li { padding: 10px 0; border-bottom: 1px solid #ddd; font-size: 16px; line-height: 1.4; }
+  .song-list li:last-child { border-bottom: none; }
+  .song-title { font-weight: 600; }
+  .song-meta { font-style: italic; color: #666; font-size: 14px; margin-top: 2px; }
   @media screen and (max-width: 600px) {
-    .song-container {
-      margin: 15px 10px 30px 10px;
-      padding: 15px 15px;
-      max-width: 100%;
-    }
-
-    .song-list li {
-      font-size: 14px;
-    }
-
-    .song-meta {
-      font-size: 12px;
-    }
-
-    .btn-retour {
-      width: 85%;
-      font-size: 16px;
-      padding: 12px;
-    }
-
-    h1.page-title {
-      font-size: 24px;
-      margin-top: 15px;
-    }
+    .song-container { margin: 15px 10px 30px 10px; padding: 15px; max-width: 100%; }
+    .song-list li { font-size: 14px; }
+    .song-meta { font-size: 12px; }
+    .btn-retour { width: 85%; font-size: 16px; padding: 12px; }
+    h1.page-title { font-size: 24px; margin-top: 15px; }
   }
 </style>
 </head>
 <body>
-
-<!-- LOGO -->
-<img src="logo.png" class="logo" alt="Les Tapas Nocturnes" />
-
-<!-- TITRE PAGE -->
 <h1 class="page-title">Répertoire</h1>
-
-<!-- BOUTON RETOUR -->
-<a href="index.html" class="btn-retour">← Retour à l’accueil</a>
-
-<!-- LISTE DES CHANSONS -->
+<a href="index.html" class="btn-retour">← Retour à l'accueil</a>
 <div class="song-container">
   <ul class="song-list">
     <li><div class="song-title">Et moi, et moi, et moi</div><div class="song-meta">Jacques Dutronc — 1966</div></li>
     <li><div class="song-title">La fille du Père Noël</div><div class="song-meta">Jacques Dutronc — 1966</div></li>
-    <li><div class="song-title">Sarbacane</div><div class="song-meta">Francis Cabrel — 1989</div></li>  
+    <li><div class="song-title">Sarbacane</div><div class="song-meta">Francis Cabrel — 1989</div></li>
     <li><div class="song-title">L'amour à la machine</div><div class="song-meta">Alain Souchon — 1993</div></li>
     <li><div class="song-title">La nuit je mens</div><div class="song-meta">Alain Bashung — 1998</div></li>
     <li><div class="song-title">Laisse béton</div><div class="song-meta">Renaud — 1977</div></li>
-    <li><div class="song-title">Jardin d’hiver</div><div class="song-meta">Henri Salvador — 2000</div></li>
+    <li><div class="song-title">Jardin d'hiver</div><div class="song-meta">Henri Salvador — 2000</div></li>
     <li><div class="song-title">Vieille canaille</div><div class="song-meta">Serge Gainsbourg — 1986</div></li>
-    <li><div class="song-title">Les Élucubrations d’Antoine</div><div class="song-meta">Antoine — 1966</div></li>
-    <li><div class="song-title">Encore une journée d’foutue</div><div class="song-meta">Jacques Higelin — 1982</div></li>
-    <li><div class="song-title">Les Ailes d’un ange</div><div class="song-meta">Robert Charlebois — 1969</div></li>  
+    <li><div class="song-title">Les Élucubrations d'Antoine</div><div class="song-meta">Antoine — 1966</div></li>
+    <li><div class="song-title">Encore une journée d'foutue</div><div class="song-meta">Jacques Higelin — 1982</div></li>
+    <li><div class="song-title">Les Ailes d'un ange</div><div class="song-meta">Robert Charlebois — 1969</div></li>
     <li><div class="song-title">J'ai dix ans</div><div class="song-meta">Alain Souchon — 1974</div></li>
     <li><div class="song-title">Ces idées là</div><div class="song-meta">Louis Bertignac — 1994</div></li>
-    <li><div class="song-title">Toute la musique que j'aime </div><div class="song-meta">Johnny Hallyday — 1973</div></li>
+    <li><div class="song-title">Toute la musique que j'aime</div><div class="song-meta">Johnny Hallyday — 1973</div></li>
     <li><div class="song-title">Gabrielle</div><div class="song-meta">Johnny Hallyday — 1976</div></li>
-    <li><div class="song-title">Vertige de l’amour</div><div class="song-meta">Alain Bashung — 19816</div></li>
-    <li><div class="song-title">New York avec toi</div><div class="song-meta">Téléphone  — 1984</div></li>
-    <li><div class="song-title">La Bombe humainel</div><div class="song-meta">Téléphone — 1979</div></li>
-    <li><div class="song-title">Antisocial</div><div class="song-meta">Trust — 1980</div></li>  
-    <li><div class="song-title">Aitormena</div><div class="song-meta">Hertzainak  — 1989</div></li>
-    <li><div class="song-title">Lau teilatu</div><div class="song-meta">Itoiz  — 1976</div></li>
-    <li><div class="song-title">Hegoaj</div><div class="song-meta">Joxean Artze — 1974</div></li>
+    <li><div class="song-title">Vertige de l'amour</div><div class="song-meta">Alain Bashung — 1981</div></li>
+    <li><div class="song-title">New York avec toi</div><div class="song-meta">Téléphone — 1984</div></li>
+    <li><div class="song-title">La Bombe humaine</div><div class="song-meta">Téléphone — 1979</div></li>
+    <li><div class="song-title">Antisocial</div><div class="song-meta">Trust — 1980</div></li>
+    <li><div class="song-title">Aitormena</div><div class="song-meta">Hertzainak — 1989</div></li>
+    <li><div class="song-title">Lau teilatu</div><div class="song-meta">Itoiz — 1976</div></li>
+    <li><div class="song-title">Hegoak</div><div class="song-meta">Joxean Artze — 1974</div></li>
     <li><div class="song-title">Un autre monde</div><div class="song-meta">Téléphone — 1984</div></li>
     <li><div class="song-title">Les cactus</div><div class="song-meta">Jacques Dutronc — 1966</div></li>
     <li><div class="song-title">Gogoaren baitan</div><div class="song-meta">Anje Duhalde — 1992</div></li>
-    <li><div class="song-title">J'irai où tu iras</div><div class="song-meta">Jean-J.J Goldman C. Dion — 1995</div></li>
-    <li><div class="song-title">Ca c'est vraiment toi</div><div class="song-meta">Téléphone  — 1982</div></li>  
+    <li><div class="song-title">J'irai où tu iras</div><div class="song-meta">Jean-J.J Goldman / C. Dion — 1995</div></li>
+    <li><div class="song-title">Ça c'est vraiment toi</div><div class="song-meta">Téléphone — 1982</div></li>
   </ul>
 </div>
-
 </body>
 </html>
