@@ -52,6 +52,24 @@
   }
   @media screen and (max-width: 600px) {
     .song-button { width: 85%; max-width: 220px; padding: 10px; font-size: 16px; margin: 6px auto; }
+  .btn-liste {
+    display: none;
+    width: 85%;
+    max-width: 280px;
+    margin: 10px auto 16px;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(#b87333, #7a3d00);
+    border-radius: 50px;
+    border: 4px solid black;
+    box-shadow: 0px 6px 10px rgba(0,0,0,0.4);
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  @media screen and (max-width: 600px) {
+    .song-button { width: 85%; max-width: 280px; padding: 12px; font-size: 16px; margin: 6px auto; }
   }
 </style>
 </head>
@@ -59,7 +77,9 @@
 
 <h1 class="page-title">Paroles</h1>
 <a href="index.html" class="btn-retour couleur-paroles">← Retour à l'accueil</a>
+<button class="btn-liste" id="btn-liste" onclick="retourListe()">← Retour à la liste</button>
 
+<div id="liste-chansons">
 <button class="song-button" onclick="toggle('etmoi', this)">Et moi et moi et moi</button>
 <div id="etmoi" class="lyrics-box"><h2>Et moi et moi et moi</h2><pre>Sept cent millions de chinois
 Et moi, et moi, et moi
@@ -651,18 +671,31 @@ Et rien d'autre que toi
 
 Car ça, c'est vraiment toi
 Oui, oui ça, c'est vraiment toi</pre></div>
+</div><!-- fin liste-chansons -->
 
 <script>
 function toggle(id, btn) {
-  var box = document.getElementById(id);
-  var isOpen = box.style.display === 'block';
+  // Cacher tous les boutons de chansons
+  document.getElementById('liste-chansons').style.display = 'none';
+  // Cacher toutes les paroles
   document.querySelectorAll('.lyrics-box').forEach(function(el) { el.style.display = 'none'; });
-  document.querySelectorAll('.song-button').forEach(function(b) { b.classList.remove('ouvert'); });
-  if (!isOpen) {
-    box.style.display = 'block';
-    btn.classList.add('ouvert');
-    box.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
+  // Afficher le bouton retour liste
+  document.getElementById('btn-liste').style.display = 'block';
+  // Afficher les paroles choisies
+  document.getElementById(id).style.display = 'block';
+  // Scroll en haut
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function retourListe() {
+  // Cacher les paroles
+  document.querySelectorAll('.lyrics-box').forEach(function(el) { el.style.display = 'none'; });
+  // Cacher le bouton retour liste
+  document.getElementById('btn-liste').style.display = 'none';
+  // Réafficher tous les boutons
+  document.getElementById('liste-chansons').style.display = 'block';
+  // Scroll en haut
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 </script>
 </body>
