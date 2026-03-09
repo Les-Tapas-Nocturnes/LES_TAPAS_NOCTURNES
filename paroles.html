@@ -1387,12 +1387,25 @@ C'est vraiment toi
 
 </pre>
 </div>
+<script>
+function showSong(id){
 
+let songs = document.querySelectorAll(".lyrics");
+
+songs.forEach(song => {
+song.style.display = "none";
+});
+
+document.getElementById(id).style.display = "block";
+
+}
+</script>
 </body>
 </html>
 
 </body>
 </html>
+
 
 
 
