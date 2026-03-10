@@ -6,6 +6,19 @@
 <title>Contact - Les Tapas Nocturnes</title>
 <link rel="stylesheet" href="style.css" />
 <style>
+  .contact-top {
+    position: fixed;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 360px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    z-index: 10;
+  }
   .contact-wrapper {
     position: fixed;
     bottom: 20px;
@@ -63,8 +76,10 @@
 </head>
 <body>
 
-<h1 class="page-title">Contact</h1>
-<a href="index.html" class="btn-retour couleur-contact">← Retour à l'accueil</a>
+<div class="contact-top">
+  <h1 class="page-title">Contact</h1>
+  <a href="index.html" class="btn-retour couleur-contact">← Retour à l'accueil</a>
+</div>
 
 <div class="contact-wrapper">
 
