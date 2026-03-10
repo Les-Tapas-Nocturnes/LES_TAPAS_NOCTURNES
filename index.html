@@ -8,7 +8,6 @@
 <style>
   /* Désactive le filigrane sur l'accueil */
   body::before { display: none; }
-
   @keyframes shake {
     0%, 100% { transform: rotate(0deg) scale(1); }
     20% { transform: rotate(-3deg) scale(1.03); }
@@ -17,6 +16,16 @@
     80% { transform: rotate(2deg) scale(1.01); }
   }
   .logo { animation: shake 0.8s ease-in-out infinite; }
+  footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 8px 0;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 0.05em;
+  }
 </style>
 </head>
 <body>
@@ -28,5 +37,10 @@
     <a href="agenda.html" class="menu-button agenda">AGENDA</a>
     <a href="contact.html" class="menu-button contact">CONTACT</a>
 </div>
+
+<footer>
+  Une création de l'association Zikomatiques
+</footer>
+
 </body>
 </html>
