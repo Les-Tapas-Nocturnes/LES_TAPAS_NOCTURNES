@@ -72,6 +72,7 @@ body > * {
 .paroles    { background: #e8dcc0; color: black; }
 .agenda     { background: linear-gradient(#ffbf3f, #ff9500); }
 .contact    { background: linear-gradient(#4caf50, #2e7d32); }
+.livreor    { background: linear-gradient(#ffbf3f, #ff9500); }
 
 /* ── TITRE DE PAGE ── */
 h1.page-title {
@@ -113,6 +114,9 @@ h1.page-title {
 .btn-retour.couleur-contact { background: linear-gradient(#4caf50, #2e7d32); }
 .btn-retour.couleur-contact:hover { background: linear-gradient(#2e7d32, #4caf50); }
 
+.btn-retour.couleur-livreor { background: linear-gradient(#ffbf3f, #ff9500); }
+.btn-retour.couleur-livreor:hover { background: linear-gradient(#ff9500, #ffbf3f); }
+
 /* ── CONTENEURS DE CONTENU ── */
 .page-container {
     background: rgba(254,254,254,0.85);
@@ -147,6 +151,3 @@ h1.page-title {
     .btn-retour { width: 85%; font-size: 16px; padding: 12px; }
     .page-container { margin: 15px 10px 30px 10px; padding: 15px; max-width: 100%; }
 }
-
-
-
