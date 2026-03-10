@@ -7,12 +7,16 @@
 <link rel="stylesheet" href="style.css" />
 <style>
   .contact-wrapper {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
     max-width: 360px;
-    margin: 20px auto;
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    padding: 0 20px;
+    gap: 12px;
+    z-index: 10;
   }
   .contact-card {
     display: flex;
