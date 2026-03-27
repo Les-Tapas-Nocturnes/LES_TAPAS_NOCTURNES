@@ -1,36 +1,715 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Accueil - Les Tapas Nocturnes</title>
-<link rel="stylesheet" href="style.css">
-<style>
-  body::before { display: none; }
-  footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-    padding: 10px 0;
-    font-size: 0.95rem;
-    color: rgba(0, 0, 0, 0.55);
-    letter-spacing: 0.05em;
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Livre d'Or - Les Tapas Nocturnes</title>
+  <link rel="icon" href="logo.png" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap');
+
+    :root {
+      --bg: #0f0c0a;
+      --surface: #1a1410;
+      --card: #221c16;
+      --border: #3a2e22;
+      --gold: #c9a84c;
+      --gold-light: #e8c87a;
+      --text: #f0e6d3;
+      --text-muted: #8a7560;
+      --red: #c0392b;
+      --green: #27ae60;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Lato', sans-serif;
+      min-height: 100vh;
+    }
+
+    /* ── NAV ── */
+    nav {
+      background: #000;
+      padding: 0.8rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      border-bottom: 1px solid var(--border);
+    }
+    nav img { height: 40px; }
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    nav a:hover, nav a.active { color: var(--gold); }
+
+    /* ── HEADER ── */
+    .page-header {
+      text-align: center;
+      padding: 3rem 1rem 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .page-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      color: var(--gold);
+      letter-spacing: 0.05em;
+    }
+    .page-header p {
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+      font-size: 0.95rem;
+      font-style: italic;
+    }
+    .ornament {
+      color: var(--gold);
+      font-size: 1.4rem;
+      margin: 0.5rem 0;
+      letter-spacing: 0.3em;
+    }
+
+    /* ── MAIN ── */
+    main {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 2rem 1rem 4rem;
+    }
+
+    /* ── FORM ── */
+    .form-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 2rem;
+      margin-bottom: 3rem;
+    }
+    .form-card h2 {
+      font-family: 'Playfair Display', serif;
+      color: var(--gold);
+      font-size: 1.3rem;
+      margin-bottom: 1.5rem;
+    }
+    .form-row { margin-bottom: 1.2rem; }
+    .form-row label {
+      display: block;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+    }
+    .form-row input,
+    .form-row textarea {
+      width: 100%;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.7rem 1rem;
+      border-radius: 4px;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.95rem;
+      transition: border-color 0.2s;
+      resize: vertical;
+    }
+    .form-row input:focus,
+    .form-row textarea:focus {
+      outline: none;
+      border-color: var(--gold);
+    }
+    .form-row textarea { min-height: 100px; }
+
+    /* Stars selector */
+    .stars-input { display: flex; gap: 0.3rem; margin-top: 0.3rem; }
+    .stars-input span {
+      font-size: 1.6rem;
+      cursor: pointer;
+      color: var(--border);
+      transition: color 0.15s, transform 0.15s;
+      user-select: none;
+    }
+    .stars-input span.active { color: var(--gold); }
+    .stars-input span:hover { transform: scale(1.2); }
+
+    .btn {
+      background: var(--gold);
+      color: #000;
+      border: none;
+      padding: 0.75rem 2rem;
+      font-family: 'Lato', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+    }
+    .btn:hover { background: var(--gold-light); }
+    .btn:active { transform: scale(0.98); }
+    .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+    .form-feedback {
+      margin-top: 1rem;
+      padding: 0.7rem 1rem;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      display: none;
+    }
+    .form-feedback.success { background: #1a3a2a; border: 1px solid var(--green); color: #6fcf97; display: block; }
+    .form-feedback.error   { background: #3a1a1a; border: 1px solid var(--red); color: #eb5757; display: block; }
+
+    /* ── MESSAGES ── */
+    .messages-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+    }
+    .messages-header h2 {
+      font-family: 'Playfair Display', serif;
+      color: var(--gold);
+      font-size: 1.3rem;
+    }
+    .msg-count {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .message-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1.2rem;
+      position: relative;
+      animation: fadeIn 0.4s ease;
+    }
+    @keyframes fadeIn { from { opacity:0; transform: translateY(8px); } to { opacity:1; transform: translateY(0); } }
+
+    .msg-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 0.8rem;
+      gap: 1rem;
+    }
+    .msg-author {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--gold-light);
+    }
+    .msg-date {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+    .msg-stars { color: var(--gold); font-size: 1rem; margin-bottom: 0.6rem; }
+    .msg-text { font-size: 0.95rem; line-height: 1.6; color: var(--text); }
+
+    /* Band reply */
+    .band-reply {
+      margin-top: 1rem;
+      padding: 0.8rem 1rem;
+      background: #1a150f;
+      border-left: 3px solid var(--gold);
+      border-radius: 0 4px 4px 0;
+    }
+    .band-reply-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+      margin-bottom: 0.3rem;
+    }
+    .band-reply p { font-size: 0.9rem; color: var(--text-muted); font-style: italic; }
+
+    /* Admin controls on cards */
+    .admin-controls {
+      display: none;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+    }
+    .admin-controls.visible { display: flex; }
+    .btn-sm {
+      padding: 0.35rem 0.9rem;
+      font-size: 0.75rem;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+      font-family: 'Lato', sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: opacity 0.2s;
+    }
+    .btn-sm:hover { opacity: 0.8; }
+    .btn-reply { background: #2a3a2a; color: #6fcf97; }
+    .btn-delete { background: #3a1a1a; color: #eb5757; }
+
+    .reply-form { display: none; margin-top: 1rem; }
+    .reply-form textarea {
+      width: 100%;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.6rem 0.8rem;
+      border-radius: 4px;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.9rem;
+      min-height: 70px;
+      resize: vertical;
+      margin-bottom: 0.5rem;
+    }
+    .reply-form textarea:focus { outline: none; border-color: var(--gold); }
+
+    /* Loading / empty */
+    .loading {
+      text-align: center;
+      padding: 2rem;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+    .empty-state {
+      text-align: center;
+      padding: 3rem 1rem;
+      color: var(--text-muted);
+    }
+    .empty-state .icon { font-size: 3rem; margin-bottom: 1rem; }
+
+    /* ── ADMIN PANEL ── */
+    .admin-bar {
+      text-align: right;
+      margin-bottom: 1rem;
+    }
+    .btn-admin-toggle {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 0.4rem 1rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-radius: 4px;
+      cursor: pointer;
+      font-family: 'Lato', sans-serif;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-admin-toggle:hover { border-color: var(--gold); color: var(--gold); }
+    .btn-admin-toggle.active { border-color: var(--gold); color: var(--gold); background: #1a150f; }
+
+    .admin-login-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.8);
+      z-index: 100;
+      align-items: center;
+      justify-content: center;
+    }
+    .admin-login-modal.open { display: flex; }
+    .modal-box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 2rem;
+      width: min(360px, 90vw);
+    }
+    .modal-box h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--gold);
+      margin-bottom: 1.2rem;
+    }
+    .modal-box input {
+      width: 100%;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.6rem 0.9rem;
+      border-radius: 4px;
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+    .modal-box input:focus { outline: none; border-color: var(--gold); }
+    .modal-row { display: flex; gap: 0.8rem; }
+    .btn-cancel {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 0.6rem 1.2rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.85rem;
+    }
+
+    /* ── SETUP BANNER ── */
+    #setup-banner {
+      background: #1a1500;
+      border: 1px dashed var(--gold);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+    #setup-banner h3 { color: var(--gold); margin-bottom: 0.8rem; font-family: 'Playfair Display', serif; }
+    #setup-banner code {
+      background: #0a0a0a;
+      color: #e8c87a;
+      padding: 0.15rem 0.4rem;
+      border-radius: 3px;
+      font-size: 0.85rem;
+    }
+    #setup-banner ol { padding-left: 1.2rem; color: var(--text-muted); }
+    #setup-banner ol li { margin-bottom: 0.4rem; }
+    #setup-banner a { color: var(--gold); }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      border-top: 1px solid var(--border);
+    }
+  </style>
 </head>
 <body>
-<img src="logo.png" class="logo" alt="Les Tapas Nocturnes">
-<div class="menu">
-    <a href="index.html" class="menu-button accueil">ACCUEIL</a>
-    <a href="repertoire.html" class="menu-button repertoire">RÉPERTOIRE</a>
-    <a href="paroles.html" class="menu-button paroles">PAROLES</a>
-    <a href="agenda.html" class="menu-button agenda">AGENDA</a>
-    <a href="contact.html" class="menu-button contact">CONTACT</a>
-    <a href="livredOr.html" class="menu-button livreor">⭐ LIVRE D'OR</a>
+
+<!-- NAV -->
+<nav>
+  <img src="logo.png" alt="Les Tapas Nocturnes" />
+  <a href="index.html">Accueil</a>
+  <a href="repertoire.html">Répertoire</a>
+  <a href="paroles.html">Paroles</a>
+  <a href="agenda.html">Agenda</a>
+  <a href="contact.html">Contact</a>
+  <a href="livredor.html" class="active">⭐ Livre d'Or</a>
+</nav>
+
+<!-- HEADER -->
+<div class="page-header">
+  <div class="ornament">✦ ✦ ✦</div>
+  <h1>Livre d'Or</h1>
+  <p>Vous nous avez vus sur scène ? Laissez-nous un mot !</p>
+  <div class="ornament">✦ ✦ ✦</div>
 </div>
-<footer>
-  Une création de l'association Zikomatiques
-</footer>
+
+<main>
+
+  <!-- SETUP BANNER (masqué une fois configuré) -->
+  <div id="setup-banner">
+    <h3>⚙️ Configuration requise</h3>
+    <p>Pour activer le livre d'or, suivez ces étapes :</p>
+    <ol>
+      <li>Créez un compte gratuit sur <a href="https://supabase.com" target="_blank">supabase.com</a></li>
+      <li>Créez un nouveau projet</li>
+      <li>Dans l'éditeur SQL, exécutez le script fourni ci-dessous</li>
+      <li>Copiez votre <code>URL</code> et votre <code>anon key</code> (Settings → API)</li>
+      <li>Remplacez <code>VOTRE_URL_SUPABASE</code> et <code>VOTRE_ANON_KEY</code> en bas de cette page</li>
+      <li>Choisissez un mot de passe admin et remplacez <code>MOT_DE_PASSE_ADMIN</code></li>
+    </ol>
+    <br>
+    <strong>Script SQL à exécuter dans Supabase :</strong>
+    <pre style="background:#0a0a0a;padding:1rem;border-radius:4px;overflow:auto;margin-top:0.5rem;color:#aaa;font-size:0.8rem;line-height:1.6;">
+create table messages (
+  id uuid primary key default gen_random_uuid(),
+  nom text not null,
+  texte text not null,
+  etoiles int default 5,
+  reponse text,
+  created_at timestamptz default now()
+);
+alter table messages enable row level security;
+create policy "lecture publique" on messages for select using (true);
+create policy "insertion publique" on messages for insert with check (true);
+create policy "mise a jour admin" on messages for update using (true);
+create policy "suppression admin" on messages for delete using (true);</pre>
+  </div>
+
+  <!-- FORMULAIRE -->
+  <div class="form-card">
+    <h2>✍️ Laisser un message</h2>
+
+    <div class="form-row">
+      <label>Votre prénom / pseudo</label>
+      <input type="text" id="inp-nom" placeholder="Marie, Jean-Pierre…" maxlength="60" />
+    </div>
+
+    <div class="form-row">
+      <label>Note</label>
+      <div class="stars-input" id="stars-input">
+        <span data-v="1">★</span>
+        <span data-v="2">★</span>
+        <span data-v="3">★</span>
+        <span data-v="4">★</span>
+        <span data-v="5">★</span>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <label>Votre message</label>
+      <textarea id="inp-texte" placeholder="Un super concert, une ambiance de feu…" maxlength="600"></textarea>
+    </div>
+
+    <button class="btn" id="btn-submit">Publier mon message</button>
+    <div class="form-feedback" id="form-feedback"></div>
+  </div>
+
+  <!-- ADMIN TOGGLE -->
+  <div class="admin-bar">
+    <button class="btn-admin-toggle" id="btn-admin-toggle">🔐 Mode admin</button>
+  </div>
+
+  <!-- MESSAGES -->
+  <div class="messages-header">
+    <h2>💬 Ce que vous dites de nous</h2>
+    <span class="msg-count" id="msg-count"></span>
+  </div>
+
+  <div id="messages-list">
+    <div class="loading">Chargement des messages…</div>
+  </div>
+
+</main>
+
+<!-- MODAL ADMIN LOGIN -->
+<div class="admin-login-modal" id="admin-modal">
+  <div class="modal-box">
+    <h3>🔐 Accès admin</h3>
+    <input type="password" id="admin-pwd-input" placeholder="Mot de passe" />
+    <div class="modal-row">
+      <button class="btn" id="btn-admin-login">Connexion</button>
+      <button class="btn-cancel" id="btn-admin-cancel">Annuler</button>
+    </div>
+    <div class="form-feedback" id="admin-feedback" style="margin-top:0.8rem;"></div>
+  </div>
+</div>
+
+<footer>Une création de l'association Zikomatiques</footer>
+
+<script>
+// ════════════════════════════════════════════════
+//  CONFIGURATION — À MODIFIER
+// ════════════════════════════════════════════════
+const SUPABASE_URL  = 'https://azugmqtxvapuqsjmwlx.supabase.co';
+const SUPABASE_KEY  = 'sb_publishable_puWQw_R_0UlSVOQquYnbEw_s_DvMOa3';
+const ADMIN_PASSWORD = 'Mouguerre2013!';
+// ════════════════════════════════════════════════
+
+const isConfigured = () =>
+  SUPABASE_URL !== 'VOTRE_URL_SUPABASE' && SUPABASE_KEY !== 'VOTRE_ANON_KEY';
+
+let isAdmin = false;
+let selectedStars = 5;
+
+// ── Stars ──
+const starsInput = document.getElementById('stars-input');
+starsInput.querySelectorAll('span').forEach(s => {
+  s.addEventListener('click', () => {
+    selectedStars = parseInt(s.dataset.v);
+    updateStarsUI();
+  });
+});
+function updateStarsUI() {
+  starsInput.querySelectorAll('span').forEach(s => {
+    s.classList.toggle('active', parseInt(s.dataset.v) <= selectedStars);
+  });
+}
+updateStarsUI();
+
+// ── Supabase helpers ──
+async function supaFetch(path, method = 'GET', body = null, extra = {}) {
+  const opts = {
+    method,
+    headers: {
+      'Content-Type': 'application/json',
+      'apikey': SUPABASE_KEY,
+      'Authorization': `Bearer ${SUPABASE_KEY}`,
+      'Prefer': 'return=minimal',
+      ...extra
+    }
+  };
+  if (body) opts.body = JSON.stringify(body);
+  const r = await fetch(SUPABASE_URL + '/rest/v1/' + path, opts);
+  if (!r.ok) {
+    const err = await r.text();
+    throw new Error(err);
+  }
+  const text = await r.text();
+  return text ? JSON.parse(text) : null;
+}
+
+// ── Load messages ──
+async function loadMessages() {
+  if (!isConfigured()) {
+    document.getElementById('messages-list').innerHTML =
+      '<div class="empty-state"><div class="icon">⚙️</div><p>Configurez Supabase pour afficher les messages.</p></div>';
+    return;
+  }
+  try {
+    const data = await supaFetch('messages?order=created_at.desc&select=*', 'GET', null, { 'Prefer': '' });
+    renderMessages(data || []);
+  } catch(e) {
+    document.getElementById('messages-list').innerHTML =
+      '<div class="loading">Erreur de chargement. Vérifiez la configuration.</div>';
+    console.error(e);
+  }
+}
+
+function renderMessages(messages) {
+  const list = document.getElementById('messages-list');
+  document.getElementById('msg-count').textContent = messages.length
+    ? `${messages.length} message${messages.length > 1 ? 's' : ''}`
+    : '';
+
+  if (!messages.length) {
+    list.innerHTML = '<div class="empty-state"><div class="icon">🎶</div><p>Soyez le premier à laisser un message !</p></div>';
+    return;
+  }
+
+  list.innerHTML = messages.map(m => {
+    const stars = '★'.repeat(m.etoiles) + '☆'.repeat(5 - m.etoiles);
+    const date = new Date(m.created_at).toLocaleDateString('fr-FR', { day:'numeric', month:'long', year:'numeric' });
+    const reply = m.reponse
+      ? `<div class="band-reply"><div class="band-reply-label">🎸 Réponse du groupe</div><p>${escHtml(m.reponse)}</p></div>`
+      : '';
+    const adminControls = `
+      <div class="admin-controls ${isAdmin ? 'visible' : ''}" id="ctrl-${m.id}">
+        <button class="btn-sm btn-reply" onclick="toggleReplyForm('${m.id}')">Répondre</button>
+        <button class="btn-sm btn-delete" onclick="deleteMessage('${m.id}')">Supprimer</button>
+      </div>
+      <div class="reply-form" id="reply-form-${m.id}">
+        <textarea id="reply-text-${m.id}" placeholder="Votre réponse…"></textarea>
+        <button class="btn" style="font-size:0.8rem;padding:0.5rem 1.2rem;" onclick="submitReply('${m.id}')">Envoyer la réponse</button>
+      </div>`;
+    return `
+      <div class="message-card" id="msg-${m.id}">
+        <div class="msg-top">
+          <span class="msg-author">${escHtml(m.nom)}</span>
+          <span class="msg-date">${date}</span>
+        </div>
+        <div class="msg-stars">${stars}</div>
+        <div class="msg-text">${escHtml(m.texte)}</div>
+        ${reply}
+        ${adminControls}
+      </div>`;
+  }).join('');
+}
+
+function escHtml(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+// ── Submit message ──
+document.getElementById('btn-submit').addEventListener('click', async () => {
+  if (!isConfigured()) {
+    showFeedback('form-feedback', 'error', 'Le livre d\'or n\'est pas encore configuré.');
+    return;
+  }
+  const nom   = document.getElementById('inp-nom').value.trim();
+  const texte = document.getElementById('inp-texte').value.trim();
+  if (!nom || !texte) {
+    showFeedback('form-feedback', 'error', 'Merci de remplir votre prénom et votre message.');
+    return;
+  }
+  const btn = document.getElementById('btn-submit');
+  btn.disabled = true;
+  btn.textContent = 'Envoi…';
+  try {
+    await supaFetch('messages', 'POST', { nom, texte, etoiles: selectedStars });
+    document.getElementById('inp-nom').value = '';
+    document.getElementById('inp-texte').value = '';
+    selectedStars = 5; updateStarsUI();
+    showFeedback('form-feedback', 'success', '✓ Merci pour votre message ! Il apparaîtra dans quelques instants.');
+    setTimeout(loadMessages, 1000);
+  } catch(e) {
+    showFeedback('form-feedback', 'error', 'Erreur lors de l\'envoi. Réessayez.');
+    console.error(e);
+  }
+  btn.disabled = false;
+  btn.textContent = 'Publier mon message';
+});
+
+// ── Admin ──
+document.getElementById('btn-admin-toggle').addEventListener('click', () => {
+  if (isAdmin) {
+    isAdmin = false;
+    document.getElementById('btn-admin-toggle').classList.remove('active');
+    document.getElementById('btn-admin-toggle').textContent = '🔐 Mode admin';
+    loadMessages();
+  } else {
+    document.getElementById('admin-modal').classList.add('open');
+    document.getElementById('admin-pwd-input').value = '';
+    document.getElementById('admin-pwd-input').focus();
+  }
+});
+document.getElementById('btn-admin-cancel').addEventListener('click', () => {
+  document.getElementById('admin-modal').classList.remove('open');
+});
+document.getElementById('btn-admin-login').addEventListener('click', () => {
+  const pwd = document.getElementById('admin-pwd-input').value;
+  if (pwd === ADMIN_PASSWORD) {
+    isAdmin = true;
+    document.getElementById('admin-modal').classList.remove('open');
+    document.getElementById('btn-admin-toggle').classList.add('active');
+    document.getElementById('btn-admin-toggle').textContent = '🔓 Admin actif';
+    loadMessages();
+  } else {
+    showFeedback('admin-feedback', 'error', 'Mot de passe incorrect.');
+  }
+});
+document.getElementById('admin-pwd-input').addEventListener('keydown', e => {
+  if (e.key === 'Enter') document.getElementById('btn-admin-login').click();
+});
+
+function toggleReplyForm(id) {
+  const f = document.getElementById('reply-form-' + id);
+  f.style.display = f.style.display === 'block' ? 'none' : 'block';
+  if (f.style.display === 'block') f.querySelector('textarea').focus();
+}
+
+async function submitReply(id) {
+  const texte = document.getElementById('reply-text-' + id).value.trim();
+  if (!texte) return;
+  try {
+    await supaFetch(`messages?id=eq.${id}`, 'PATCH', { reponse: texte });
+    loadMessages();
+  } catch(e) { alert('Erreur lors de la réponse.'); console.error(e); }
+}
+
+async function deleteMessage(id) {
+  if (!confirm('Supprimer ce message définitivement ?')) return;
+  try {
+    await supaFetch(`messages?id=eq.${id}`, 'DELETE');
+    document.getElementById('msg-' + id)?.remove();
+    loadMessages();
+  } catch(e) { alert('Erreur lors de la suppression.'); console.error(e); }
+}
+
+// ── Feedback helper ──
+function showFeedback(elId, type, msg) {
+  const el = document.getElementById(elId);
+  el.className = 'form-feedback ' + type;
+  el.textContent = msg;
+  setTimeout(() => { el.className = 'form-feedback'; }, 6000);
+}
+
+// ── Hide setup banner when configured ──
+if (isConfigured()) {
+  document.getElementById('setup-banner').style.display = 'none';
+}
+
+// ── Init ──
+loadMessages();
+</script>
 </body>
 </html>
