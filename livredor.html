@@ -8,6 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet"/>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
       background: #f5f2ee;
       color: #2a2a2a;
@@ -17,6 +18,7 @@
       flex-direction: column;
       align-items: center;
     }
+
     .site-title {
       font-family: 'Caveat', cursive;
       font-size: clamp(2.8rem, 8vw, 4.5rem);
@@ -36,6 +38,12 @@
       text-align: center;
       margin-top: 0.2rem;
     }
+    .logo-wrap {
+      width: min(300px, 75vw);
+      margin: 0 auto;
+    }
+    .logo-wrap img { width: 100%; display: block; }
+
     .btn-back {
       display: inline-block;
       background: #3a9e4a;
@@ -50,7 +58,13 @@
       transition: background 0.2s, transform 0.1s;
     }
     .btn-back:hover { background: #2e8a3c; transform: scale(1.03); }
-    main { width: min(700px, 94vw); padding-bottom: 3rem; }
+
+    main {
+      width: min(700px, 94vw);
+      padding-bottom: 3rem;
+    }
+
+    /* ── FORM ── */
     .form-card {
       background: #fff;
       border-radius: 20px;
@@ -74,7 +88,8 @@
       color: #888;
       margin-bottom: 0.35rem;
     }
-    .form-row input, .form-row textarea {
+    .form-row input,
+    .form-row textarea {
       width: 100%;
       background: #f5f2ee;
       border: 2px solid #e0dbd4;
@@ -86,8 +101,10 @@
       transition: border-color 0.2s;
       resize: vertical;
     }
-    .form-row input:focus, .form-row textarea:focus { outline: none; border-color: #e8463a; }
+    .form-row input:focus,
+    .form-row textarea:focus { outline: none; border-color: #e8463a; }
     .form-row textarea { min-height: 90px; }
+
     .stars-input { display: flex; gap: 0.4rem; margin-top: 0.3rem; }
     .stars-input span {
       font-size: 2rem;
@@ -98,6 +115,7 @@
     }
     .stars-input span.active { color: #f5a623; }
     .stars-input span:hover { transform: scale(1.2); }
+
     .btn-submit {
       background: linear-gradient(135deg, #e8463a, #c0392b);
       color: #fff;
@@ -113,6 +131,7 @@
     }
     .btn-submit:hover { opacity: 0.9; transform: scale(1.02); }
     .btn-submit:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
     .form-feedback {
       margin-top: 0.8rem;
       padding: 0.65rem 1rem;
@@ -123,9 +142,21 @@
     }
     .form-feedback.success { background: #e8f5e9; color: #2e7d32; display: block; }
     .form-feedback.error   { background: #ffebee; color: #c62828; display: block; }
-    .messages-header { display: flex; align-items: baseline; gap: 0.5rem; margin-bottom: 1.2rem; }
-    .messages-title { font-family: 'Caveat', cursive; font-size: 2rem; color: #2a2a2a; }
+
+    /* ── MESSAGES ── */
+    .messages-header {
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      margin-bottom: 1.2rem;
+    }
+    .messages-title {
+      font-family: 'Caveat', cursive;
+      font-size: 2rem;
+      color: #2a2a2a;
+    }
     .msg-count { font-size: 0.85rem; color: #aaa; font-weight: 600; }
+
     .message-card {
       background: #fff;
       border-radius: 18px;
@@ -145,10 +176,16 @@
       gap: 1rem;
       margin-bottom: 0.4rem;
     }
-    .msg-author { font-family: 'Caveat', cursive; font-size: 1.45rem; color: #e8463a; font-weight: 700; }
+    .msg-author {
+      font-family: 'Caveat', cursive;
+      font-size: 1.45rem;
+      color: #e8463a;
+      font-weight: 700;
+    }
     .msg-date { font-size: 0.75rem; color: #bbb; white-space: nowrap; padding-top: 0.35rem; }
     .msg-stars { color: #f5a623; font-size: 1.1rem; margin-bottom: 0.5rem; }
     .msg-text { font-size: 0.95rem; line-height: 1.6; color: #444; }
+
     .band-reply {
       margin-top: 1rem;
       padding: 0.8rem 1rem;
@@ -165,6 +202,7 @@
       margin-bottom: 0.3rem;
     }
     .band-reply p { font-size: 0.9rem; color: #666; font-style: italic; }
+
     .admin-controls { display: none; gap: 0.5rem; margin-top: 1rem; flex-wrap: wrap; }
     .admin-controls.visible { display: flex; }
     .btn-sm {
@@ -180,6 +218,7 @@
     .btn-sm:hover { opacity: 0.85; transform: scale(1.03); }
     .btn-reply  { background: #e8f5e9; color: #2e7d32; }
     .btn-delete { background: #ffebee; color: #c62828; }
+
     .reply-form { display: none; margin-top: 0.8rem; }
     .reply-form textarea {
       width: 100%;
@@ -206,9 +245,12 @@
       font-size: 0.85rem;
       cursor: pointer;
     }
+
     .loading { text-align: center; padding: 2rem; color: #aaa; font-style: italic; }
     .empty-state { text-align: center; padding: 2.5rem 1rem; color: #bbb; }
     .empty-state .icon { font-size: 3rem; margin-bottom: 0.8rem; }
+
+    /* ADMIN BAR */
     .admin-bar { text-align: right; margin-bottom: 1rem; }
     .btn-admin-toggle {
       background: transparent;
@@ -224,6 +266,8 @@
     }
     .btn-admin-toggle:hover { border-color: #e8463a; color: #e8463a; }
     .btn-admin-toggle.active { border-color: #e8463a; color: #e8463a; background: #fff5f5; }
+
+    /* MODAL */
     .admin-login-modal {
       display: none;
       position: fixed;
@@ -241,7 +285,12 @@
       width: min(340px, 90vw);
       box-shadow: 0 10px 40px rgba(0,0,0,0.2);
     }
-    .modal-box h3 { font-family: 'Caveat', cursive; font-size: 1.8rem; color: #2a2a2a; margin-bottom: 1rem; }
+    .modal-box h3 {
+      font-family: 'Caveat', cursive;
+      font-size: 1.8rem;
+      color: #2a2a2a;
+      margin-bottom: 1rem;
+    }
     .modal-box input {
       width: 100%;
       background: #f5f2ee;
@@ -266,6 +315,8 @@
       font-weight: 700;
       font-size: 0.9rem;
     }
+
+    /* ── LOGO FOND ── */
     body::before {
       content: '';
       position: fixed;
@@ -279,10 +330,11 @@
       pointer-events: none;
       z-index: 0;
     }
-    main, .btn-back, .site-title, .page-label, .site-subtitle, footer {
+    main, .btn-back, .site-title, .page-label, .logo-wrap, .site-subtitle, footer {
       position: relative;
       z-index: 1;
     }
+
     .site-subtitle {
       font-family: 'Caveat', cursive;
       font-size: clamp(1.4rem, 4vw, 2rem);
@@ -303,15 +355,20 @@
 
   <div class="site-title">Les Tapas Nocturnes</div>
   <div class="page-label">⭐ Livre d'Or</div>
+
+
   <a href="index.html" class="btn-back">← Retour à l'accueil</a>
 
   <main>
+
     <div class="form-card">
       <h2>✍️ Laissez-nous un mot !</h2>
+
       <div class="form-row">
         <label>Votre prénom / pseudo</label>
         <input type="text" id="inp-nom" placeholder="Marie, Jean-Pierre…" maxlength="60" />
       </div>
+
       <div class="form-row">
         <label>Note</label>
         <div class="stars-input" id="stars-input">
@@ -322,10 +379,12 @@
           <span data-v="5">★</span>
         </div>
       </div>
+
       <div class="form-row">
         <label>Votre message</label>
         <textarea id="inp-texte" placeholder="Un super concert, une ambiance de feu…" maxlength="600"></textarea>
       </div>
+
       <button class="btn-submit" id="btn-submit">🎶 Publier mon message</button>
       <div class="form-feedback" id="form-feedback"></div>
     </div>
@@ -342,6 +401,7 @@
     <div id="messages-list">
       <div class="loading">Chargement des messages…</div>
     </div>
+
   </main>
 
   <div class="admin-login-modal" id="admin-modal">
@@ -360,7 +420,7 @@
   <footer>Une création de l'association Zikomatiques</footer>
 
 <script>
-const SUPABASE_URL   = 'https://azugmqtxvapuqsjmwlx.supabase.co';
+const SUPABASE_URL   = 'https://azugmxqtxvapuqsjmwlx.supabase.co';
 const SUPABASE_KEY   = 'sb_publishable_puWQw_R_0UlSVOQquYnbEw_s_DvMOa3';
 const ADMIN_PASSWORD = 'Mouguerre2013!';
 
@@ -384,7 +444,7 @@ async function supaFetch(path, method = 'GET', body = null, extra = {}) {
     headers: {
       'Content-Type': 'application/json',
       'apikey': SUPABASE_KEY,
-      'Authorization': 'Bearer ' + SUPABASE_KEY,
+      'Authorization': `Bearer ${SUPABASE_KEY}`,
       'Prefer': 'return=minimal',
       ...extra
     }
@@ -409,36 +469,37 @@ async function loadMessages() {
 function renderMessages(messages) {
   const list = document.getElementById('messages-list');
   document.getElementById('msg-count').textContent = messages.length
-    ? '— ' + messages.length + ' message' + (messages.length > 1 ? 's' : '') : '';
+    ? `— ${messages.length} message${messages.length > 1 ? 's' : ''}` : '';
 
   if (!messages.length) {
     list.innerHTML = '<div class="empty-state"><div class="icon">🎶</div><p>Soyez le premier à laisser un message !</p></div>';
     return;
   }
 
-  list.innerHTML = messages.map(function(m) {
+  list.innerHTML = messages.map(m => {
     const stars = '★'.repeat(m.etoiles) + '☆'.repeat(5 - m.etoiles);
     const date  = new Date(m.created_at).toLocaleDateString('fr-FR', { day:'numeric', month:'long', year:'numeric' });
     const reply = m.reponse
-      ? '<div class="band-reply"><div class="band-reply-label">🎸 Réponse du groupe</div><p>' + escHtml(m.reponse) + '</p></div>' : '';
-    const adminControls =
-      '<div class="admin-controls ' + (isAdmin ? 'visible' : '') + '" id="ctrl-' + m.id + '">' +
-        '<button class="btn-sm btn-reply" onclick="toggleReplyForm(\'' + m.id + '\')">✏️ Répondre</button>' +
-        '<button class="btn-sm btn-delete" onclick="deleteMessage(\'' + m.id + '\')">🗑️ Supprimer</button>' +
-      '</div>' +
-      '<div class="reply-form" id="reply-form-' + m.id + '">' +
-        '<textarea id="reply-text-' + m.id + '" placeholder="Votre réponse…"></textarea>' +
-        '<button class="btn-reply-send" onclick="submitReply(\'' + m.id + '\')">Envoyer</button>' +
-      '</div>';
-    return '<div class="message-card" id="msg-' + m.id + '">' +
-      '<div class="msg-top">' +
-        '<span class="msg-author">' + escHtml(m.nom) + '</span>' +
-        '<span class="msg-date">' + date + '</span>' +
-      '</div>' +
-      '<div class="msg-stars">' + stars + '</div>' +
-      '<div class="msg-text">' + escHtml(m.texte) + '</div>' +
-      reply + adminControls +
-    '</div>';
+      ? `<div class="band-reply"><div class="band-reply-label">🎸 Réponse du groupe</div><p>${escHtml(m.reponse)}</p></div>` : '';
+    const adminControls = `
+      <div class="admin-controls ${isAdmin ? 'visible' : ''}" id="ctrl-${m.id}">
+        <button class="btn-sm btn-reply" onclick="toggleReplyForm('${m.id}')">✏️ Répondre</button>
+        <button class="btn-sm btn-delete" onclick="deleteMessage('${m.id}')">🗑️ Supprimer</button>
+      </div>
+      <div class="reply-form" id="reply-form-${m.id}">
+        <textarea id="reply-text-${m.id}" placeholder="Votre réponse…"></textarea>
+        <button class="btn-reply-send" onclick="submitReply('${m.id}')">Envoyer</button>
+      </div>`;
+    return `
+      <div class="message-card" id="msg-${m.id}">
+        <div class="msg-top">
+          <span class="msg-author">${escHtml(m.nom)}</span>
+          <span class="msg-date">${date}</span>
+        </div>
+        <div class="msg-stars">${stars}</div>
+        <div class="msg-text">${escHtml(m.texte)}</div>
+        ${reply}${adminControls}
+      </div>`;
   }).join('');
 }
 
@@ -446,14 +507,14 @@ function escHtml(s) {
   return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 }
 
-document.getElementById('btn-submit').addEventListener('click', async function() {
+document.getElementById('btn-submit').addEventListener('click', async () => {
   const nom   = document.getElementById('inp-nom').value.trim();
   const texte = document.getElementById('inp-texte').value.trim();
   if (!nom || !texte) { showFeedback('form-feedback','error','Merci de remplir votre prénom et votre message.'); return; }
   const btn = document.getElementById('btn-submit');
   btn.disabled = true; btn.textContent = 'Envoi…';
   try {
-    await supaFetch('messages', 'POST', { nom: nom, texte: texte, etoiles: selectedStars });
+    await supaFetch('messages', 'POST', { nom, texte, etoiles: selectedStars });
     document.getElementById('inp-nom').value = '';
     document.getElementById('inp-texte').value = '';
     selectedStars = 5; updateStarsUI();
@@ -465,7 +526,7 @@ document.getElementById('btn-submit').addEventListener('click', async function()
   btn.disabled = false; btn.textContent = '🎶 Publier mon message';
 });
 
-document.getElementById('btn-admin-toggle').addEventListener('click', function() {
+document.getElementById('btn-admin-toggle').addEventListener('click', () => {
   if (isAdmin) {
     isAdmin = false;
     document.getElementById('btn-admin-toggle').classList.remove('active');
@@ -477,10 +538,10 @@ document.getElementById('btn-admin-toggle').addEventListener('click', function()
     document.getElementById('admin-pwd-input').focus();
   }
 });
-document.getElementById('btn-admin-cancel').addEventListener('click', function() {
+document.getElementById('btn-admin-cancel').addEventListener('click', () => {
   document.getElementById('admin-modal').classList.remove('open');
 });
-document.getElementById('btn-admin-login').addEventListener('click', function() {
+document.getElementById('btn-admin-login').addEventListener('click', () => {
   if (document.getElementById('admin-pwd-input').value === ADMIN_PASSWORD) {
     isAdmin = true;
     document.getElementById('admin-modal').classList.remove('open');
@@ -491,7 +552,7 @@ document.getElementById('btn-admin-login').addEventListener('click', function() 
     showFeedback('admin-feedback','error','Mot de passe incorrect.');
   }
 });
-document.getElementById('admin-pwd-input').addEventListener('keydown', function(e) {
+document.getElementById('admin-pwd-input').addEventListener('keydown', e => {
   if (e.key === 'Enter') document.getElementById('btn-admin-login').click();
 });
 
@@ -503,19 +564,19 @@ function toggleReplyForm(id) {
 async function submitReply(id) {
   const texte = document.getElementById('reply-text-' + id).value.trim();
   if (!texte) return;
-  try { await supaFetch('messages?id=eq.' + id, 'PATCH', { reponse: texte }); loadMessages(); }
+  try { await supaFetch(`messages?id=eq.${id}`, 'PATCH', { reponse: texte }); loadMessages(); }
   catch(e) { alert('Erreur lors de la réponse.'); }
 }
 async function deleteMessage(id) {
   if (!confirm('Supprimer ce message définitivement ?')) return;
-  try { await supaFetch('messages?id=eq.' + id, 'DELETE'); loadMessages(); }
+  try { await supaFetch(`messages?id=eq.${id}`, 'DELETE'); loadMessages(); }
   catch(e) { alert('Erreur lors de la suppression.'); }
 }
 function showFeedback(elId, type, msg) {
   const el = document.getElementById(elId);
   el.className = 'form-feedback ' + type;
   el.textContent = msg;
-  setTimeout(function() { el.className = 'form-feedback'; }, 6000);
+  setTimeout(() => { el.className = 'form-feedback'; }, 6000);
 }
 
 loadMessages();
