@@ -11,7 +11,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: '20'
       - name: Install Supabase
         run: npm install @supabase/supabase-js --force
       - name: Ping
@@ -21,6 +21,10 @@ jobs:
         run: |
           node -e "
           const { createClient } = require('@supabase/supabase-js');
-          const sb = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_KEY);
-          sb.from('NOM_DE_TA_TABLE').select('*').limit(1).then(r => console.log('OK', r));
+          const url = process.env.SUPABASE_URL;
+          const key = process.env.SUPABASE_KEY;
+          console.log('URL found:', !!url);
+          console.log('KEY found:', !!key);
+          const sb = createClient(url, key);
+          sb.from('reservations').select('*').limit(1).then(r => console.log('OK', r));
           "
