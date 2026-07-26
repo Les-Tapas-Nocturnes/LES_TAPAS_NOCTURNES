@@ -2,13 +2,26 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Contact - Les Tapas Nocturnes</title>
 <link rel="stylesheet" href="style.css" />
 <style>
+  body {
+    background: #ffffff;
+  }
+  .bunting-contact {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+  }
   .contact-top {
     position: fixed;
-    top: 15px;
+    top: 45px;
     left: 50%;
     transform: translateX(-50%);
     width: 90%;
@@ -35,17 +48,19 @@
     display: flex;
     align-items: center;
     gap: 16px;
-    border-radius: 50px;
-    border: 4px solid black;
-    box-shadow: 0px 6px 10px rgba(0,0,0,0.3);
+    border-radius: 22px;
+    border: 3px solid black;
+    box-shadow: 0 5px 0 rgba(0,0,0,0.25);
     padding: 14px 24px;
     text-decoration: none;
     font-weight: bold;
     color: white;
     transition: transform 0.15s ease;
   }
+  .contact-card:nth-child(1) { transform: rotate(1deg); }
+  .contact-card:nth-child(2) { transform: rotate(-1deg); }
   .contact-card:hover {
-    transform: scale(1.03);
+    transform: scale(1.05) rotate(0deg);
   }
   .contact-card svg {
     width: 36px;
@@ -87,13 +102,23 @@
 </head>
 <body>
 
+<svg viewBox="0 0 300 30" class="bunting-contact">
+  <path d="M0,3 Q150,22 300,3" fill="none" stroke="#000" stroke-width="2"/>
+  <g stroke="#000" stroke-width="1.5">
+    <path d="M20,5 L35,18 L50,6" fill="#ff3b3b"/>
+    <path d="M70,8 L85,21 L100,9" fill="#e8b030"/>
+    <path d="M120,10 L135,23 L150,11" fill="#4caf50"/>
+    <path d="M170,10 L185,23 L200,11" fill="#b87333"/>
+    <path d="M220,8 L235,21 L250,9" fill="#ff3b3b"/>
+    <path d="M260,5 L275,18 L290,6" fill="#e8b030"/>
+  </g>
+</svg>
+
 <div class="contact-top">
   <h1 class="page-title">Contact</h1>
   <a href="index.html" class="btn-retour couleur-contact">← Retour à l'accueil</a>
 </div>
-
 <div class="contact-wrapper">
-
   <!-- Gmail -->
   <a href="mailto:lestapasnocturnes64@gmail.com" class="contact-card card-email">
     <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
@@ -108,7 +133,6 @@
       <span class="value">lestapasnocturnes64@gmail.com</span>
     </div>
   </a>
-
   <!-- Instagram -->
   <a href="https://www.instagram.com/les_tapas_nocturnes" target="_blank" class="contact-card card-instagram">
     <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
@@ -129,12 +153,9 @@
       <span class="value">@les_tapas_nocturnes</span>
     </div>
   </a>
-
 </div>
-
 <footer>
   Une création de l'association Zikomatiques
 </footer>
-
 </body>
 </html>
