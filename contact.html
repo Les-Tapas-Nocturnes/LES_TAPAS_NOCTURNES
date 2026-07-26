@@ -11,49 +11,23 @@
 <style>
   body {
     background: #ffffff;
-  }
-  .bunting-contact {
-    position: fixed;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    max-width: 600px;
-    z-index: 5;
-  }
-  .contact-top {
-    position: fixed;
-    top: 85px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90%;
-    max-width: 360px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
-    z-index: 10;
   }
-  .contact-wrapper {
-    position: fixed;
-    bottom: 40px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90%;
-    max-width: 360px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    z-index: 10;
+  .contact-main {
+    width: min(420px, 92vw);
+    padding-bottom: 2rem;
   }
   .contact-card {
     display: flex;
     align-items: center;
-    gap: 16px;
-    border-radius: 22px;
+    gap: 14px;
+    border-radius: 20px;
     border: 3px solid black;
     box-shadow: 0 5px 0 rgba(0,0,0,0.25);
-    padding: 14px 24px;
+    padding: 12px 18px;
+    margin: 10px 0;
     text-decoration: none;
     font-weight: bold;
     color: white;
@@ -62,11 +36,11 @@
   .contact-card:nth-child(1) { transform: rotate(1deg); }
   .contact-card:nth-child(2) { transform: rotate(-1deg); }
   .contact-card:hover {
-    transform: scale(1.05) rotate(0deg);
+    transform: scale(1.04) rotate(0deg);
   }
   .contact-card svg {
-    width: 36px;
-    height: 36px;
+    width: 32px;
+    height: 32px;
     flex-shrink: 0;
   }
   .contact-card .info {
@@ -75,13 +49,14 @@
     text-align: left;
   }
   .contact-card .label {
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     opacity: 0.85;
     text-transform: uppercase;
     letter-spacing: 0.08em;
   }
   .contact-card .value {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
+    word-break: break-word;
   }
   .card-email {
     background: linear-gradient(#4caf50, #2e7d32);
@@ -89,22 +64,52 @@
   .card-instagram {
     background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af);
   }
+  .info-card {
+    background: #fdfaf4;
+    border: 3px solid #000;
+    border-radius: 20px;
+    padding: 16px 18px;
+    margin: 14px 0;
+    box-shadow: 0 4px 0 rgba(0,0,0,0.12);
+    text-align: left;
+  }
+  .info-card:nth-child(odd) { transform: rotate(-1deg); }
+  .info-card:nth-child(even) { transform: rotate(1deg); background: #fff8ec; }
+  .info-card .info-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #b87333;
+    margin-bottom: 6px;
+  }
+  .info-card.animations .info-label { color: #c8960c; }
+  .info-card p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+  }
+  .info-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.9;
+    color: #333;
+  }
   footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
     text-align: center;
-    padding: 8px 0;
-    font-size: 0.95rem;
-    color: rgba(0, 0, 0, 0.55);
-    letter-spacing: 0.05em;
-    z-index: 10;
+    padding: 0.8rem 1rem 2rem;
+    color: #bbb;
+    font-size: 0.82rem;
+    width: 100%;
   }
 </style>
 </head>
 <body>
 
-<svg viewBox="0 0 300 30" class="bunting-contact">
+<svg viewBox="0 0 300 30" style="width:100%;max-width:600px;display:block;margin:8px auto 0">
   <path d="M0,3 Q150,22 300,3" fill="none" stroke="#000" stroke-width="2"/>
   <g stroke="#000" stroke-width="1.5">
     <path d="M20,5 L35,18 L50,6" fill="#ff3b3b"/>
@@ -116,11 +121,26 @@
   </g>
 </svg>
 
-<div class="contact-top">
-  <h1 class="page-title">Contact</h1>
-  <a href="index.html" class="btn-retour couleur-contact">← Retour à l'accueil</a>
-</div>
-<div class="contact-wrapper">
+<h1 class="page-title">Contact</h1>
+<a href="index.html" class="btn-retour couleur-contact">← Retour à l'accueil</a>
+
+<main class="contact-main">
+
+  <div class="info-card">
+    <div class="info-label">🌶️ Qui sommes-nous ?</div>
+    <p>Les Tapas Nocturnes, c'est une bande de copains de l'association <strong>Zikomatiques</strong> qui a décidé qu'un apéro sans guitare, c'est juste... un apéro. On joue des chansons françaises et basques, on ne prend pas notre note toujours très au sérieux, mais on adore partager une bonne ambiance et refaire le monde entre deux refrains.</p>
+  </div>
+
+  <div class="info-card animations">
+    <div class="info-label">🎶 Nos animations</div>
+    <ul>
+      <li>🍷 Apéros-concerts en terrasse ou en bar</li>
+      <li>🎉 Soirées privées (anniversaires, mariages…)</li>
+      <li>🏮 Fêtes associatives &amp; événements caritatifs</li>
+      <li>🎤 Répertoire chansons françaises &amp; basques</li>
+    </ul>
+  </div>
+
   <!-- Gmail -->
   <a href="mailto:lestapasnocturnes64@gmail.com" class="contact-card card-email">
     <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
@@ -135,6 +155,7 @@
       <span class="value">lestapasnocturnes64@gmail.com</span>
     </div>
   </a>
+
   <!-- Instagram -->
   <a href="https://www.instagram.com/les_tapas_nocturnes" target="_blank" class="contact-card card-instagram">
     <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
@@ -155,7 +176,9 @@
       <span class="value">@les_tapas_nocturnes</span>
     </div>
   </a>
-</div>
+
+</main>
+
 <footer>
   Une création de l'association Zikomatiques
 </footer>
