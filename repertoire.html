@@ -22,7 +22,7 @@
     position: fixed;
     top: 12px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) rotate(-1deg);
     z-index: 999;
     white-space: nowrap;
   }
@@ -30,6 +30,19 @@
 </style>
 </head>
 <body>
+
+<svg viewBox="0 0 300 30" style="width:100%;max-width:600px;display:block;margin:0 auto;position:relative;z-index:1">
+  <path d="M0,3 Q150,22 300,3" fill="none" stroke="#000" stroke-width="2"/>
+  <g stroke="#000" stroke-width="1.5">
+    <path d="M20,5 L35,18 L50,6" fill="#ff3b3b"/>
+    <path d="M70,8 L85,21 L100,9" fill="#e8b030"/>
+    <path d="M120,10 L135,23 L150,11" fill="#4caf50"/>
+    <path d="M170,10 L185,23 L200,11" fill="#b87333"/>
+    <path d="M220,8 L235,21 L250,9" fill="#ff3b3b"/>
+    <path d="M260,5 L275,18 L290,6" fill="#e8b030"/>
+  </g>
+</svg>
+
 <h1 class="page-title">Répertoire</h1>
 <a href="index.html" class="btn-retour couleur-repertoire">← Retour à l'accueil</a>
 <div class="page-container">
